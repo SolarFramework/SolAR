@@ -5,6 +5,8 @@ This repository contains all our source code.
 
 * git clone the project
 
+After that, open a Bash and execute following command lines :
+
 * git submodule init
 
-* git submodule upadte --remote
+* git submodule update --remote
