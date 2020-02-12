@@ -1,0 +1,45 @@
+[submodule "core/SolARFramework"]
+	path = core/SolARFramework
+	url = https://github.com/SolarFramework/SolARFramework
+[submodule "samples/NaturalImageMarker"]
+	path = samples/NaturalImageMarker
+	url = https://github.com/SolarFramework/NaturalImageMarker
+[submodule "modules/SolARPipelineManager"]
+	path = modules/SolARPipelineManager
+	url = https://github.com/SolarFramework/SolARPipelineManager
+[submodule "modules/SolARUnityPlugin"]
+	path = modules/SolARUnityPlugin
+	url = https://github.com/SolarFramework/SolARUnityPlugin
+[submodule "samples/FiducialMarker"]
+	path = samples/FiducialMarker
+	url = https://github.com/SolarFramework/FiducialMarker
+[submodule "modules/SolARModuleTools"]
+	path = modules/SolARModuleTools
+	url = https://github.com/SolarFramework/SolARModuleTools
+[submodule "samples/Sample-Slam"]
+	path = samples/Sample-Slam
+	url = https://github.com/SolarFramework/Sample-Slam
+[submodule "modules/SolARModuleOpenCV"]
+	path = modules/SolARModuleOpenCV
+	url = https://github.com/SolarFramework/SolARModuleOpenCV
+[submodule "modules/SolARModuleOpenGV"]
+	path = modules/SolARModuleOpenGV
+	url = https://github.com/SolarFramework/SolARModuleOpenGV
+[submodule "modules/SolARModuleOpenGL"]
+	path = modules/SolARModuleOpenGL
+	url = https://github.com/SolarFramework/SolARModuleOpenGL
+[submodule "modules/SolARModuleNonFreeOpenCV"]
+	path = modules/SolARModuleNonFreeOpenCV
+	url = https://github.com/SolarFramework/SolARModuleNonFreeOpenCV
+[submodule "modules/SolARModuleFBOW"]
+	path = modules/SolARModuleFBOW
+	url = https://github.com/SolarFramework/SolARModuleFBOW
+[submodule "modules/SolARModuleCeres"]
+	path = modules/SolARModuleCeres
+	url = https://github.com/SolarFramework/SolARModuleCeres
+[submodule "modules/SolARModuleG2O"]
+	path = modules/SolARModuleG2O
+	url = https://github.com/SolarFramework/SolARModuleG2O
+[submodule "samples/Sample-Triangulation"]
+	path = samples/Sample-Triangulation
+	url = https://github.com/SolarFramework/Sample-Triangulation
