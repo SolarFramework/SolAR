@@ -1,45 +1,60 @@
 [submodule "core/SolARFramework"]
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
+	branch = develop
 [submodule "samples/NaturalImageMarker"]
 	path = samples/NaturalImageMarker
 	url = https://github.com/SolarFramework/NaturalImageMarker
+	branch = develop
 [submodule "modules/SolARPipelineManager"]
 	path = modules/SolARPipelineManager
 	url = https://github.com/SolarFramework/SolARPipelineManager
+	branch = develop
 [submodule "modules/SolARUnityPlugin"]
 	path = modules/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
+    branch = develop
 [submodule "samples/FiducialMarker"]
 	path = samples/FiducialMarker
 	url = https://github.com/SolarFramework/FiducialMarker
+    branch = develop
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
+	branch = develop
 [submodule "samples/Sample-Slam"]
 	path = samples/Sample-Slam
 	url = https://github.com/SolarFramework/Sample-Slam
+	branch = develop
 [submodule "modules/SolARModuleOpenCV"]
 	path = modules/SolARModuleOpenCV
 	url = https://github.com/SolarFramework/SolARModuleOpenCV
+	branch = develop
 [submodule "modules/SolARModuleOpenGV"]
 	path = modules/SolARModuleOpenGV
 	url = https://github.com/SolarFramework/SolARModuleOpenGV
+	branch = develop
 [submodule "modules/SolARModuleOpenGL"]
 	path = modules/SolARModuleOpenGL
 	url = https://github.com/SolarFramework/SolARModuleOpenGL
+	branch = develop
 [submodule "modules/SolARModuleNonFreeOpenCV"]
 	path = modules/SolARModuleNonFreeOpenCV
 	url = https://github.com/SolarFramework/SolARModuleNonFreeOpenCV
+	branch = develop
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
+	branch = develop
 [submodule "modules/SolARModuleCeres"]
 	path = modules/SolARModuleCeres
 	url = https://github.com/SolarFramework/SolARModuleCeres
+	branch = develop
 [submodule "modules/SolARModuleG2O"]
 	path = modules/SolARModuleG2O
 	url = https://github.com/SolarFramework/SolARModuleG2O
+	branch = develop
 [submodule "samples/Sample-Triangulation"]
 	path = samples/Sample-Triangulation
 	url = https://github.com/SolarFramework/Sample-Triangulation
+	branch = develop
