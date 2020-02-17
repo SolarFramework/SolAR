@@ -111,7 +111,7 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = .\SolARModuleOpenCV\interfaces .\SolARModuleTools\interfaces .\SolARModuleCeres\interfaces .\SolARModuleFBOW\interfaces .\SolARModuleNonFreeOpenCV\interfaces .\SolARModuleOpenGL\interfaces .\SolARModuleOpenGV\interfaces .\SolARModuleG2O\interfaces
+INPUT                  = ./SolARModuleOpenCV/interfaces ./SolARModuleTools/interfaces ./SolARModuleCeres/interfaces ./SolARModuleFBOW/interfaces ./SolARModuleNonFreeOpenCV/interfaces ./SolARModuleOpenGL/interfaces ./SolARModuleOpenGV/interfaces ./SolARModuleG2O/interfaces
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.cc \
