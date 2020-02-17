@@ -157,7 +157,7 @@ FILE_PATTERNS          = *.c \
                          *.as \
                          *.js
 RECURSIVE              = YES
-EXCLUDE                =  .\SolARModuleOpenCV\interfaces\features2d_akaze2.hpp .\SolARModuleCeres\interfaces\SolARCeresUtils.h
+EXCLUDE                =  ./SolARModuleOpenCV/interfaces/features2d_akaze2.hpp ./SolARModuleCeres/interfaces/SolARCeresUtils.h
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = 
 EXCLUDE_SYMBOLS        = 
