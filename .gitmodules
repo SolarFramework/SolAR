@@ -40,6 +40,6 @@
 [submodule "core/SolARPipelineManager"]
 	path = core/SolARPipelineManager
 	url = https://github.com/SolarFramework/SolARPipelineManager
-[submodule "unity/plugin/SolARUnityPlugin"]
-	path = unity/plugin/SolARUnityPlugin
+[submodule "plugin/unity/SolARUnityPlugin"]
+	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
