@@ -6,14 +6,6 @@
 	path = samples/NaturalImageMarker
 	url = https://github.com/SolarFramework/NaturalImageMarker
 	branch = develop
-[submodule "modules/SolARPipelineManager"]
-	path = modules/SolARPipelineManager
-	url = https://github.com/SolarFramework/SolARPipelineManager
-	branch = develop
-[submodule "modules/SolARUnityPlugin"]
-	path = modules/SolARUnityPlugin
-	url = https://github.com/SolarFramework/SolARUnityPlugin
-    branch = develop
 [submodule "samples/FiducialMarker"]
 	path = samples/FiducialMarker
 	url = https://github.com/SolarFramework/FiducialMarker
@@ -57,4 +49,12 @@
 [submodule "samples/Sample-Triangulation"]
 	path = samples/Sample-Triangulation
 	url = https://github.com/SolarFramework/Sample-Triangulation
+	branch = develop
+[submodule "core/SolARPipelineManager"]
+	path = core/SolARPipelineManager
+	url = https://github.com/SolarFramework/SolARPipelineManager
+	branch = develop
+[submodule "unity/plugin/SolARUnityPlugin"]
+	path = unity/plugin/SolARUnityPlugin
+	url = https://github.com/SolarFramework/SolARUnityPlugin
 	branch = develop
