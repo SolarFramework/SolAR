@@ -1,57 +1,57 @@
-SolARFramework|0.8.0
+SolARFramework|0.8.1
 
-SolARWrapper|0.8.0
+SolARWrapper|0.8.1
 
-SolARModuleTools|0.8.0
+SolARModuleTools|0.8.1
 
-SolARModuleOpenCV|0.8.0
-SolAROpenCVCameraCalibration|0.8.0
-SolAROpenCVDescriptorMatcher|0.8.0
-SolAROpenCVFiducialMarker|0.8.0
-SolAROpenCVFundamentalMatrixDecomposer|0.8.0
-SolAROpenCVFundamentalMatrixEstimation|0.8.0
-SolAROpenCVImageConvertor|0.8.0
-SolAROpenCVImageLoader|0.8.0
-SolAROpenCVMatchesFilter|0.8.0
-SolAROpenCVOpticalFlow|0.8.0
-SolARImageOpenCVStaticTest|0.8.0
-SolARModuleOpenCVUnitTests|0.8.0
+SolARModuleOpenCV|0.8.1
+SolAROpenCVCameraCalibration|0.8.1
+SolAROpenCVDescriptorMatcher|0.8.1
+SolAROpenCVFiducialMarker|0.8.1
+SolAROpenCVFundamentalMatrixDecomposer|0.8.1
+SolAROpenCVFundamentalMatrixEstimation|0.8.1
+SolAROpenCVImageConvertor|0.8.1
+SolAROpenCVImageLoader|0.8.1
+SolAROpenCVMatchesFilter|0.8.1
+SolAROpenCVOpticalFlow|0.8.1
+SolARImageOpenCVStaticTest|0.8.1
+SolARModuleOpenCVUnitTests|0.8.1
 
-SolARModuleNonFreeOpenCV|0.8.0
-SolARDescriptorExtractorOpenCVNonFreeTest|0.8.0
+SolARModuleNonFreeOpenCV|0.8.1
+SolARDescriptorExtractorOpenCVNonFreeTest|0.8.1
 
-SolARModuleOpenGL|0.8.0
-SolAROpenGLPointCloudDisplay|0.8.0
+SolARModuleOpenGL|0.8.1
+SolAROpenGLPointCloudDisplay|0.8.1
 
-SolARModuleFBOW|0.8.0
-SolARFBOWClosestKeyframeRetrieval|0.8.0
+SolARModuleFBOW|0.8.1
+SolARFBOWClosestKeyframeRetrieval|0.8.1
 
-SolARModuleCeres|0.8.0
-SolARCeresBundler|0.8.0
+SolARModuleCeres|0.8.1
+SolARCeresBundler|0.8.1
 
-SolARModuleG2O|0.8.0
+SolARModuleG2O|0.8.1
 
-SolARPipelineManager|0.8.0
+SolARPipelineManager|0.8.1
 
-SolARModuleOpenGV|0.8.0
-SolAROpenGVPnP|0.8.0
-SolAROpenGVTriangulation|0.8.0
+SolARModuleOpenGV|0.8.1
+SolAROpenGVPnP|0.8.1
+SolAROpenGVTriangulation|0.8.1
 
-SolARFiducialMarkerSampleStandAlone|0.8.0
-PipelineFiducialMarker|0.8.0
-TestFiducialMarkerPlugin|0.8.0
+SolARFiducialMarkerSampleStandAlone|0.8.1
+PipelineFiducialMarker|0.8.1
+TestFiducialMarkerPlugin|0.8.1
 
-SolARNaturalImageMarkerSampleStandAlone|0.8.0
-SolARNaturalImageMarkerSampleMultiThread|0.8.0
-PipelineNaturalImageMarker|0.8.0
-TestNaturalImageMarkerPlugin|0.8.0
+SolARNaturalImageMarkerSampleStandAlone|0.8.1
+SolARNaturalImageMarkerSampleMultiThread|0.8.1
+PipelineNaturalImageMarker|0.8.1
+TestNaturalImageMarkerPlugin|0.8.1
 
-SolARSlamSampleMono|0.8.0
-SolARSlamSampleMulti|0.8.0
-PipelineSlam|0.8.0
-TestSlamPlugin|0.8.0
+SolARSlamSampleMono|0.8.1
+SolARSlamSampleMulti|0.8.1
+PipelineSlam|0.8.1
+TestSlamPlugin|0.8.1
 
-SolARTriangulationSample|0.8.0
+SolARTriangulationSample|0.8.1
 
 xpcf|2.3.4
 boost|1.71.0
