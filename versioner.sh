@@ -190,7 +190,7 @@ cd $SOURCEDIR
 echo "----------- Process unity plugin batch files"
 cd plugin
 if [[ $DONOTHING == "0" ]]; then
-	unityplugin=`find -name "SolARUnityPlugin" -type d`
+	unityplugin=`find -name "SolARUnityPlugin" -type d ! -path "*.vs*"` 
 	cd $unityplugin
 	sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" Install.bat
 	sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" Install.bat
