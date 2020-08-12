@@ -1,0 +1,6 @@
+*.so.*
+*/*.txt
+*.pc
+*.stash
+*.o
+*.MakeFile
