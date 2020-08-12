@@ -5,3 +5,4 @@
 *.stash
 *.o
 /*/*/Makefile
+remaken*
