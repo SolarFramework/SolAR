@@ -1,6 +1,7 @@
 *.so.*
-*/*.txt
+*.so
+/*/*/*.txt
 *.pc
 *.stash
 *.o
-*.MakeFile
+/*/*/Makefile
