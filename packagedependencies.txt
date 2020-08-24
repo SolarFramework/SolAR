@@ -5,5 +5,3 @@ SolARModuleFBOW|0.8.0|SolARModuleFBOW|SolARBuild@github|https://github.com/Solar
 SolARModuleCeres|0.8.0|SolARModuleCeres|SolARBuild@github|https://github.com/SolarFramework/SolARModuleCeres/releases/download
 SolARModuleG2O|0.8.0|SolARModuleG2O|SolARBuild@github|https://github.com/SolarFramework/SolARModuleG2O/releases/download
 SolARModuleTools|0.8.0|SolARModuleTools|SolARBuild@github|https://github.com/SolarFramework/SolARModuleTools/releases/download
-SolARPipelineManager|0.8.0|SolARPipelineManager|SolARBuild@github|https://github.com/SolarFramework/SolARPipelineManager/releases/download
-SolARWrapper|0.8.0|SolARWrapper|SolARBuild@github|https://github.com/SolarFramework/SwigWrapper/releases/download
