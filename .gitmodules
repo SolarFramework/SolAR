@@ -58,3 +58,12 @@
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
 	branch = develop
+[submodule "modules/SolARModuleRealSense"]
+	path = modules/SolARModuleRealSense
+	url = https://github.com/SolarFramework/SolARModuleRealSense.git
+[submodule "modules/SolARModulePCL"]
+	path = modules/SolARModulePCL
+	url = https://github.com/SolarFramework/SolARModulePCL.git
+[submodule "samples/Sample-DepthCamera"]
+	path = samples/Sample-DepthCamera
+	url = https://github.com/SolarFramework/Sample-DepthCamera.git

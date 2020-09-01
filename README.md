@@ -5,8 +5,6 @@ This repository contains all our source code.
 
 * git clone the project
 
-After that, open a Bash and execute following command lines :
+After that, open a Bash to initialize and update submodule recursively  :
 
-* git submodule init
-
-* git submodule update --remote
+* `git submodule update --init --recursive --remote`
