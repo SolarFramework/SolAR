@@ -1,0 +1,11 @@
+#Ignore Qt shadow builds
+**/build-SolAR*  
+*.so.*
+*.so
+/*/*/*.txt
+*.pc
+*.stash
+*.o
+/*/*/Makefile
+remaken*
+
