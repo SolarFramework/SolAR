@@ -47,6 +47,12 @@ SolARModuleOpenGV|0.8.0
 SolAROpenGVPnP|0.8.0
 SolAROpenGVTriangulation|0.8.0
 
+SolARModulePCL|0.8.0
+SolARTestPCLPointCloudLoader|0.8.0
+
+SolARModuleRealSense|0.8.0
+SolARTestRealSenseRGBDCamera|0.8.0
+
 SolARFiducialMarkerSampleStandAlone|0.8.0
 PipelineFiducialMarker|0.8.0
 TestFiducialMarkerPlugin|0.8.0
@@ -55,6 +61,8 @@ SolARNaturalImageMarkerSampleStandAlone|0.8.0
 SolARNaturalImageMarkerSampleMultiThread|0.8.0
 PipelineNaturalImageMarker|0.8.0
 TestNaturalImageMarkerPlugin|0.8.0
+
+SolARDepthCameraSampleStandAlone|0.8.0
 
 SolARSlamSampleMono|0.8.0
 SolARSlamSampleMulti|0.8.0
@@ -71,3 +79,6 @@ eigen|3.3.7
 freeglut|3.0.0
 fbowSolAR|0.0.3
 ceres|1.14.0
+pcl|1.9.1
+flann17|1.9.1
+realsense2|2.36.0
