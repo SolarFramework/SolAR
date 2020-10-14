@@ -67,3 +67,6 @@
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
+[submodule "samples/Sample-Mapping"]
+	path = samples/Sample-Mapping
+	url = https://github.com/SolarFramework/Sample-Mapping.git
