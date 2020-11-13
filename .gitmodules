@@ -61,9 +61,12 @@
 [submodule "modules/SolARModuleRealSense"]
 	path = modules/SolARModuleRealSense
 	url = https://github.com/SolarFramework/SolARModuleRealSense.git
+	branch = .
 [submodule "modules/SolARModulePCL"]
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
+	branch = .
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
+	branch = .
