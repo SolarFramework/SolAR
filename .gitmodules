@@ -1,72 +1,76 @@
 [submodule "core/SolARFramework"]
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
-	branch = .
+	branch = feature/mappingPipeline
 [submodule "samples/NaturalImageMarker"]
 	path = samples/NaturalImageMarker
 	url = https://github.com/SolarFramework/NaturalImageMarker
-	branch = .
+	branch = feature/poseEstimationPipeline
 [submodule "samples/FiducialMarker"]
 	path = samples/FiducialMarker
 	url = https://github.com/SolarFramework/FiducialMarker
-	branch = .
+	branch = feature/poseEstimationPipeline
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
-	branch = .
+	branch = feature/MapFusion
 [submodule "samples/Sample-Slam"]
 	path = samples/Sample-Slam
 	url = https://github.com/SolarFramework/Sample-Slam
-	branch = .
+	branch = feature/poseEstimationPipeline
 [submodule "modules/SolARModuleOpenCV"]
 	path = modules/SolARModuleOpenCV
 	url = https://github.com/SolarFramework/SolARModuleOpenCV
-	branch = .
+	branch = feature/mappingPipeline
 [submodule "modules/SolARModuleOpenGV"]
 	path = modules/SolARModuleOpenGV
 	url = https://github.com/SolarFramework/SolARModuleOpenGV
-	branch = .
+	branch = feature/MapFusion
 [submodule "modules/SolARModuleOpenGL"]
 	path = modules/SolARModuleOpenGL
 	url = https://github.com/SolarFramework/SolARModuleOpenGL
-	branch = .
+	branch = feature/MapFusion
 [submodule "modules/SolARModuleNonFreeOpenCV"]
 	path = modules/SolARModuleNonFreeOpenCV
 	url = https://github.com/SolarFramework/SolARModuleNonFreeOpenCV
-	branch = .
+	branch = feature/MapFusion
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
-	branch = .
+	branch = feature/MapFusion
 [submodule "modules/SolARModuleCeres"]
 	path = modules/SolARModuleCeres
 	url = https://github.com/SolarFramework/SolARModuleCeres
-	branch = .
+	branch = feature/MapFusion
 [submodule "modules/SolARModuleG2O"]
 	path = modules/SolARModuleG2O
 	url = https://github.com/SolarFramework/SolARModuleG2O
-	branch = .
+	branch = feature/MapFusion
 [submodule "samples/Sample-Triangulation"]
 	path = samples/Sample-Triangulation
 	url = https://github.com/SolarFramework/Sample-Triangulation
-	branch = .
+	branch = feature/poseEstimationPipeline
 [submodule "core/SolARPipelineManager"]
 	path = core/SolARPipelineManager
 	url = https://github.com/SolarFramework/SolARPipelineManager
-	branch = .
+	branch = master
 [submodule "plugin/unity/SolARUnityPlugin"]
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
-	branch = .
+	branch = master
 [submodule "modules/SolARModuleRealSense"]
 	path = modules/SolARModuleRealSense
 	url = https://github.com/SolarFramework/SolARModuleRealSense.git
+	branch = develop
 [submodule "modules/SolARModulePCL"]
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
+	branch = develop
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
+	branch = develop
 [submodule "samples/Sample-Mapping"]
 	path = samples/Sample-Mapping
 	url = https://github.com/SolarFramework/Sample-Mapping.git
+	branch = feature/SolARMappingPipeline
