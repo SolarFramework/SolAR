@@ -1,7 +1,7 @@
 [submodule "core/SolARFramework"]
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
-	branch = feature/mappingPipeline
+	branch = feature/remoting
 [submodule "samples/NaturalImageMarker"]
 	path = samples/NaturalImageMarker
 	url = https://github.com/SolarFramework/NaturalImageMarker
@@ -13,7 +13,7 @@
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
-	branch = feature/MapFusion
+	branch = feature/remoting
 [submodule "samples/Sample-Slam"]
 	path = samples/Sample-Slam
 	url = https://github.com/SolarFramework/Sample-Slam
@@ -21,7 +21,7 @@
 [submodule "modules/SolARModuleOpenCV"]
 	path = modules/SolARModuleOpenCV
 	url = https://github.com/SolarFramework/SolARModuleOpenCV
-	branch = feature/mappingPipeline
+	branch = feature/remoting
 [submodule "modules/SolARModuleOpenGV"]
 	path = modules/SolARModuleOpenGV
 	url = https://github.com/SolarFramework/SolARModuleOpenGV
@@ -37,7 +37,7 @@
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
-	branch = feature/MapFusion
+	branch = feature/remoting
 [submodule "modules/SolARModuleCeres"]
 	path = modules/SolARModuleCeres
 	url = https://github.com/SolarFramework/SolARModuleCeres
