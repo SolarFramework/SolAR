@@ -1,83 +1,83 @@
-SolARFramework|0.9.0
+SolARFramework|0.9.1
 
-SolARWrapper|0.9.0
+SolARWrapper|0.9.1
 
-SolARModuleTools|0.9.0
-testSolARBoostCovisibilityGraph|0.9.0
-testSolARCovisibilityGraph|0.9.0
-testSolARModuleTools|0.9.0
-testSolARPointCloudManager|0.9.0
-SolARTest3DTransformEstimationSACFrom3D3D|0.9.0
-SolARTestLoopClosureDetection|0.9.0
-SolARTestLoopCorrection|0.9.0
+SolARModuleTools|0.9.1
+testSolARBoostCovisibilityGraph|0.9.1
+testSolARCovisibilityGraph|0.9.1
+testSolARModuleTools|0.9.1
+testSolARPointCloudManager|0.9.1
+SolARTest3DTransformEstimationSACFrom3D3D|0.9.1
+SolARTestLoopClosureDetection|0.9.1
+SolARTestLoopCorrection|0.9.1
 
-SolARModuleOpenCV|0.9.0
-SolAROpenCVCameraCalibration|0.9.0
-SolAROpenCVDescriptorMatcher|0.9.0
-SolAROpenCVFiducialMarker|0.9.0
-SolAROpenCVFundamentalMatrixDecomposer|0.9.0
-SolAROpenCVFundamentalMatrixEstimation|0.9.0
-SolAROpenCVImageConvertor|0.9.0
-SolAROpenCVImageLoader|0.9.0
-SolAROpenCVMatchesFilter|0.9.0
-SolAROpenCVOpticalFlow|0.9.0
-SolARImageOpenCVStaticTest|0.9.0
-SolARModuleOpenCVUnitTests|0.9.0
+SolARModuleOpenCV|0.9.1
+SolAROpenCVCameraCalibration|0.9.1
+SolAROpenCVDescriptorMatcher|0.9.1
+SolAROpenCVFiducialMarker|0.9.1
+SolAROpenCVFundamentalMatrixDecomposer|0.9.1
+SolAROpenCVFundamentalMatrixEstimation|0.9.1
+SolAROpenCVImageConvertor|0.9.1
+SolAROpenCVImageLoader|0.9.1
+SolAROpenCVMatchesFilter|0.9.1
+SolAROpenCVOpticalFlow|0.9.1
+SolARImageOpenCVStaticTest|0.9.1
+SolARModuleOpenCVUnitTests|0.9.1
 
-SolARModuleNonFreeOpenCV|0.9.0
-SolARNonFreeOpenCVDescriptorExtractor|0.9.0
+SolARModuleNonFreeOpenCV|0.9.1
+SolARNonFreeOpenCVDescriptorExtractor|0.9.1
 
-SolARModuleOpenGL|0.9.0
-SolAROpenGLPointCloudDisplay|0.9.0
+SolARModuleOpenGL|0.9.1
+SolAROpenGLPointCloudDisplay|0.9.1
 
-SolARModuleFBOW|0.9.0
-SolARFBOWClosestKeyframeRetrieval|0.9.0
+SolARModuleFBOW|0.9.1
+SolARFBOWClosestKeyframeRetrieval|0.9.1
 
-SolARModuleCeres|0.9.0
-SolARCeresBundler|0.9.0
-SolARTestCeresGlobalBundleAdjustment|0.9.0
+SolARModuleCeres|0.9.1
+SolARCeresBundler|0.9.1
+SolARTestCeresGlobalBundleAdjustment|0.9.1
 
-SolARModuleG2O|0.9.0
-SolARTestG2OBundler|0.9.0
-SolARTestModuleG2OGlobalBundleAdjustment|0.9.0
+SolARModuleG2O|0.9.1
+SolARTestG2OBundler|0.9.1
+SolARTestModuleG2OGlobalBundleAdjustment|0.9.1
 
-SolARPipelineManager|0.9.0
+SolARPipelineManager|0.9.1
 
-SolARModuleOpenGV|0.9.0
-SolAROpenGVPnP|0.9.0
-SolAROpenGVTriangulation|0.9.0
+SolARModuleOpenGV|0.9.1
+SolAROpenGVPnP|0.9.1
+SolAROpenGVTriangulation|0.9.1
 
-SolARModulePCL|0.9.0
-SolARTestPCLPointCloudLoader|0.9.0
+SolARModulePCL|0.9.1
+SolARTestPCLPointCloudLoader|0.9.1
 
-SolARModuleRealSense|0.9.0
-SolARTestRealSenseRGBDCamera|0.9.0
+SolARModuleRealSense|0.9.1
+SolARTestRealSenseRGBDCamera|0.9.1
 
-SolARFiducialMarkerSampleStandAlone|0.9.0
-PipelineFiducialMarker|0.9.0
-TestFiducialMarkerPlugin|0.9.0
+SolARFiducialMarkerSampleStandAlone|0.9.1
+PipelineFiducialMarker|0.9.1
+TestFiducialMarkerPlugin|0.9.1
 
-SolARNaturalImageMarkerSampleStandAlone|0.9.0
-SolARNaturalImageMarkerSampleMultiThread|0.9.0
-PipelineNaturalImageMarker|0.9.0
-TestNaturalImageMarkerPlugin|0.9.0
+SolARNaturalImageMarkerSampleStandAlone|0.9.1
+SolARNaturalImageMarkerSampleMultiThread|0.9.1
+PipelineNaturalImageMarker|0.9.1
+TestNaturalImageMarkerPlugin|0.9.1
 
-SolARDepthCameraSampleStandAlone|0.9.0
+SolARDepthCameraSampleStandAlone|0.9.1
 
-SolARSlamSampleMono|0.9.0
-SolARSlamSampleMulti|0.9.0
-PipelineSlam|0.9.0
-TestSlamPlugin|0.9.0
+SolARSlamSampleMono|0.9.1
+SolARSlamSampleMulti|0.9.1
+PipelineSlam|0.9.1
+TestSlamPlugin|0.9.1
 
-SolARTriangulationSample|0.9.0
+SolARTriangulationSample|0.9.1
 
-SolARMappingStandAlone|0.9.0
-SolARMappingPipeline|0.9.0
-TestSolARMappingPipeline|0.9.0
-SolARLocalMapFusionStandAlone|0.9.0
-SolARfloatingMapFusionStandAlone|0.9.0
-SolARMapExtensionStandAlone|0.9.0
-SolARMapViz|0.9.0
+SolARMappingStandAlone|0.9.1
+SolARMappingPipeline|0.9.1
+TestSolARMappingPipeline|0.9.1
+SolARLocalMapFusionStandAlone|0.9.1
+SolARfloatingMapFusionStandAlone|0.9.1
+SolARMapExtensionStandAlone|0.9.1
+SolARMapViz|0.9.1
 
 xpcf|2.4.0
 boost|1.71.0
