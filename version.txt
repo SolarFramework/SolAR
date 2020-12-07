@@ -79,13 +79,13 @@ SolARfloatingMapFusionStandAlone|0.9.0
 SolARMapExtensionStandAlone|0.9.0
 SolARMapViz|0.9.0
 
-xpcf|2.4.0
-boost|1.71.0
+xpcf|2.5.0
+boost|1.74.0
 opencv|4.4.0
 spdlog|0.14.0
 eigen|3.3.7
 freeglut|3.0.0
-fbowSolAR|0.0.3
+fbowSolAR|0.0.4
 ceres|1.14.0
 pcl|1.9.1
 flann17|1.9.1
