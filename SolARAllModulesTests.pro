@@ -43,7 +43,6 @@ SUBDIRS = \
     modules/SolARModuleOpenGV/tests/SolARTestModuleOpenGVTriangulation/SolARTestModuleOpenGVTriangulation.pro \
     modules/SolARModulePCL/tests/SolARTestPCLPointCloudLoader/SolARTestPCLPointCloudLoader.pro \
     modules/SolARModuleRealSense/tests/SolARTestRealSenseRGBDCamera/SolARTestRealSenseRGBDCamera.pro \
-    modules/SolARModuleTools/SolARModuleTools.pro \
 
 
 
