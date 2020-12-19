@@ -19,20 +19,46 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    core/SolARFramework/SolARFramework.pro \
-    core/SolARPipelineManager/SolARPipelineManager.pro \
-    modules/SolARModuleCeres/SolARModuleCeres.pro \
-    modules/SolARModuleFBOW/SolARModuleFBOW.pro \
-    modules/SolARModuleG2O/SolARModuleG2O.pro \
-    modules/SolARModuleNonFreeOpenCV/SolARModuleNonFreeOpenCV.pro \
-    modules/SolARModuleOpenCV/SolARModuleOpenCV.pro \
-    modules/SolARModuleOpenGL/SolARModuleOpenGL.pro \
-    modules/SolARModuleOpenGV/SolARModuleOpenGV.pro \
-    modules/SolARModulePCL/SolARModulePCL.pro \
-    modules/SolARModuleRealSense/SolARModuleRealSense.pro \
-    modules/SolARModuleTools/SolARModuleTools.pro \
+    SolARFramework \
+	SolARPipelineManager \
+	SolARModuleCeres \
+	SolARModuleFBOW \
+	SolARModuleG2O \
+	SolARModuleNonFreeOpenCV \
+	SolARModuleOpenCV \
+	SolARModuleOpenGL \
+	SolARModuleOpenGV \
+	SolARModulePCL \
+	SolARModuleRealSense \
+	SolARModuleTools
 
+# where to find the sub projects - give the folders
+    SolARFramework.subdir = core/SolARFramework
+    SolARPipelineManager.subdir = core/SolARPipelineManager
+    SolARModuleCeres.subdir = modules/SolARModuleCeres
+    SolARModuleFBOW.subdir = modules/SolARModuleFBOW
+    SolARModuleG2O.subdir = modules/SolARModuleG2O
+    SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
+    SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV
+    SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
+    SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
+    SolARModulePCL.subdir = modules/SolARModulePCL
+    SolARModuleRealSense.subdir = modules/SolARModuleRealSense
+    SolARModuleTools.subdir = modules/SolARModuleTools
 
+ 
+  # what subproject depends on others
+  SolARPipelineManager.depends = SolARFramework
+  SolARModuleCeres.depends = SolARFramework
+  SolARModuleFBOW.depends = SolARFramework
+  SolARModuleG2O.depends = SolARFramework
+  SolARModuleNonFreeOpenCV.depends = SolARFramework SolARModuleOpenCV
+  SolARModuleOpenCV.depends = SolARFramework
+  SolARModuleOpenGL.depends = SolARFramework
+  SolARModuleOpenGV.depends = SolARFramework
+  SolARModulePCL.depends = SolARFramework
+  SolARModuleRealSense.depends = SolARFramework
+  SolARModuleTools.depends = SolARFramework
 
 
 
