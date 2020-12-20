@@ -21,8 +21,8 @@ TEMPLATE = subdirs
 SUBDIRS = \
     samples/FiducialMarker/Plugin/tests/TestFiducialMarkerPipeline/TestFiducialMarkerPlugin.pro \
     samples/NaturalImageMarker/Plugin/tests/TestNaturalImageMarkerPipeline/TestNaturalImageMarkerPlugin.pro \
-    samples/Sample-Mapping/Mapping/SolARMappingPipeline/tests/TestSolARMappingPipeline/TestSolARMappingPipeline.pro \
-    samples/Sample-Mapping/Mapping/SolARMappingPipelineMulti/tests/TestSolARMappingPipelineMulti/TestSolARMappingPipelineMulti.pro \
+    samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/tests/SolARPipelineTest_Mapping_Mono.pro \
+    samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi.pro \
     samples/Sample-Slam/Plugin/tests/TestSlamPipeline/TestSlamPlugin.pro \
 
 

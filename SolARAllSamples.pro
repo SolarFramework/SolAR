@@ -19,24 +19,19 @@ CONFIG -= flat
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples\FiducialMarker\StandAlone\SolARFiducialMarkerSampleStandAlone.pro \
-    samples\FiducialMarker\Plugin\PipelineFiducialMarker.pro \
-    samples\NaturalImageMarker\Multithread\SolARNaturalImageMarkerMT.pro \
-    samples\NaturalImageMarker\Plugin\PipelineNaturalImageMarker.pro \
-    samples\NaturalImageMarker\StandAlone\SolARNaturalImageMarkerStandAlone.pro \
-    samples\Sample-DepthCamera\StandAlone\SolARDepthCameraSampleStandAlone.pro \
-    samples\Sample-Mapping\MapExtension\StandAlone\SolARMapExtensionStandAlone.pro \
-    samples\Sample-Mapping\MapFusion\floatingMapFusionStandAlone\SolARfloatingMapFusionStandAlone.pro \
-    samples\Sample-Mapping\MapFusion\localMapFusionStandAlone\SolARLocalMapFusionStandAlone.pro \
-    samples\Sample-Mapping\Mapping\Multi\SolARMappingMulti.pro \
-    samples\Sample-Mapping\Mapping\SolARMappingPipeline\SolARMappingPipeline.pro \
-    samples\Sample-Mapping\Mapping\SolARMappingPipelineMulti\SolARMappingPipelineMulti.pro \
-    samples\Sample-Mapping\Mapping\StandAlone\SolARMappingStandAlone.pro \
-    samples\Sample-Mapping\MapViz\SolARMapViz.pro \
-    samples\Sample-Slam\Mono\SolARSlamSampleMono.pro \
-    samples\Sample-Slam\Multi\SolARSlamSampleMulti.pro \
-    samples\Sample-Slam\Plugin\PipelineSlam.pro \
-    samples\Sample-Triangulation\StandAlone\SolARTriangulationSample.pro \
+    samples\FiducialMarker\SolARSample_FiducialMarker_Mono\SolARSample_FiducialMarker_Mono.pro \
+    samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Mono\SolARSample_NaturalImageMarker_Mono.pro \
+    samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Multi\SolARSample_NaturalImageMarker_Multi.pro \
+    samples\Sample-Mapping\MapExtension\SolARSample_Mapping_MapExtension_Mono\SolARSample_Mapping_MapExtension_Mono.pro \
+    samples\Sample-Mapping\MapFusion\SolARSample_Mapping_FloatingMapFusion_Mono\SolARSample_Mapping_FloatingMapFusion_Mono.pro \
+    samples\Sample-Mapping\MapFusion\SolARSample_Mapping_LocalMapFusion_Mono\SolARSample_Mapping_LocalMapFusion_Mono.pro \
+    samples\Sample-Mapping\Mapping\SolARSample_Mapping_Mono\SolARSample_Mapping_Mono.pro \
+    samples\Sample-Mapping\Mapping\SolARSample_Mapping_Multi\SolARSample_Mapping_Multi.pro \
+    samples\Sample-Mapping\MapViz\SolARSample_Mapping_MapVisualizer.pro \
+    samples\Sample-Slam\SolARSample_SLAM_Mono\SolARSample_SLAM_Mono.pro \
+    samples\Sample-Slam\SolARSample_SLAM_Multi\SolARSample_SLAM_Multi.pro \
+    samples\Sample-Triangulation\SolARSample_Triangulation_Mono\SolARSample_Triangulation_Mono.pro \
+    samples\Sample-DepthCamera\SolARSample_DepthCamera_Mono\SolARSample_DepthCamera_Mono.pro
 
 
 

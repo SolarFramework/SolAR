@@ -19,30 +19,36 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    modules/SolARModuleCeres/tests/Bundler/SolARTestModuleCeresBundler.pro \
-    modules/SolARModuleCeres/tests/SolARTestCeresGlobalBundleAdjustment/SolARTestCeresGlobalBundleAdjustment.pro \
-    modules/SolARModuleFBOW/tests/ClosestKeyframeRetrieval/SolARTestModuleFBOWClosestKeyframeRetrieval.pro \
-    modules/SolARModuleFBOW/tests/SolARFeatureMatchingUsingFBOW/SolARFeatureMatchingUsingFBOW.pro \
-    modules/SolARModuleG2O/tests/SolARTestModuleG2OBundler/SolARTestModuleG2OBundler.pro \
-    modules/SolARModuleG2O/tests/SolARTestModuleG2OGlobalBundleAdjustment/SolARTestModuleG2OGlobalBundleAdjustment.pro \
-    modules/SolARModuleNonFreeOpenCV/tests/SolARDescriptorExtractor/SolARDescriptorExtractorOpenCVNonFreeTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARCameraCalibration/SolARCameraCalibration.pro \
-    modules/SolARModuleOpenCV/tests/SolARDescriptorMatcher/SolARDescriptorMatcherOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARDeviceDataLoader/SolARDeviceDataLoaderTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARDeviceDualMarkerCalibration/SolARDeviceDualMarkerCalibrationTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARDevicePoseCorrection/SolARDevicePoseCorrectionTest.pro \
+    modules/SolARModuleCeres/tests/SolARTest_ModuleCeres_Bundler/SolARTest_ModuleCeres_Bundler.pro \
+    modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval.pro \
+    modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_FeatureMatching/SolARTest_ModuleFBOW_FeatureMatching.pro \
+    modules/SolARModuleG2O/tests/SolARTest_ModuleG2O_Bundler/SolARTest_ModuleG2O_Bundler.pro \
+    modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_CameraCalibration/SolARTest_ModuleOpenCV_CameraCalibration.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DescriptorMatcher/SolARTest_ModuleOpenCV_DescriptorMatcher.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDataLoader/SolARTest_ModuleOpenCV_DeviceDataLoader.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DevicePoseCorrection/SolARTest_ModuleOpenCV_DevicePoseCorrection.pro \
     modules/SolARModuleOpenCV/tests/SolARFiducialMarker/SolARMarker2DFiducialOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARFundamentalMatrixDecomposer/SolARFundamentalMatrixDecomposerOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARFundamentalMatrixEstimation/SolARFundamentalMatrixEstimationOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARImageConvertor/SolARImageConvertorOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARImageLoader/SolARImageLoaderOpenCVTest.pro \
-    modules/SolARModuleOpenCV/tests/SolARMatchesFilter/SolARMatchesFilterTest.pro \
-    modules/SolARModuleOpenCV/tests/SolAROpticalFlow/SolAROpticalFlowOpenCVTest.pro \
-    modules/SolARModuleOpenGL/tests/PointsCloudDisplay/SolARTestModuleOpenGLPointCloudDisplay.pro \
-    modules/SolARModuleOpenGV/tests/SolARTestModuleOpenGVPnP/SolARTestModuleOpenGVPnP.pro \
-    modules/SolARModuleOpenGV/tests/SolARTestModuleOpenGVTriangulation/SolARTestModuleOpenGVTriangulation.pro \
-    modules/SolARModulePCL/tests/SolARTestPCLPointCloudLoader/SolARTestPCLPointCloudLoader.pro \
-    modules/SolARModuleRealSense/tests/SolARTestRealSenseRGBDCamera/SolARTestRealSenseRGBDCamera.pro \
+	modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FiducialMarker/SolARTest_ModuleOpenCV_FiducialMarker.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_ImageConvertor/SolARTest_ModuleOpenCV_ImageConvertor.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_ImageLoader/SolARTest_ModuleOpenCV_ImageLoader.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_MatchesFilter/SolARTest_ModuleOpenCV_MatchesFilter.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_OpticalFlow/SolARTest_ModuleOpenCV_OpticalFlow.pro \
+    modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
+    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
+    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
+    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
+    modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
+	modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro
 
 
 

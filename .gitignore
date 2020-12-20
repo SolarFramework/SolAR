@@ -10,4 +10,10 @@
 remaken*
 *.sln
 *.vs*
+samples/*
+core/*
+plugin/*
+modules/*
+tools/*
+*.pro.user
 
