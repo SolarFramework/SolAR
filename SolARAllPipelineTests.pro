@@ -23,7 +23,7 @@ SUBDIRS = \
     samples/NaturalImageMarker/Plugin/tests/TestNaturalImageMarkerPipeline/TestNaturalImageMarkerPlugin.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/tests/SolARPipelineTest_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi.pro \
-    samples/Sample-Slam/Plugin/tests/TestSlamPipeline/TestSlamPlugin.pro \
+    samples/Sample-Slam/SolARPipeline_SLAM/tests/SolARPipelineTest_SLAM/SolARPipelineTest_SLAM.pro
 
 
 
