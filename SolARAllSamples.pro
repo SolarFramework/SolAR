@@ -19,7 +19,7 @@ CONFIG -= flat
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples\FiducialMarker\SolARSample_FiducialMarker_Mono\SolARSample_FiducialMarker_Mono.pro \
+    samples\Sample-FiducialMarker\SolARSample_FiducialMarker_Mono\SolARSample_FiducialMarker_Mono.pro \
     samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Mono\SolARSample_NaturalImageMarker_Mono.pro \
     samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Multi\SolARSample_NaturalImageMarker_Multi.pro \
     samples\Sample-Mapping\MapExtension\SolARSample_Mapping_MapExtension_Mono\SolARSample_Mapping_MapExtension_Mono.pro \

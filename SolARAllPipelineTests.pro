@@ -19,7 +19,7 @@ CONFIG -= flat
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples/FiducialMarker/Plugin/tests/TestFiducialMarkerPipeline/TestFiducialMarkerPlugin.pro \
+    samples/Sample-FiducialMarker/SolARPipeline_FiducialMarker/tests/SolARPipelineTest_FiducialMarker/SolARPipelineTest_FiducialMarker.pro \
     samples/NaturalImageMarker/Plugin/tests/TestNaturalImageMarkerPipeline/TestNaturalImageMarkerPlugin.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/tests/SolARPipelineTest_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi.pro \

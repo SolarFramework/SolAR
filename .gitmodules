@@ -6,8 +6,8 @@
 	path = samples/NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = feature/poseEstimationPipeline
-[submodule "samples/FiducialMarker"]
-	path = samples/FiducialMarker
+[submodule "samples/Sample-FiducialMarker"]
+	path = samples/Sample-FiducialMarker
 	url = https://github.com/SolarFramework/Sample-FiducialMarker
 	branch = feature/poseEstimationPipeline
 [submodule "modules/SolARModuleTools"]

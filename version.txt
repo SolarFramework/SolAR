@@ -51,10 +51,9 @@ SolARTest_ModulePCL_PointCloudLoader|0.9.0
 SolARModuleRealSense|0.9.0
 SolARTest_ModuleRealSense_RGBDCamera|0.9.0
 
-SolARFiducialMarkerSampleStandAlone|0.9.0
 SolARSample_FiducialMarker_Mono|0.9.0
-PipelineFiducialMarker|0.9.0
-TestFiducialMarkerPlugin|0.9.0
+SolARPipeline_FiducialMarker|0.9.0
+SolARPipelineTest_FiducialMarker|0.9.0
 
 SolARSample_NaturalImageMarker_Mono|0.9.0
 SolARSample_NaturalImageMarker_Multi|0.9.0
