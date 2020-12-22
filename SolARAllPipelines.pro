@@ -20,7 +20,7 @@ TEMPLATE = subdirs
  
 SUBDIRS = \
     samples/Sample-FiducialMarker/SolARPipeline_FiducialMarker/SolARPipeline_FiducialMarker.pro \
-    samples/NaturalImageMarker/Plugin/PipelineNaturalImageMarker.pro \
+    samples/Sample-NaturalImageMarker/SolARPipeline_NaturalImageMarker/SolARPipeline_NaturalImageMarker.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/SolARPipeline_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/SolARPipeline_Mapping_Multi.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/SolARPipeline_SLAM.pro \

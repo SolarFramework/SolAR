@@ -20,8 +20,8 @@ TEMPLATE = subdirs
  
 SUBDIRS = \
     samples\Sample-FiducialMarker\SolARSample_FiducialMarker_Mono\SolARSample_FiducialMarker_Mono.pro \
-    samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Mono\SolARSample_NaturalImageMarker_Mono.pro \
-    samples\NaturalImageMarker\SolARSample_NaturalImageMarker_Multi\SolARSample_NaturalImageMarker_Multi.pro \
+    samples\Sample-NaturalImageMarker\SolARSample_NaturalImageMarker_Mono\SolARSample_NaturalImageMarker_Mono.pro \
+    samples\Sample-NaturalImageMarker\SolARSample_NaturalImageMarker_Multi\SolARSample_NaturalImageMarker_Multi.pro \
     samples\Sample-Mapping\MapExtension\SolARSample_Mapping_MapExtension_Mono\SolARSample_Mapping_MapExtension_Mono.pro \
     samples\Sample-Mapping\MapFusion\SolARSample_Mapping_FloatingMapFusion_Mono\SolARSample_Mapping_FloatingMapFusion_Mono.pro \
     samples\Sample-Mapping\MapFusion\SolARSample_Mapping_LocalMapFusion_Mono\SolARSample_Mapping_LocalMapFusion_Mono.pro \

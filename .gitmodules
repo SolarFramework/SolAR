@@ -2,8 +2,8 @@
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
 	branch = feature/remoting
-[submodule "samples/NaturalImageMarker"]
-	path = samples/NaturalImageMarker
+[submodule "samples/Sample-NaturalImageMarker"]
+	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = feature/poseEstimationPipeline
 [submodule "samples/Sample-FiducialMarker"]
