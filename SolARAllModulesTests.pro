@@ -29,7 +29,6 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDataLoader/SolARTest_ModuleOpenCV_DeviceDataLoader.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DevicePoseCorrection/SolARTest_ModuleOpenCV_DevicePoseCorrection.pro \
-    modules/SolARModuleOpenCV/tests/SolARFiducialMarker/SolARMarker2DFiducialOpenCVTest.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FiducialMarker/SolARTest_ModuleOpenCV_FiducialMarker.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation.pro \
