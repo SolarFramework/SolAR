@@ -19,8 +19,6 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    SolARFramework \
-    SolARPipelineManager \
     SolARModuleCeres \
     SolARModuleFBOW \
     SolARModuleG2O \
