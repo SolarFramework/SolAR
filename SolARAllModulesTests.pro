@@ -30,7 +30,7 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DevicePoseCorrection/SolARTest_ModuleOpenCV_DevicePoseCorrection.pro \
     modules/SolARModuleOpenCV/tests/SolARFiducialMarker/SolARMarker2DFiducialOpenCVTest.pro \
-	modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FiducialMarker/SolARTest_ModuleOpenCV_FiducialMarker.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FiducialMarker/SolARTest_ModuleOpenCV_FiducialMarker.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer/SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_ImageConvertor/SolARTest_ModuleOpenCV_ImageConvertor.pro \
@@ -42,13 +42,13 @@ SUBDIRS = \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
     modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
     modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
-	modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro
 
 
 

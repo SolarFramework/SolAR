@@ -20,17 +20,17 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
     SolARFramework \
-	SolARPipelineManager \
-	SolARModuleCeres \
-	SolARModuleFBOW \
-	SolARModuleG2O \
-	SolARModuleNonFreeOpenCV \
-	SolARModuleOpenCV \
-	SolARModuleOpenGL \
-	SolARModuleOpenGV \
-	SolARModulePCL \
-	SolARModuleRealSense \
-	SolARModuleTools
+    SolARPipelineManager \
+    SolARModuleCeres \
+    SolARModuleFBOW \
+    SolARModuleG2O \
+    SolARModuleNonFreeOpenCV \
+    SolARModuleOpenCV \
+    SolARModuleOpenGL \
+    SolARModuleOpenGV \
+    SolARModulePCL \
+    SolARModuleRealSense \
+    SolARModuleTools
 
 # where to find the sub projects - give the folders
     SolARFramework.subdir = core/SolARFramework
