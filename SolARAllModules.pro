@@ -26,13 +26,15 @@ SUBDIRS = \
     SolARModuleOpenCV \
     SolARModuleOpenGL \
     SolARModuleOpenGV \
-    SolARModulePCL \
-    SolARModuleRealSense \
     SolARModuleTools
 
+win32 {
+    SUBDIRS += \
+        SolARModulePCL \
+        SolARModuleRealSense
+}
+
 # where to find the sub projects - give the folders
-    SolARFramework.subdir = core/SolARFramework
-    SolARPipelineManager.subdir = core/SolARPipelineManager
     SolARModuleCeres.subdir = modules/SolARModuleCeres
     SolARModuleFBOW.subdir = modules/SolARModuleFBOW
     SolARModuleG2O.subdir = modules/SolARModuleG2O
@@ -40,23 +42,17 @@ SUBDIRS = \
     SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV
     SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
     SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
+    SolARModuleTools.subdir = modules/SolARModuleTools
+
+win32 {
     SolARModulePCL.subdir = modules/SolARModulePCL
     SolARModuleRealSense.subdir = modules/SolARModuleRealSense
-    SolARModuleTools.subdir = modules/SolARModuleTools
+}
+
 
  
   # what subproject depends on others
-  SolARPipelineManager.depends = SolARFramework
-  SolARModuleCeres.depends = SolARFramework
-  SolARModuleFBOW.depends = SolARFramework
-  SolARModuleG2O.depends = SolARFramework
-  SolARModuleNonFreeOpenCV.depends = SolARFramework SolARModuleOpenCV
-  SolARModuleOpenCV.depends = SolARFramework
-  SolARModuleOpenGL.depends = SolARFramework
-  SolARModuleOpenGV.depends = SolARFramework
-  SolARModulePCL.depends = SolARFramework
-  SolARModuleRealSense.depends = SolARFramework
-  SolARModuleTools.depends = SolARFramework
+  SolARModuleNonFreeOpenCV.depends = SolARModuleOpenCV
 
 
 

@@ -39,8 +39,6 @@ SUBDIRS = \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
-    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
-    modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
@@ -48,6 +46,12 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro
+	
+win32 {
+	SUBDIRS += \
+		modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
+		modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
+}
 
 
 
