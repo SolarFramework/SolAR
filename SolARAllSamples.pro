@@ -30,8 +30,11 @@ SUBDIRS = \
     samples\Sample-Mapping\MapViz\SolARSample_Mapping_MapVisualizer.pro \
     samples\Sample-Slam\SolARSample_SLAM_Mono\SolARSample_SLAM_Mono.pro \
     samples\Sample-Slam\SolARSample_SLAM_Multi\SolARSample_SLAM_Multi.pro \
-    samples\Sample-Triangulation\SolARSample_Triangulation_Mono\SolARSample_Triangulation_Mono.pro \
-    samples\Sample-DepthCamera\SolARSample_DepthCamera_Mono\SolARSample_DepthCamera_Mono.pro
+    samples\Sample-Triangulation\SolARSample_Triangulation_Mono\SolARSample_Triangulation_Mono.pro
+
+win32 {
+	SUBDIRS += samples\Sample-DepthCamera\SolARSample_DepthCamera_Mono\SolARSample_DepthCamera_Mono.pro
+}
 
 
 
