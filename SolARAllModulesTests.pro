@@ -53,7 +53,7 @@ win32 {
 		modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
 }
 
-# Add install_deps_all target that recursively calls install_deps
+# Add install_deps target that recursively calls install_deps
 # on submodules
 install_deps.CONFIG += recursive
 install_deps.recurse_target = install_deps

@@ -25,7 +25,7 @@ SUBDIRS = \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi/SolARPipelineTest_Mapping_Multi.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/tests/SolARPipelineTest_SLAM/SolARPipelineTest_SLAM.pro
 
-# Add install_deps_all target that recursively calls install_deps
+# Add install_deps target that recursively calls install_deps
 # on submodules
 install_deps.CONFIG += recursive
 install_deps.recurse_target = install_deps

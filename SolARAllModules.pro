@@ -54,7 +54,7 @@ win32 {
   # what subproject depends on others
   SolARModuleNonFreeOpenCV.depends = SolARModuleOpenCV
 
-# Add install_deps_all target that recursively calls install_deps
+# Add install_deps target that recursively calls install_deps
 # on submodules
 install_deps.CONFIG += recursive
 install_deps.recurse_target = install_deps
