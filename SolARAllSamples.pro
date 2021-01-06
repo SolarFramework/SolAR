@@ -36,7 +36,11 @@ win32 {
 	SUBDIRS += samples/Sample-DepthCamera/SolARSample_DepthCamera_Mono/SolARSample_DepthCamera_Mono.pro
 }
 
-
+# Add install_deps_all target that recursively calls install_deps
+# on submodules
+install_deps_all.CONFIG += recursive
+install_deps_all.recurse_target = install_deps
+QMAKE_EXTRA_TARGETS += install_deps_all
 
 
 
