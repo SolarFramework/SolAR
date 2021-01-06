@@ -1,4 +1,4 @@
-SolARModuleOpenGL|0.8.0|SolARModuleOpenGL|SolARBuild@github|https://github.com/SolarFramework/SolarModuleOpenGL/releases/download
-SolARModuleOpenGV|0.8.0|SolARModuleOpenGV|SolARBuild@github|https://github.com/SolarFramework/SolarModuleOpenGV/releases/download
-SolARModulePCL|0.8.0|SolARModulePCL|SolARBuild@github|https://github.com/SolarFramework/SolARModulePCL/releases/download
-SolARModuleRealSense|0.8.0|SolARModuleRealSense|SolARBuild@github|https://github.com/SolarFramework/SolARModuleRealSense/releases/download
+SolARModuleOpenGL|0.9.0|SolARModuleOpenGL|SolARBuild@github|https://github.com/SolarFramework/SolarModuleOpenGL/releases/download
+SolARModuleOpenGV|0.9.0|SolARModuleOpenGV|SolARBuild@github|https://github.com/SolarFramework/SolarModuleOpenGV/releases/download
+SolARModulePCL|0.9.0|SolARModulePCL|SolARBuild@github|https://github.com/SolarFramework/SolARModulePCL/releases/download
+SolARModuleRealSense|0.9.0|SolARModuleRealSense|SolARBuild@github|https://github.com/SolarFramework/SolARModuleRealSense/releases/download

@@ -2,14 +2,6 @@
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
 	branch = .
-[submodule "samples/NaturalImageMarker"]
-	path = samples/NaturalImageMarker
-	url = https://github.com/SolarFramework/NaturalImageMarker
-	branch = .
-[submodule "samples/FiducialMarker"]
-	path = samples/FiducialMarker
-	url = https://github.com/SolarFramework/FiducialMarker
-	branch = .
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
@@ -69,4 +61,15 @@
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
+	branch = .
+[submodule "samples/Sample-FiducialMarker"]
+	path = samples/Sample-FiducialMarker
+	url = https://github.com/SolarFramework/Sample-FiducialMarker
+[submodule "samples/Sample-Mapping"]
+	path = samples/Sample-Mapping
+	url = https://github.com/SolarFramework/Sample-Mapping
+	branch = .
+[submodule "samples/Sample-NaturalImageMarker"]
+	path = samples/Sample-NaturalImageMarker
+	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = .
