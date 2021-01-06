@@ -27,7 +27,7 @@ SUBDIRS = \
 
 # Add install_deps_all target that recursively calls install_deps
 # on submodules
-install_deps_all.CONFIG += recursive
-install_deps_all.recurse_target = install_deps
-QMAKE_EXTRA_TARGETS += install_deps_all
+install_deps.CONFIG += recursive
+install_deps.recurse_target = install_deps
+QMAKE_EXTRA_TARGETS += install_deps
 
