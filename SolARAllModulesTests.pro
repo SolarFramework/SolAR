@@ -53,7 +53,11 @@ win32 {
 		modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
 }
 
-
+# Add install_deps_all target that recursively calls install_deps
+# on submodules
+install_deps_all.CONFIG += recursive
+install_deps_all.recurse_target = install_deps
+QMAKE_EXTRA_TARGETS += install_deps_all
 
 
 
