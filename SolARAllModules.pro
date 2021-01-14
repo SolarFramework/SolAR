@@ -19,40 +19,27 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    SolARModuleCeres \
-    SolARModuleFBOW \
-    SolARModuleG2O \
-    SolARModuleNonFreeOpenCV \
-    SolARModuleOpenCV \
-    SolARModuleOpenGL \
-    SolARModuleOpenGV \
-    SolARModuleTools
+    modules/SolARModuleCeres \
+    modules/SolARModuleFBOW \
+    modules/SolARModuleG2O \
+    modules/SolARModuleNonFreeOpenCV \
+    modules/SolARModuleOpenCV \
+    modules/SolARModuleTools
 
 win32 {
     SUBDIRS += \
-        SolARModulePCL \
-        SolARModuleRealSense
-}
+        modules/SolARModulePCL \
+        modules/SolARModuleRealSense \
+        modules/SolARModuleOpenGV \
+        modules/SolARModuleOpenGL
+    }
 
-# where to find the sub projects - give the folders
-    SolARModuleCeres.subdir = modules/SolARModuleCeres
-    SolARModuleFBOW.subdir = modules/SolARModuleFBOW
-    SolARModuleG2O.subdir = modules/SolARModuleG2O
-    SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
-    SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV
-    SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
-    SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
-    SolARModuleTools.subdir = modules/SolARModuleTools
+unix:!android {
+    SUBDIRS += \
+        modules/SolARModuleOpenGV \
+        modules/SolARModuleOpenGL
+    }
 
-win32 {
-    SolARModulePCL.subdir = modules/SolARModulePCL
-    SolARModuleRealSense.subdir = modules/SolARModuleRealSense
-}
-
-
-
-  # what subproject depends on others
-  SolARModuleNonFreeOpenCV.depends = SolARModuleOpenCV
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
