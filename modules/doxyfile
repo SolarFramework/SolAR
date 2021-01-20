@@ -37,7 +37,18 @@ MULTILINE_CPP_IS_BRIEF = NO
 INHERIT_DOCS           = YES
 SEPARATE_MEMBER_PAGES  = NO
 TAB_SIZE               = 4
-ALIASES                = 
+
+ALIASES                += SolARComponentPropertiesBegin="<dl class=params> <dt>Properties</dt> <dd> <table class=params>"
+ALIASES                += SolARComponentPropertiesEnd="</table> </dd> </dl>"
+#ALIASES                += SolARComponentProperty{3}="<tr> <td class=paramname> \1 </td> <td> \2 </td> <td> \3 </td> </tr>"
+ALIASES                += SolARComponentProperty{3}="<tr> <td class=paramname rowspan=2 valign=top> \1 </td> <td> \2 <td> </tr> <tr> <td> \3 </td> </tr> "
+ALIASES                += SolARComponentPropertyDescNum{3}="<b>type</b>: \1; <b>range</b> : \2; <b>default</b>: \3"
+ALIASES                += SolARComponentPropertyDescList{4}="<b>size</b>: \1, <b>elem type</b>: \2; <b>range</b> : \3; <b>default</b>: \4"
+ALIASES                += SolARComponentPropertyDescString{1}="<b>type</b>: string; <b>default</b>: \1"
+ALIASES                += SolARComponentInjectablesBegin="<dl class=params> <dt>Injectables</dt> <dd> <table class=params>"
+ALIASES                += SolARComponentInjectablesEnd="</table> </dd> </dl>"
+ALIASES                += SolARComponentInjectable{1}="<tr> <td class=paramname> \1 </tr> "
+
 TCL_SUBST              = 
 OPTIMIZE_OUTPUT_FOR_C  = NO
 OPTIMIZE_OUTPUT_JAVA   = NO
