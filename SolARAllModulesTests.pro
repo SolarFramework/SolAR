@@ -23,7 +23,10 @@ SUBDIRS = \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval.pro \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_FeatureMatching/SolARTest_ModuleFBOW_FeatureMatching.pro \
     modules/SolARModuleG2O/tests/SolARTest_ModuleG2O_Bundler/SolARTest_ModuleG2O_Bundler.pro \
+    modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_BinaryDescriptorsMatcher/SolARTest_ModuleNonFreeOpenCV_BinaryDescriptorsMatcher.pro \
     modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor.pro \
+    modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_KeylineDetector/SolARTest_ModuleNonFreeOpenCV_KeylineDetector.pro \
+    modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_KeylineTriangulator/SolARTest_ModuleNonFreeOpenCV_KeylineTriangulator.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_CameraCalibration/SolARTest_ModuleOpenCV_CameraCalibration.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DescriptorMatcher/SolARTest_ModuleOpenCV_DescriptorMatcher.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDataLoader/SolARTest_ModuleOpenCV_DeviceDataLoader.pro \
