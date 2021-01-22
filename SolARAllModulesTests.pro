@@ -37,6 +37,7 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation/SolARTest_ModuleOpenCV_FundamentalMatrixEstimation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_ImageConvertor/SolARTest_ModuleOpenCV_ImageConvertor.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_ImageLoader/SolARTest_ModuleOpenCV_ImageLoader.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_KeylineDetector/SolARTest_ModuleOpenCV_KeylineDetector.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_MatchesFilter/SolARTest_ModuleOpenCV_MatchesFilter.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_OpticalFlow/SolARTest_ModuleOpenCV_OpticalFlow.pro \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
