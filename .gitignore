@@ -10,4 +10,6 @@
 remaken*
 *.sln
 *.vs*
+tools/*
+*.pro.user
 

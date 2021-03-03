@@ -3,3 +3,4 @@ SolARModuleFBOW|0.9.1|SolARModuleFBOW|SolARBuild@github|https://github.com/Solar
 SolARModuleCeres|0.9.1|SolARModuleCeres|SolARBuild@github|https://github.com/SolarFramework/SolARModuleCeres/releases/download
 SolARModuleG2O|0.9.1|SolARModuleG2O|SolARBuild@github|https://github.com/SolarFramework/SolARModuleG2O/releases/download
 SolARModuleTools|0.9.1|SolARModuleTools|SolARBuild@github|https://github.com/SolarFramework/SolARModuleTools/releases/download
+SolARModuleNonFreeOpenCV|0.9.1|SolARModuleNonFreeOpenCV|SolARBuild@github|https://github.com/SolarFramework/SolARModuleNonFreeOpenCV/releases/download

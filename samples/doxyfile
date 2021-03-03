@@ -122,7 +122,7 @@ WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
-INPUT                  = ./SolARModuleCeres/interfaces ./SolARModuleFBOW/interfaces ./SolARModuleG2O/interfaces ./SolARModuleNonFreeOpenCV/interfaces ./SolARModuleOpenCV/interfaces ./SolARModuleOpenGL/interfaces ./SolARModuleOpenGV/interfaces ./SolARModulePCL/interfaces ./SolARModuleRealSense/interfaces ./SolARModuleTools/interfaces
+INPUT                  = .
 INPUT_ENCODING         = UTF-8
 FILE_PATTERNS          = *.c \
                          *.cc \
@@ -168,7 +168,7 @@ FILE_PATTERNS          = *.c \
                          *.as \
                          *.js
 RECURSIVE              = YES
-EXCLUDE                =  ./SolARModuleOpenCV/interfaces/features2d_akaze2.hpp ./SolARModuleCeres/interfaces/SolARCeresUtils.h
+EXCLUDE                = 
 EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = 
 EXCLUDE_SYMBOLS        = 
