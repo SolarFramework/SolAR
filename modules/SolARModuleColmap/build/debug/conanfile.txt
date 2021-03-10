@@ -1,0 +1,10 @@
+[requires]
+eigen/3.3.7@conan-solar/stable
+boost/1.74.0@conan-solar/stable
+[generators]
+qmake
+[options]
+eigen:shared=True
+boost:shared=True
+boost:zlib=False
+boost:bzip2=False

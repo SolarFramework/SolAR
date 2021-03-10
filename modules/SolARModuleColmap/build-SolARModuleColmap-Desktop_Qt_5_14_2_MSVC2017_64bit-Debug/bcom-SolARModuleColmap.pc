@@ -1,0 +1,8 @@
+libname=SolARModuleColmap
+prefix=/usr/local
+includedir=${prefix}/interfaces
+Name: SolARModuleColmap
+Description:
+Version: 0.9.5
+Requires:
+Cflags: -I${includedir}
