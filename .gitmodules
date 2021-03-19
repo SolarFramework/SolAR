@@ -1,75 +1,76 @@
 [submodule "core/SolARFramework"]
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
-	branch = .
+	branch = 0.9.3
 [submodule "samples/Sample-Slam"]
 	path = samples/Sample-Slam
 	url = https://github.com/SolarFramework/Sample-Slam
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleOpenCV"]
 	path = modules/SolARModuleOpenCV
 	url = https://github.com/SolarFramework/SolARModuleOpenCV
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleOpenGV"]
 	path = modules/SolARModuleOpenGV
 	url = https://github.com/SolarFramework/SolARModuleOpenGV
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleOpenGL"]
 	path = modules/SolARModuleOpenGL
 	url = https://github.com/SolarFramework/SolARModuleOpenGL
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleNonFreeOpenCV"]
 	path = modules/SolARModuleNonFreeOpenCV
 	url = https://github.com/SolarFramework/SolARModuleNonFreeOpenCV
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleCeres"]
 	path = modules/SolARModuleCeres
 	url = https://github.com/SolarFramework/SolARModuleCeres
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModuleG2O"]
 	path = modules/SolARModuleG2O
 	url = https://github.com/SolarFramework/SolARModuleG2O
-	branch = .
+	branch = 0.9.3
 [submodule "samples/Sample-Triangulation"]
 	path = samples/Sample-Triangulation
 	url = https://github.com/SolarFramework/Sample-Triangulation
-	branch = .
+	branch = 0.9.3
 [submodule "core/SolARPipelineManager"]
 	path = core/SolARPipelineManager
 	url = https://github.com/SolarFramework/SolARPipelineManager
-	branch = .
+	branch = 0.9.3
 [submodule "plugin/unity/SolARUnityPlugin"]
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
-	branch = .
+	branch = develop
 [submodule "modules/SolARModuleRealSense"]
 	path = modules/SolARModuleRealSense
 	url = https://github.com/SolarFramework/SolARModuleRealSense.git
-	branch = .
+	branch = 0.9.3
 [submodule "modules/SolARModulePCL"]
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
-	branch = .
+	branch = 0.9.3
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
-	branch = .
+	branch = 0.9.3
 [submodule "samples/Sample-FiducialMarker"]
 	path = samples/Sample-FiducialMarker
 	url = https://github.com/SolarFramework/Sample-FiducialMarker
+	branch = 0.9.3
 [submodule "samples/Sample-Mapping"]
 	path = samples/Sample-Mapping
 	url = https://github.com/SolarFramework/Sample-Mapping
-	branch = .
+	branch = 0.9.3
 [submodule "samples/Sample-NaturalImageMarker"]
 	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
-	branch = .
+	branch = 0.9.3
