@@ -1,90 +1,90 @@
-SolARFramework|0.9.4
-SolARPipelineManager|0.9.4
-SolARWrapper|0.9.4
+SolARFramework|0.9.5
+SolARPipelineManager|0.9.5
+SolARWrapper|0.9.5
 
-SolARModuleTools|0.9.4
-SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D|0.9.4
-SolARTest_ModuleTools_BoostCovisibilityGraph|0.9.4
-SolARTest_ModuleTools_CovisibilityGraph|0.9.4
-SolARTest_ModuleTools_DualMapperSingleton|0.9.4
-SolARTest_ModuleTools_LoopClosureDetection|0.9.4
-SolARTest_ModuleTools_LoopCorrection|0.9.4
-SolARTest_ModuleTools_PointCloudManager|0.9.4
+SolARModuleTools|0.9.5
+SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D|0.9.5
+SolARTest_ModuleTools_BoostCovisibilityGraph|0.9.5
+SolARTest_ModuleTools_CovisibilityGraph|0.9.5
+SolARTest_ModuleTools_DualMapperSingleton|0.9.5
+SolARTest_ModuleTools_LoopClosureDetection|0.9.5
+SolARTest_ModuleTools_LoopCorrection|0.9.5
+SolARTest_ModuleTools_PointCloudManager|0.9.5
 
-SolARModuleOpenCV|0.9.4
-SolARTest_ModuleOpenCV_FiducialMarker|0.9.4
-SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer|0.9.4
-SolARTest_ModuleOpenCV_FundamentalMatrixEstimation|0.9.4
-SolARTest_ModuleOpenCV_ImageConvertor|0.9.4
-SolARTest_ModuleOpenCV_ImageLoader|0.9.4
-SolARTest_ModuleOpenCV_MatchesFilter|0.9.4
-SolARTest_ModuleOpenCV_OpticalFlow|0.9.4
-SolARTest_ModuleOpenCV_DevicePoseCorrection|0.9.4
-SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration|0.9.4
-SolARTest_ModuleOpenCV_DeviceDataLoader|0.9.4
-SolARTest_ModuleOpenCV_DescriptorMatcher|0.9.4
-SolARTest_ModuleOpenCV_CameraCalibration|0.9.4
-SolARTest_ModuleOpenCV_FeatureMatchingStabilization|0.9.4
+SolARModuleOpenCV|0.9.5
+SolARTest_ModuleOpenCV_FiducialMarker|0.9.5
+SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer|0.9.5
+SolARTest_ModuleOpenCV_FundamentalMatrixEstimation|0.9.5
+SolARTest_ModuleOpenCV_ImageConvertor|0.9.5
+SolARTest_ModuleOpenCV_ImageLoader|0.9.5
+SolARTest_ModuleOpenCV_MatchesFilter|0.9.5
+SolARTest_ModuleOpenCV_OpticalFlow|0.9.5
+SolARTest_ModuleOpenCV_DevicePoseCorrection|0.9.5
+SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration|0.9.5
+SolARTest_ModuleOpenCV_DeviceDataLoader|0.9.5
+SolARTest_ModuleOpenCV_DescriptorMatcher|0.9.5
+SolARTest_ModuleOpenCV_CameraCalibration|0.9.5
+SolARTest_ModuleOpenCV_FeatureMatchingStabilization|0.9.5
 
-SolARModuleNonFreeOpenCV|0.9.4
-SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor|0.9.4
+SolARModuleNonFreeOpenCV|0.9.5
+SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor|0.9.5
 
-SolARModuleOpenGL|0.9.4
-SolARTest_ModuleOpenGL_PointsCloudDisplay|0.9.4
+SolARModuleOpenGL|0.9.5
+SolARTest_ModuleOpenGL_PointsCloudDisplay|0.9.5
 
-SolARModuleFBOW|0.9.4
-SolARTest_ModuleFBOW_ClosestKeyframeRetrieval|0.9.4
-SolARTest_ModuleFBOW_FeatureMatching|0.9.4
+SolARModuleFBOW|0.9.5
+SolARTest_ModuleFBOW_ClosestKeyframeRetrieval|0.9.5
+SolARTest_ModuleFBOW_FeatureMatching|0.9.5
 
-SolARModuleCeres|0.9.4
-SolARTest_ModuleCeres_Bundler|0.9.4
+SolARModuleCeres|0.9.5
+SolARTest_ModuleCeres_Bundler|0.9.5
 
-SolARModuleG2O|0.9.4
-SolARTest_ModuleG2O_Bundler|0.9.4
+SolARModuleG2O|0.9.5
+SolARTest_ModuleG2O_Bundler|0.9.5
 
-SolARModuleOpenGV|0.9.4
-SolARTest_ModuleOpenGV_PnP|0.9.4
-SolARTest_ModuleOpenGV_Triangulation|0.9.4
+SolARModuleOpenGV|0.9.5
+SolARTest_ModuleOpenGV_PnP|0.9.5
+SolARTest_ModuleOpenGV_Triangulation|0.9.5
 
-SolARModulePCL|0.9.4
-SolARTest_ModulePCL_PointCloudLoader|0.9.4
+SolARModulePCL|0.9.5
+SolARTest_ModulePCL_PointCloudLoader|0.9.5
 
-SolARModuleRealSense|0.9.4
-SolARTest_ModuleRealSense_RGBDCamera|0.9.4
+SolARModuleRealSense|0.9.5
+SolARTest_ModuleRealSense_RGBDCamera|0.9.5
 
-SolARSample_FiducialMarker_Mono|0.9.4
-SolARPipeline_FiducialMarker|0.9.4
-SolARPipelineTest_FiducialMarker|0.9.4
+SolARSample_FiducialMarker_Mono|0.9.5
+SolARPipeline_FiducialMarker|0.9.5
+SolARPipelineTest_FiducialMarker|0.9.5
 
-SolARSample_NaturalImageMarker_Mono|0.9.4
-SolARSample_NaturalImageMarker_Multi|0.9.4
-SolARPipeline_NaturalImageMarker|0.9.4
-SolARPipelineTest_NaturalImageMarker|0.9.4
+SolARSample_NaturalImageMarker_Mono|0.9.5
+SolARSample_NaturalImageMarker_Multi|0.9.5
+SolARPipeline_NaturalImageMarker|0.9.5
+SolARPipelineTest_NaturalImageMarker|0.9.5
 
-SolARSample_DepthCamera_Mono|0.9.4
+SolARSample_DepthCamera_Mono|0.9.5
 
-SolARSample_SLAM_Mono|0.9.4
-SolARSample_SLAM_Multi|0.9.4
-SolARPipeline_SLAM|0.9.4
-SolARPipelineTest_SLAM|0.9.4
+SolARSample_SLAM_Mono|0.9.5
+SolARSample_SLAM_Multi|0.9.5
+SolARPipeline_SLAM|0.9.5
+SolARPipelineTest_SLAM|0.9.5
 
-SolARSample_Relocalization_Mono|0.9.4
-SolARSample_Relocalization_Multi|0.9.4
-SolARPipeline_Relocalization|0.9.4
-SolARPipelineTest_Relocalization|0.9.4
+SolARSample_Relocalization_Mono|0.9.5
+SolARSample_Relocalization_Multi|0.9.5
+SolARPipeline_Relocalization|0.9.5
+SolARPipelineTest_Relocalization|0.9.5
 
-SolARSample_Triangulation_Mono|0.9.4
+SolARSample_Triangulation_Mono|0.9.5
 
-SolARSample_Mapping_MapExtension_Mono|0.9.4
-SolARSample_Mapping_FloatingMapFusion_Mono|0.9.4
-SolARSample_Mapping_LocalMapFusion_Mono|0.9.4
-SolARSample_Mapping_Mono|0.9.4
-SolARSample_Mapping_Multi|0.9.4
-SolARSample_Mapping_MapVisualizer|0.9.4
-SolARPipeline_Mapping_Mono|0.9.4
-SolARPipeline_Mapping_Multi|0.9.4
-SolARPipelineTest_Mapping_Mono|0.9.4
-SolARPipelineTest_Mapping_Multi|0.9.4
+SolARSample_Mapping_MapExtension_Mono|0.9.5
+SolARSample_Mapping_FloatingMapFusion_Mono|0.9.5
+SolARSample_Mapping_LocalMapFusion_Mono|0.9.5
+SolARSample_Mapping_Mono|0.9.5
+SolARSample_Mapping_Multi|0.9.5
+SolARSample_Mapping_MapVisualizer|0.9.5
+SolARPipeline_Mapping_Mono|0.9.5
+SolARPipeline_Mapping_Multi|0.9.5
+SolARPipelineTest_Mapping_Mono|0.9.5
+SolARPipelineTest_Mapping_Multi|0.9.5
 
 xpcf|2.5.0
 boost|1.74.0
