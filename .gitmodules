@@ -2,6 +2,10 @@
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
 	branch = 0.9.3
+[submodule "core/SolARFrameworkGRPCRemote"]
+	path = core/SolARFrameworkGRPCRemote
+	url = https://github.com/SolarFramework/SolARFrameworkGRPCRemote
+	branch = 0.9.3
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
@@ -74,3 +78,4 @@
 	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = 0.9.3
+

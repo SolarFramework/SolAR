@@ -1,4 +1,5 @@
 SolARFramework|0.9.3
+SolARFrameworkGRPCRemote|0.9.3
 SolARPipelineManager|0.9.3
 SolARWrapper|0.9.3
 
