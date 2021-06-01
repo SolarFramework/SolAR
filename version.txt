@@ -71,8 +71,6 @@ SolARPipelineTest_SLAM|0.9.3
 SolARSample_Triangulation_Mono|0.9.3
 
 SolARSample_Mapping_MapExtension_Mono|0.9.3
-SolARSample_Mapping_FloatingMapFusion_Mono|0.9.3
-SolARSample_Mapping_LocalMapFusion_Mono|0.9.3
 SolARSample_Mapping_Mono|0.9.3
 SolARSample_Mapping_Multi|0.9.3
 SolARSample_Mapping_MapVisualizer|0.9.3
@@ -81,14 +79,19 @@ SolARPipeline_Mapping_Multi|0.9.3
 SolARPipelineTest_Mapping_Mono|0.9.3
 SolARPipelineTest_Mapping_Multi|0.9.3
 
+SolARSample_Relocalization_Mono|0.9.3
+SolARSample_Relocalization_Multi|0.9.3
+SolARPipeline_Relocalization|0.9.3
+SolARPipelineTest_Relocalization|0.9.3
+
 xpcf|2.5.0
 boost|1.74.0
 opencv|4.4.0
 spdlog|0.14.0
 eigen|3.3.7
 freeglut|3.0.0
-fbowSolAR|0.0.4
+fbowSolAR|0.0.5
 ceres|1.14.0
-pcl|1.9.1
-flann17|1.9.1
+pcl|1.11.1
+flann|1.9.1
 realsense2|2.36.0
