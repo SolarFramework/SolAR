@@ -24,8 +24,9 @@ SUBDIRS = \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/tests/SolARPipelineTest_Mapping_Mono/SolARPipelineTest_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi/SolARPipelineTest_Mapping_Multi.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/tests/SolARPipelineTest_SLAM/SolARPipelineTest_SLAM.pro \
-    samples/Sample-Relocalization/SolARPipeline_Relocalization/tests/SolARPipelineTest_Relocalization/SolARPipelineTest_Relocalization.pro
-
+    samples/Sample-Relocalization/SolARPipeline_Relocalization/tests/SolARPipelineTest_Relocalization/SolARPipelineTest_Relocalization.pro \
+    samples/Sample-MapUpdate/SolARPipeline_MapUpdate/tests/SolARPipelineTest_MapUpdate/SolARPipelineTest_MapUpdate.pro \
+	
 # Add install_deps target that recursively calls install_deps
 # on submodules
 install_deps.CONFIG += recursive
