@@ -65,6 +65,7 @@
 [submodule "samples/Sample-FiducialMarker"]
 	path = samples/Sample-FiducialMarker
 	url = https://github.com/SolarFramework/Sample-FiducialMarker
+	branch = .
 [submodule "samples/Sample-Mapping"]
 	path = samples/Sample-Mapping
 	url = https://github.com/SolarFramework/Sample-Mapping
