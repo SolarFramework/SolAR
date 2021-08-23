@@ -27,7 +27,7 @@ SUBDIRS = \
     samples/Sample-Mapping/MapFusion/SolARSample_Mapping_LocalMapFusion_Mono/SolARSample_Mapping_LocalMapFusion_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARSample_Mapping_Mono/SolARSample_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARSample_Mapping_Multi/SolARSample_Mapping_Multi.pro \
-    samples/Sample-Mapping/MapViz/SolARSample_Mapping_MapVisualizer.pro \
+    samples/Sample-Mapping/MapViz/SolARSample_Mapping_MapVisualizer/SolARSample_Mapping_MapVisualizer.pro \
     samples/Sample-Slam/SolARSample_SLAM_Mono/SolARSample_SLAM_Mono.pro \
     samples/Sample-Slam/SolARSample_SLAM_Multi/SolARSample_SLAM_Multi.pro \
     samples/Sample-Relocalization/SolARSample_Relocalization_Mono/SolARSample_Relocalization_Mono.pro \
