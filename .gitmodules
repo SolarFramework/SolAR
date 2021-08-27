@@ -49,7 +49,7 @@
 [submodule "plugin/unity/SolARUnityPlugin"]
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
-	branch = .
+	branch = develop
 [submodule "modules/SolARModuleRealSense"]
 	path = modules/SolARModuleRealSense
 	url = https://github.com/SolarFramework/SolARModuleRealSense.git
@@ -74,8 +74,11 @@
 	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = .
-
 [submodule "samples/Sample-Relocalization"]
 	path = samples/Sample-Relocalization
 	url = https://github.com/SolarFramework/Sample-Relocalization.git
+	branch = .
+[submodule "samples/Sample-MapUpdate"]
+	path = samples/Sample-MapUpdate
+	url = https://github.com/SolarFramework/Sample-MapUpdate.git
 	branch = .

@@ -43,9 +43,10 @@ win32 {
     SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
     SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
     SolARModuleTools.subdir = modules/SolARModuleTools
+    SolARModulePCL.subdir = modules/SolARModulePCL
 
 win32 {
-    SolARModulePCL.subdir = modules/SolARModulePCL
+
     SolARModuleRealSense.subdir = modules/SolARModuleRealSense
 }
 

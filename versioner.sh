@@ -114,6 +114,14 @@ function updateVersion()
 							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
 						done
 					fi
+					
+					# change in bundleSamples.bat and .sh if exists
+					for bundleSamples in ./*bundleSamples.*; do
+						[ -e "$bundleSamples" ] && sed -i -e "s/Version: [0-]\.[0-9]\.[0-9]/Version: $newversion/g" $bundleSamples
+					done
+					
+					# change in .pro
+					sed -i -e "s/VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/VERSION=$newversion/g" *.pro > /dev/null
 				fi		
 				# 
 				####
