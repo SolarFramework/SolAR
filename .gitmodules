@@ -58,6 +58,10 @@
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
 	branch = .
+[submodule "samples/SolARModulePopSift"]
+	path = modules/SolARModulePopSift
+	url = https://github.com/SolarFramework/SolARModulePopSift
+	branch = .
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
 	url = https://github.com/SolarFramework/Sample-DepthCamera.git
