@@ -26,11 +26,12 @@ SUBDIRS = \
     SolARModuleOpenCV \
     SolARModuleOpenGL \
     SolARModuleOpenGV \
-    SolARModuleTools
+    SolARModuleTools \
+    SolARModulePCL \
+    SolARModulePopSift
 
 win32 {
     SUBDIRS += \
-        SolARModulePCL \
         SolARModuleRealSense
 }
 
@@ -44,16 +45,11 @@ win32 {
     SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
     SolARModuleTools.subdir = modules/SolARModuleTools
     SolARModulePCL.subdir = modules/SolARModulePCL
+    SolARModulePopSift.subdir = modules/SolARModulePopSift
 
 win32 {
-
     SolARModuleRealSense.subdir = modules/SolARModuleRealSense
 }
-
-
-
-  # what subproject depends on others
-  SolARModuleNonFreeOpenCV.depends = SolARModuleOpenCV
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
