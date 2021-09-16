@@ -2,6 +2,10 @@
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
 	branch = .
+[submodule "core/SolARFrameworkGRPCRemote"]
+	path = core/SolARFrameworkGRPCRemote
+	url = https://github.com/SolarFramework/SolARFrameworkGRPCRemote.git
+	branch = .
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
