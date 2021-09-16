@@ -22,6 +22,7 @@ SUBDIRS = \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_Remote/tests/SolARPipelineTest_Mapping_Multi_Remote_Producer/SolARPipelineTest_Mapping_Multi_Remote_Producer.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_Remote/tests/SolARPipelineTest_Mapping_Multi_Remote_Viewer/SolARPipelineTest_Mapping_Multi_Remote_Viewer.pro \
     samples/Sample-Relocalization/SolARPipeline_Relocalization_Remote/tests/SolARPipelineTest_Relocalization_Remote/SolARPipelineTest_Relocalization_Remote.pro \
+    samples/Sample-MapUpdate/SolARPipeline_MapUpdate_Remote/tests/SolARPipelineTest_MapUpdate_Remote/SolARPipelineTest_MapUpdate_Remote.pro \
 }
 	
 # Add install_deps target that recursively calls install_deps
