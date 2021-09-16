@@ -21,7 +21,7 @@ TEMPLATE = subdirs
 SUBDIRS = \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_Remote/SolARPipeline_Mapping_Multi_Remote.pro \
     samples/Sample-Relocalization/SolARPipeline_Relocalization_Remote/SolARPipeline_Relocalization_Remote.pro \
-    samples/Sample-MapUdate/SolARPipeline_MapUpdate_Remote/SolARPipeline_MapUpdate_Remote.pro
+    samples/Sample-MapUpdate/SolARPipeline_MapUpdate_Remote/SolARPipeline_MapUpdate_Remote.pro
 }
 
 # Add install_deps target that recursively calls install_deps
