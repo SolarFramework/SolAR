@@ -16,7 +16,7 @@ then
     exit 0
 fi 
 
-if [ $# -eq 1 ]; then
+if [ $# -ge 1 ]; then
 	QTVERSION=$1
 fi
 

@@ -18,11 +18,11 @@ then
     exit 0
 fi
 
-if [ $# -eq 1 ]; then
+if [ $# -ge 1 ]; then
 	BRANCH=$1
 fi 
 
-if [ $# -eq 2 ]; then
+if [ $# -ge 2 ]; then
 	FORCE=$2
 fi 
 
@@ -36,16 +36,17 @@ if [ ! -d ${SOLARROOT} ]; then
 fi
 
 pushd ${SOLARROOT}
-if (FORCE="force"); then
-   echo "Force checkout"
-   git checkout -f ${BRANCH}
+if [ "$FORCE" = "force" ]; then
+   echo "Force checkout branch ${BRANCH}"
+   git checkout -f "${BRANCH}"
    git pull
-   git submodule foreach --recursive git checkout -f ${BRANCH}
+   git submodule foreach --recursive git checkout -f "${BRANCH}"
    git submodule foreach --recursive git pull
-else 
-   git checkout ${BRANCH}
+else
+   echo "Checkout branch ${BRANCH}"
+   git checkout "${BRANCH}"
    git pull
-   git submodule foreach --recursive git checkout ${BRANCH}
+   git submodule foreach --recursive git checkout "${BRANCH}"
    git submodule foreach --recursive git pull
 fi
 popd
