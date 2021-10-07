@@ -55,7 +55,7 @@ mkdir -p build-SolARFramework/shared/release
 
 echo "===========> run remaken from ${SOLARROOTFOLDER}/packagedependencies.txt <==========="
 remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt
-remaken install ${SOLARROOTFOLDER}/packagedependencies.txt -c debug
+remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
 
 echo "===========> building SolAR Framework shared <==========="
 pushd build-SolARFramework/shared/debug
