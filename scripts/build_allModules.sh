@@ -2,7 +2,7 @@
 
 QTVERSION=5.15.2
 SOLARMODULESROOT=../modules
-modules=("SolARModuleCeres" "SolARModuleFBOW" "SolARModuleG20" "SolARModuleNonFreeOpenCV" "SolARModuleOpenCV" "SolARModuleOpenGL" "SolARModuleOpenGV" "SolARModulePCL" "SolARModulePopSift" "SolARModuleTools")
+modules=("SolARModuleCeres" "SolARModuleFBOW" "SolARModuleG2O" "SolARModuleNonFreeOpenCV" "SolARModuleOpenCV" "SolARModuleOpenGL" "SolARModuleOpenGV" "SolARModulePCL" "SolARModulePopSift" "SolARModuleTools")
 
 display_usage() { 
 	echo "This script builds the SolAR modules in shared mode."
