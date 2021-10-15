@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 
 QTVERSION=5.15.2
 SOLARROOT=../
