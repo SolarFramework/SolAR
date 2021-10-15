@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 QTVERSION=5.15.2
 SOLARROOT=../
 
@@ -30,7 +32,7 @@ if [ ! -d ${SOLARROOT} ]; then
 	exit 2
 fi
 
-./build_framework.sh ${QTVERSION} ${SOLARROOT}/core/SolARFRamework
+./build_framework.sh ${QTVERSION} ${SOLARROOT}/core/SolARFramework
 ./build_allModules.sh ${QTVERSION} ${SOLARROOT}/modules
 ./build_allModuleTests.sh ${QTVERSION} ${SOLARROOT}
 ./build_allSamples.sh ${QTVERSION} ${SOLARROOT}
