@@ -5,6 +5,8 @@
 * Camera stereo components (e.g. calibration, rectification, depth estimation, reprojection to 3D)
 * Map update pipeline
 * SLAM and mapping optimizations
+* gRPC module: stubs for client and server sides, for all SolAR interfaces, to create remote services
+* Map Update, Relocalization and Mapping services (for cloud deployment) and client test applications
 
 ## v0.9.1 (2021/08/30)
 
