@@ -37,5 +37,5 @@ fi
 ./build_allSamples.sh ${QTVERSION} ${SOLARROOT}
 ./build_allPipelines.sh ${QTVERSION} ${SOLARROOT}
 ./build_allPipelineTests.sh ${QTVERSION} ${SOLARROOT}
-./build_allPipelinesRemote.sh ${QTVERSION} ${SOLARROOT}
-./build_allPipelinesRemoteTests.sh ${QTVERSION} ${SOLARROOT}
+./build_allServices.sh ${QTVERSION} ${SOLARROOT}
+./build_allServiceTests.sh ${QTVERSION} ${SOLARROOT}

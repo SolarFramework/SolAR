@@ -6,7 +6,7 @@ SOLARROOTFOLDER=../
 display_usage() { 
 	echo "This script builds the SolAR samples in shared mode."
     echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION}'] [path to the folder containing the QT project SolARAllPipelinesRemote.pro | default='${SOLARROOTFOLDER}']] \n" 
+	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to the folder containing the QT project SolARAllServices.pro | default='${SOLARROOTFOLDER}']'] \n" 
 }
 
 
@@ -41,12 +41,12 @@ if [ ! -d ${QMAKE_PATH} ]; then
 	exit 2
 fi
 
-if [ ! -f ${SOLARROOTFOLDER}SolARAllPipelinesRemote.pro ]; then
-	echo "QT project SolARAllPipelinesRemote.pro doesn't exist in folder '${SOLARROOTFOLDERPROJECT}'"
+if [ ! -f ${SOLARROOTFOLDER}SolARAllServices.pro ]; then
+	echo "QT project SolARAllServices.pro doesn't exist in folder '${SOLARROOTFOLDERPROJECT}'"
 	exit 2
 fi
 
-echo "SOLAR all pipelines remote QT project used is : ${SOLARROOTFOLDER}SolARAllPipelinesRemote.pro"
+echo "SOLAR all services QT project used is : ${SOLARROOTFOLDER}SolARAllServices.pro"
 
 buildAndInstall() {
 if [ -d build-${1}/shared ]; then
@@ -55,10 +55,10 @@ fi
 mkdir -p build-${1}/shared/debug
 mkdir -p build-${1}/shared/release
 
-pipelineRemoteProjectPath=${2%/*}
-echo "===========> run remaken from ${SOLARROOTFOLDER}/${pipelineRemoteProjectPath}/packagedependencies.txt <==========="
-remaken install ${SOLARROOTFOLDER}/${pipelineRemoteProjectPath}/packagedependencies.txt
-remaken install ${SOLARROOTFOLDER}/${pipelineRemoteProjectPath}/packagedependencies.txt -c debug
+serviceProjectPath=${2%/*}
+echo "===========> run remaken from ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt <==========="
+remaken install ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt
+remaken install ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt -c debug
 
 
 echo "===========> building ${1} shared <==========="
@@ -74,12 +74,12 @@ make install
 popd
 }
 
-for pipelineRemoteProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllPipelinesRemote.pro | grep -v "SUBDIRS +=" | tr -d '\\')
+for serviceProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllServices.pro | grep -v "SUBDIRS +=" | tr -d '\\')
   do
-     pipelineRemoteProject="${pipelineRemoteProjectPath##*/}"
-     pipelineRemoteName="${pipelineRemoteProject%%.pro}"
-     echo "${pipelineRemoteName} ${pipelineRemoteProjectPath}"
-     buildAndInstall ${pipelineRemoteName} ${pipelineRemoteProjectPath}
+     serviceProject="${serviceProjectPath##*/}"
+     serviceName="${serviceProject%%.pro}"
+     echo "${serviceName} ${serviceProjectPath}"
+     buildAndInstall ${serviceName} ${serviceProjectPath}
   done
 
 
