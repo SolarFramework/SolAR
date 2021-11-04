@@ -20,15 +20,12 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
     SolARFramework \
-    SolARPipelineManager 
+    SolARFrameworkGRPCRemote 
 
 # where to find the sub projects - give the folders
     SolARFramework.subdir = core/SolARFramework
-    SolARPipelineManager.subdir = core/SolARPipelineManager
+    SolARFrameworkGRPCRemote.subdir = core/SolARFrameworkGRPCRemote
 
- 
-  # what subproject depends on others
-  SolARPipelineManager.depends = SolARFramework
 
 
 
