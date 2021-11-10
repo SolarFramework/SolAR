@@ -54,19 +54,19 @@ SolARModuleRealSense|0.10.0
 SolARTest_ModuleRealSense_RGBDCamera|0.10.0
 
 SolARSample_FiducialMarker_Mono|0.10.0
-SolARPipeline_FiducialMarker|0.10.0
+SolARPipelineFiducialMarker|0.10.0
 SolARPipelineTest_FiducialMarker|0.10.0
 
 SolARSample_NaturalImageMarker_Mono|0.10.0
 SolARSample_NaturalImageMarker_Multi|0.10.0
-SolARPipeline_NaturalImageMarker|0.10.0
+SolARPipelineNaturalImageMarker|0.10.0
 SolARPipelineTest_NaturalImageMarker|0.10.0
 
 SolARSample_DepthCamera_Mono|0.10.0
 
 SolARSample_SLAM_Mono|0.10.0
 SolARSample_SLAM_Multi|0.10.0
-SolARPipeline_SLAM|0.10.0
+SolARPipelineSLAM|0.10.0
 SolARPipelineTest_SLAM|0.10.0
 
 SolARSample_Triangulation_Mono|0.10.0
@@ -75,26 +75,30 @@ SolARSample_Mapping_MapExtension_Mono|0.10.0
 SolARSample_Mapping_Mono|0.10.0
 SolARSample_Mapping_Multi|0.10.0
 SolARSample_Mapping_MapVisualizer|0.10.0
-SolARPipeline_Mapping_Mono|0.10.0
-SolARPipeline_Mapping_Multi|0.10.0
-SolARPipeline_Mapping_Multi_Remote|0.10.0
+SolARPipelineMappingMono|0.10.0
+SolARPipelineMappingMulti|0.10.0
+SolARService_Mapping_Multi|0.10.0
 SolARPipelineTest_Mapping_Mono|0.10.0
 SolARPipelineTest_Mapping_Multi|0.10.0
-SolARPipelineTest_Mapping_Multi_Remote_Producer|0.10.0
-SolARPipelineTest_Mapping_Multi_Remote_Viewer|0.10.0
+SolARServiceTest_Mapping_Multi_Producer|0.10.0
+SolARServiceTest_Mapping_Multi_Viewer|0.10.0
+SolARServiceTest_Mapping_Multi_Relocalization|0.10.0
 
-SolARPipeline_MapUpdate|0.10.0
+SolARPipelineMapUpdate|0.10.0
 SolARPipelineTest_MapUpdate|0.10.0
 SolARSample_MapUpdate_FloatingMapFusion|0.10.0
 SolARSample_MapUpdate_LocalMapFusion|0.10.0
 SolARSample_MapUpdate_Standalone|0.10.0
+SolARService_MapUpdate|0.10.0
+SolARServiceTest_MapUpdate|0.10.0
 
-SolARPipeline_Relocalization|0.10.0
-SolARPipeline_Relocalization_Remote|0.10.0
+SolARServiceTest_Mapping_Multi_Relocalization|0.10.0
+SolARPipelineRelocalization|0.10.0
+SolARPipelineTest_Relocalization|0.10.0
 SolARSample_Relocalization_Mono|0.10.0
 SolARSample_Relocalization_Multi|0.10.0
-SolARPipelineTest_Relocalization_Remote|0.10.0
-SolARPipelineTest_Relocalization|0.10.0
+SolARService_Relocalization|0.10.0
+SolARServiceTest_Relocalization|0.10.0
 
 xpcf|2.5.0
 boost|1.74.0
