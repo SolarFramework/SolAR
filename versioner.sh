@@ -74,24 +74,24 @@ function updateVersion()
 
 					# change in .pc.in if exists
 					for pcin in ./*.pc.in; do
-						[ -e "$pcin" ] && sed -i -e "s/Version: [0-]\.[0-9]\.[0-9]/Version: $newversion/g" $pcin
+						[ -e "$pcin" ] && sed -i -e "s/Version: [0-9]*\.[0-9]*\.[0-9]*/Version: $newversion/g" $pcin
 					done
 					
 					# change in .pro
-					sed -i -e "s/VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/VERSION=$newversion/g" *.pro > /dev/null
+					sed -i -e "s/VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/VERSION=$newversion/g" *.pro > /dev/null
 
 					# change in all .xml
 					xmlfiles=`find $SOURCEDIR -name "*.xml"`
 					for xmlfile in $xmlfiles
 					do
-						sed -i -e "s/$target\/[0-9]\.[0-9]\.[0-9]/$target\/$newversion/g" $xmlfile
+						sed -i -e "s/$target\/[0-9]*\.[0-9]*\.[0-9]*/$target\/$newversion/g" $xmlfile
 					done
 
 					# change packagedependencies.txt in other repositories
 					packagedepfiles=`find $SOURCEDIR -name "packagedependencies*.txt"`
 					for packagedepfile in $packagedepfiles
 					do
-						sed -i -e "s/$target|[0-9]\.[0-9]\.[0-9]/$target|$newversion/g" $packagedepfile
+						sed -i -e "s/$target|[0-9]*\.[0-9]*\.[0-9]*/$target|$newversion/g" $packagedepfile
 					done
 					
 					# change in _build.bat and _build.sh for SolARWrapper
@@ -99,9 +99,9 @@ function updateVersion()
 						batfiles=`find $SOURCEDIR -name "_build.*"`
 						for batfile in $batfiles
 						do
-							sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" $batfile
-							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
-							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
+							sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" $batfile
+							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
+							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
 						done
 					fi
 					
@@ -110,18 +110,18 @@ function updateVersion()
 						batfiles=`find $SOURCEDIR -name "BuildCSharp.*"`
 						for batfile in $batfiles
 						do
-							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
-							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
+							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
+							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
 						done
 					fi
 					
 					# change in bundleSamples.bat and .sh if exists
 					for bundleSamples in ./*bundleSamples.*; do
-						[ -e "$bundleSamples" ] && sed -i -e "s/Version: [0-]\.[0-9]\.[0-9]/Version: $newversion/g" $bundleSamples
+						[ -e "$bundleSamples" ] && sed -i -e "s/Version: [0-9]*\.[0-9]*\.[0-9]*/Version: $newversion/g" $bundleSamples
 					done
 					
 					# change in .pro
-					sed -i -e "s/VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/VERSION=$newversion/g" *.pro > /dev/null
+					sed -i -e "s/VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/VERSION=$newversion/g" *.pro > /dev/null
 				fi		
 				# 
 				####
@@ -187,8 +187,8 @@ if [[ $DONOTHING == "0" ]]; then
 		packagedepfiles=`find $SOURCEDIR -name "packagedependencies*.txt"`
 		for packagedepfile in $packagedepfiles
 		do
-			sed -i -e "s/$comp|[0-9]\.[0-9]\.[0-9]/$comp|$vers/g" $packagedepfile
-			sed -i -e "s/$comp|[0-9]\.[0-9][0-9]\.[0-9]/$comp|$vers/g" $packagedepfile
+			sed -i -e "s/$comp|[0-9]*\.[0-9]*\.[0-9]*/$comp|$vers/g" $packagedepfile
+			sed -i -e "s/$comp|[0-9]*\.[0-9]*[0-9]*\.[0-9]*/$comp|$vers/g" $packagedepfile
 		done				
 	done
 fi
@@ -200,7 +200,7 @@ cd plugin
 if [[ $DONOTHING == "0" ]]; then
 	unityplugin=`find -name "SolARUnityPlugin" -type d ! -path "*.vs*"` 
 	cd $unityplugin
-	sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" Bundle.bat
-	sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" Bundle.bat
+	sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" Bundle.bat
+	sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]*\.[0-9]*\.[0-9]*/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" Bundle.bat
 fi
 cd $SOURCEDIR
