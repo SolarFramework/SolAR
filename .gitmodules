@@ -74,8 +74,12 @@
 	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = .
-
 [submodule "samples/Sample-Relocalization"]
 	path = samples/Sample-Relocalization
 	url = https://github.com/SolarFramework/Sample-Relocalization.git
+	branch = .
+
+[submodule "samples/Sample-MapUpdate"]
+	path = samples/Sample-MapUpdate
+	url = https://github.com/SolarFramework/Sample-MapUpdate.git
 	branch = .
