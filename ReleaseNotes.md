@@ -1,6 +1,6 @@
 # Release Notes
 
-## v0.10.0
+## v0.10.0 (2021/12/30)
 
 * Stereo camera components (e.g. calibration, rectification, depth estimation, reprojection to 3D)
 * Map update pipeline
