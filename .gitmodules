@@ -62,7 +62,7 @@
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
 	branch = .
-[submodule "samples/SolARModulePopSift"]
+[submodule "modules/SolARModulePopSift"]
 	path = modules/SolARModulePopSift
 	url = https://github.com/SolarFramework/SolARModulePopSift
 	branch = .
