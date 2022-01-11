@@ -20,8 +20,10 @@ CONFIG += ordered
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples/Sample-Mapping/Mapping/SolARService_Mapping_Multi/SolARService_Mapping_Multi.pro \
-    samples/Sample-Relocalization/SolARService_Relocalization/SolARService_Relocalization.pro \
-    samples/Sample-MapUpdate/SolARService_MapUpdate/SolARService_MapUpdate.pro \
-
+    services/Service-Mapping/SolARService_Mapping_Multi/SolARService_Mapping_Multi.pro \
+    services/Service-Mapping/SolARService_Mapping_Multi_NoDrop/SolARService_Mapping_Multi_NoDrop.pro \
+    services/Service-MapUpdate/SolARService_MapUpdate/SolARService_MapUpdate.pro \
+    services/Service-Relocalization/SolARService_Relocalization/SolARService_Relocalization.pro \
+    services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/SolARService_MappingAndRelocalizationFrontend.pro \
+    services/Service-Relocalization/SolARService_MappingAndRelocalizationProxy/SolARService_MappingAndRelocalizationProxy.pro \
 

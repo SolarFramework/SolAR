@@ -19,12 +19,14 @@ CONFIG -= flat
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples/Sample-Mapping/Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Producer/SolARPipelineTest_Mapping_Multi_Producer.pro \
-    samples/Sample-Mapping/Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Viewer/SolARPipelineTest_Mapping_Multi_Viewer.pro \
-    samples/Sample-Mapping/Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Relocalization/SolARPipelineTest_Mapping_Multi_Relocalization.pro \
-    samples/Sample-Relocalization/SolARService_Relocalization/tests/SolARServiceTest_Relocalization/SolARServiceTest_Relocalization.pro \
-    samples/Sample-MapUpdate/SolARService_MapUpdate/tests/SolARServiceTest_MapUpdate/SolARServiceTest_MapUpdate.pro \
-	
+    services/Service-Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Producer/SolARServiceTest_Mapping_Multi_Producer.pro \
+    services/Service-Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Viewer/SolARServiceTest_Mapping_Multi_Viewer.pro \
+    services/Service-Mapping/SolARService_Mapping_Multi/tests/SolARServiceTest_Mapping_Multi_Relocalization/SolARServiceTest_Mapping_Multi_Relocalization.pro \
+    services/Service-MapUpdate/SolARService_MapUpdate/tests/SolARServiceTest_MapUpdate/SolARServiceTest_MapUpdate.pro \
+    services/Service-MapUpdate/SolARService_MapUpdate/tests/SolARServiceTest_MapUpdate_DisplayMap/SolARServiceTest_MapUpdate_DisplayMap.pro \
+    services/Service-Relocalization/SolARService_Relocalization/tests/SolARServiceTest_Relocalization/SolARServiceTest_Relocalization.pro \
+    services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/tests/SolARServiceTest_MappingAndRelocalizationFrontend/SolARServiceTest_MappingAndRelocalizationFrontend.pro \
+
 # Add install_deps target that recursively calls install_deps
 # on submodules
 install_deps.CONFIG += recursive

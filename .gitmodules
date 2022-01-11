@@ -90,3 +90,12 @@
 	path = samples/Sample-MapUpdate
 	url = https://github.com/SolarFramework/Sample-MapUpdate.git
 	branch = .
+[submodule "services/Service-MapUpdate"]
+	path = services/Service-MapUpdate
+	url = https://github.com/SolarFramework/Service-MapUpdate.git
+[submodule "services/Service-Relocalization"]
+	path = services/Service-Relocalization
+	url = https://github.com/SolarFramework/Service-Relocalization.git
+[submodule "services/Service-Mapping"]
+	path = services/Service-Mapping
+	url = https://github.com/SolarFramework/Service-Mapping.git
