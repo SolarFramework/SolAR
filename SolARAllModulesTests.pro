@@ -50,8 +50,7 @@ SUBDIRS = \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro 
 	
 win32 {
-	SUBDIRS += \
-		modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
+        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
 }
 
 # Add install_deps target that recursively calls install_deps

@@ -46,25 +46,25 @@ if [ ! -d ${SOLARFRAMEWORKROOT} ]; then
 fi
 echo "SOLAR project root path used is : ${SOLARFRAMEWORKROOT}"
 
-if [ -d build-SolARFramework/shared ]; then
-	rm -rf build-SolARFramework/shared
+if [ -d build/core/SolARFramework/shared ]; then
+	rm -rf build/core/SolARFramework/shared
 fi
 
-mkdir -p build-SolARFramework/shared/debug
-mkdir -p build-SolARFramework/shared/release
+mkdir -p build/core/SolARFramework/shared/debug
+mkdir -p build/core/SolARFramework/shared/release
 
 echo "===========> run remaken from ${SOLARROOTFOLDER}/packagedependencies.txt <==========="
 remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt
 remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
 
 echo "===========> building SolAR Framework shared <==========="
-pushd build-SolARFramework/shared/debug
-`${QMAKE_PATH}/qmake ../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/core/SolARFramework/shared/debug
+`${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 popd
-pushd build-SolARFramework/shared/release
-`${QMAKE_PATH}/qmake ../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/core/SolARFramework/shared/release
+`${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 popd

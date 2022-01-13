@@ -1,5 +1,6 @@
 #Ignore Qt shadow builds
-**/build-SolAR*  
+**/build-SolAR*
+scripts/build/*  
 *.so.*
 *.so
 /*/*/*.txt

@@ -53,21 +53,21 @@ buildAndInstall() {
 if [ -d build-${1}/shared ]; then
 	rm -rf build-${1}/shared
 fi
-mkdir -p build-${1}/shared/debug
-mkdir -p build-${1}/shared/release
+mkdir -p build/modules/${1}/shared/debug
+mkdir -p build/modules/${1}/shared/release
 echo "===========> run remaken for ${1} <==========="
 remaken install ${SOLARMODULESROOT}/${1}/packagedependencies.txt
 remaken install ${SOLARMODULESROOT}/${1}/packagedependencies.txt -c debug
 
 echo "===========> building ${1} shared <==========="
-pushd build-${1}/shared/debug
-`${QMAKE_PATH}/qmake ../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/modules/${1}/shared/debug
+`${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps
 popd
-pushd build-${1}/shared/release
-`${QMAKE_PATH}/qmake ../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/modules/${1}/shared/release
+`${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps

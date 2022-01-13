@@ -4,7 +4,7 @@ QTVERSION=5.15.2
 SOLARROOTFOLDER=../
 
 display_usage() { 
-	echo "This script builds the SolAR samples in shared mode."
+	echo "This script builds the SolAR module tests."
     echo "It can receive two optional arguments." 
 	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to the folder containing the QT project SolARAllModulesTests.pro | default='${SOLARROOTFOLDER}']'] \n" 
 }
@@ -49,11 +49,11 @@ fi
 echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}SolARAllModulesTests.pro"
 
 buildAndInstall() {
-if [ -d build-${1}/shared ]; then
-	rm -rf build-${1}/shared
+if [ -d build/moduleTests/${1}/shared ]; then
+	rm -rf build/moduleTests/${1}/shared
 fi
-mkdir -p build-${1}/shared/debug
-mkdir -p build-${1}/shared/release
+mkdir -p build/moduleTests/${1}/shared/debug
+mkdir -p build/moduleTests/${1}/shared/release
 
 moduleTestProjectPath=${2%/*}
 echo "===========> run remaken from ${SOLARROOTFOLDER}/${moduleTestProjectPath}/packagedependencies.txt <==========="
@@ -62,19 +62,21 @@ remaken install ${SOLARROOTFOLDER}/${moduleTestProjectPath}/packagedependencies.
 
 
 echo "===========> building ${1} shared <==========="
-pushd build-${1}/shared/debug
-`${QMAKE_PATH}/qmake ../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/moduleTests/${1}/shared/debug
+`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps
 popd
-pushd build-${1}/shared/release
-`${QMAKE_PATH}/qmake ../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/moduleTests/${1}/shared/release
+`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps
 popd
 }
+
+
 
 for moduleTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllModulesTests.pro | grep -v "SUBDIRS +=" | tr -d '\\')
   do
@@ -83,6 +85,8 @@ for moduleTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllModulesTest
      echo "${moduleTestName} ${moduleTestProjectPath}"
      buildAndInstall ${moduleTestName} ${moduleTestProjectPath}
   done
+
+
 
 
 

@@ -49,11 +49,11 @@ fi
 echo "SOLAR all Services QT project used is : ${SOLARROOTFOLDER}SolARAllServiceTests.pro"
 
 buildAndInstall() {
-if [ -d build-${1}/shared ]; then
-	rm -rf build-${1}/shared
+if [ -d build/serviceTests/${1}/shared ]; then
+	rm -rf build/serviceTests/${1}/shared
 fi
-mkdir -p build-${1}/shared/debug
-mkdir -p build-${1}/shared/release
+mkdir -p build/serviceTests/${1}/shared/debug
+mkdir -p build/serviceTests/${1}/shared/release
 
 ServiceTestProjectPath=${2%/*}
 echo "===========> run remaken from ${SOLARROOTFOLDER}/${ServiceTestProjectPath}/packagedependencies.txt <==========="
@@ -62,14 +62,14 @@ remaken install ${SOLARROOTFOLDER}/${ServiceTestProjectPath}/packagedependencies
 
 
 echo "===========> building ${1} shared <==========="
-pushd build-${1}/shared/debug
-`${QMAKE_PATH}/qmake ../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/serviceTests/${1}/shared/debug
+`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps
 popd
-pushd build-${1}/shared/release
-`${QMAKE_PATH}/qmake ../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+pushd build/serviceTests/${1}/shared/release
+`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
 make
 make install
 make install_deps
