@@ -1,12 +1,13 @@
 #!/bin/bash
 
 QTVERSION=5.15.2
-SOLARROOTFOLDER=../
+SOLARROOTFOLDER=..
+NBPROCESSORS=6
 
 display_usage() { 
 	echo "This script builds the SolAR module tests."
-    echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to the folder containing the QT project SolARAllModulesTests.pro | default='${SOLARROOTFOLDER}']'] \n" 
+    echo "It can receive three optional arguments." 
+	echo -e "\nUsage: \$0 [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to the folder containing the QT project SolARAllModulesTests.pro | default='${SOLARROOTFOLDER}'] \n" 
 }
 
 
@@ -18,11 +19,16 @@ then
 fi 
 
 if [ $# -ge 1 ]; then
-	QTVERSION=$1
+	NBPROCESSORS=$1
+	echo "Build using ${NBPROCESSORS} processors"
 fi
 
-if [ $# -eq 2 ]; then
-	SOLARROOTFOLDER=$2
+if [ $# -ge 2 ]; then
+	QTVERSION=$2
+fi
+
+if [ $# -eq 3 ]; then
+	SOLARROOTFOLDER=$3
 fi
 
 # default linux values
@@ -41,12 +47,12 @@ if [ ! -d ${QMAKE_PATH} ]; then
 	exit 2
 fi
 
-if [ ! -f ${SOLARROOTFOLDER}SolARAllModulesTests.pro ]; then
+if [ ! -f ${SOLARROOTFOLDER}/SolARAllModulesTests.pro ]; then
 	echo "QT project SolARAllModulesTests.pro doesn't exist in folder '${SOLARROOTFOLDERPROJECT}'"
 	exit 2
 fi
 
-echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}SolARAllModulesTests.pro"
+echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}/SolARAllModulesTests.pro"
 
 buildAndInstall() {
 if [ -d build/moduleTests/${1}/shared ]; then
@@ -64,26 +70,22 @@ remaken install ${SOLARROOTFOLDER}/${moduleTestProjectPath}/packagedependencies.
 echo "===========> building ${1} shared <==========="
 pushd build/moduleTests/${1}/shared/debug
 `${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
-make install_deps
+make -j${3}
 popd
 pushd build/moduleTests/${1}/shared/release
 `${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
-make install_deps
+make -j${3}
 popd
 }
 
 
 
-for moduleTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllModulesTests.pro | grep -v "SUBDIRS +=" | tr -d '\\')
+for moduleTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllModulesTests.pro | grep -v "SUBDIRS +=" | tr -d '\\')
   do
      moduleTestProject="${moduleTestProjectPath##*/}"
      moduleTestName="${moduleTestProject%%.pro}"
      echo "${moduleTestName} ${moduleTestProjectPath}"
-     buildAndInstall ${moduleTestName} ${moduleTestProjectPath}
+     buildAndInstall ${moduleTestName} ${moduleTestProjectPath} ${NBPROCESSORS}
   done
 
 

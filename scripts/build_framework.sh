@@ -1,12 +1,13 @@
 #!/bin/bash
 
 QTVERSION=5.15.2
+NBPROCESSORS=6
 SOLARFRAMEWORKROOT=../core/SolARFramework
 
 display_usage() { 
 	echo "This script builds the SolAR framework in shared mode."
     echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to SolAR Framework project root | default='${SOLARFRAMEWORKROOT}']'] \n" 
+	echo -e "\nUsage: \$0 [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to SolAR Framework project root | default='${SOLARFRAMEWORKROOT}'] \n" 
 } 
 
 # check whether user had supplied -h or --help . If yes display usage 
@@ -17,11 +18,16 @@ then
 fi 
 
 if [ $# -ge 1 ]; then
-	QTVERSION=$1
+	NBPROCESSORS=$1
+	echo "Build using ${NBPROCESSORS} processors"
 fi
 
-if [ $# -eq 2 ]; then
-	SOLARFRAMEWORKROOT=$2
+if [ $# -ge 2 ]; then
+	QTVERSION=$2
+fi
+
+if [ $# -eq 3 ]; then
+	SOLARFRAMEWORKROOT=$3
 fi
 
 # default linux values
@@ -54,18 +60,20 @@ mkdir -p build/core/SolARFramework/shared/debug
 mkdir -p build/core/SolARFramework/shared/release
 
 echo "===========> run remaken from ${SOLARROOTFOLDER}/packagedependencies.txt <==========="
+if [ -f ${SOLARFRAMEWORKROOT}/installpackages.txt ]; then
+	remaken install ${SOLARFRAMEWORKROOT}/installpackages.txt
+	remaken install ${SOLARFRAMEWORKROOT}/installpackages.txt -c debug
+fi
 remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt
 remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
 
 echo "===========> building SolAR Framework shared <==========="
 pushd build/core/SolARFramework/shared/debug
 `${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
+make -j${NBPROCESSORS}
 popd
 pushd build/core/SolARFramework/shared/release
 `${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
+make -j${NBPROCESSORS}
 popd
 

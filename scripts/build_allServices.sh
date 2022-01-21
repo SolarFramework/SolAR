@@ -1,12 +1,13 @@
 #!/bin/bash
 
 QTVERSION=5.15.2
-SOLARROOTFOLDER=../
+NBPROCESSORS=6
+SOLARROOTFOLDER=..
 
 display_usage() { 
 	echo "This script builds the SolAR samples in shared mode."
     echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to the folder containing the QT project SolARAllServices.pro | default='${SOLARROOTFOLDER}']'] \n" 
+	echo -e "\nUsage: \$0 [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to the folder containing the QT project SolARAllServices.pro | default='${SOLARROOTFOLDER}'] \n" 
 }
 
 
@@ -18,11 +19,16 @@ then
 fi 
 
 if [ $# -ge 1 ]; then
-	QTVERSION=$1
+	NBPROCESSORS=$1
+	echo "Build using ${NBPROCESSORS} processors"
 fi
 
-if [ $# -eq 2 ]; then
-	SOLARROOTFOLDER=$2
+if [ $# -ge 2 ]; then
+	QTVERSION=$2
+fi
+
+if [ $# -eq 3 ]; then
+	SOLARROOTFOLDER=$3
 fi
 
 # default linux values
@@ -41,12 +47,12 @@ if [ ! -d ${QMAKE_PATH} ]; then
 	exit 2
 fi
 
-if [ ! -f ${SOLARROOTFOLDER}SolARAllServices.pro ]; then
+if [ ! -f ${SOLARROOTFOLDER}/SolARAllServices.pro ]; then
 	echo "QT project SolARAllServices.pro doesn't exist in folder '${SOLARROOTFOLDERPROJECT}'"
 	exit 2
 fi
 
-echo "SOLAR all services QT project used is : ${SOLARROOTFOLDER}SolARAllServices.pro"
+echo "SOLAR all services QT project used is : ${SOLARROOTFOLDER}/SolARAllServices.pro"
 
 buildAndInstall() {
 if [ -d build/services/${1}/shared ]; then
@@ -63,23 +69,23 @@ remaken install ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt
 
 echo "===========> building ${1} shared <==========="
 pushd build/services/${1}/shared/debug
+echo "${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all"
 `${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
+make -j${3}
 popd
 pushd build/services/${1}/shared/release
+echo "${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all"
 `${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
+make -j${3}
 popd
 }
 
-for serviceProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllServices.pro | grep -v "SUBDIRS +=" | tr -d '\\')
+for serviceProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllServices.pro | grep -v "SUBDIRS +=" | tr -d '\\')
   do
      serviceProject="${serviceProjectPath##*/}"
      serviceName="${serviceProject%%.pro}"
-     echo "${serviceName} ${serviceProjectPath}"
-     buildAndInstall ${serviceName} ${serviceProjectPath}
+     echo "Toto ${serviceName} ${serviceProjectPath}"
+     buildAndInstall ${serviceName} ${serviceProjectPath} ${NBPROCESSORS}
   done
 
 

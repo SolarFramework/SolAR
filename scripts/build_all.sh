@@ -2,6 +2,7 @@
 
 
 QTVERSION=5.15.2
+NBPROCESSORS=6
 SOLARROOT=../
 
 display_usage() { 
@@ -19,11 +20,16 @@ then
 fi
 
 if [ $# -ge 1 ]; then
-	QTVERSION=$1
+	NBPROCESSORS=$1
+	echo "Build using ${NBPROCESSORS} processors"
+fi
+
+if [ $# -ge 2 ]; then
+	QTVERSION=$2
 fi 
 
-if [ $# -eq 2 ]; then
-	SOLARROOT=$2
+if [ $# -eq 3 ]; then
+	SOLARROOT=$3
 fi
 
 if [ ! -d ${SOLARROOT} ]; then
@@ -31,11 +37,11 @@ if [ ! -d ${SOLARROOT} ]; then
 	exit 2
 fi
 
-./build_framework.sh ${QTVERSION} ${SOLARROOT}/core/SolARFramework
-./build_allModules.sh ${QTVERSION} ${SOLARROOT}/modules
-./build_allModuleTests.sh ${QTVERSION} ${SOLARROOT}
-./build_allSamples.sh ${QTVERSION} ${SOLARROOT}
-./build_allPipelines.sh ${QTVERSION} ${SOLARROOT}
-./build_allPipelineTests.sh ${QTVERSION} ${SOLARROOT}
-./build_allServices.sh ${QTVERSION} ${SOLARROOT}
-./build_allServiceTests.sh ${QTVERSION} ${SOLARROOT}
+./build_framework.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/core/SolARFramework
+./build_allModules.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/modules
+./build_allModuleTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+./build_allSamples.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+./build_allPipelines.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+./build_allPipelineTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+./build_allServices.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+./build_allServiceTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
