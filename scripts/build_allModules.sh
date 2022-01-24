@@ -56,7 +56,7 @@ echo "SOLAR module folder root path used is : ${SOLARMODULESROOT}"
 
 buildAndInstall() {
 
-if [ -d build/${1}/shared ]; then
+if [ -d build/modules/${1}/shared ]; then
 	rm -rf build/modules/${1}/shared
 fi
 mkdir -p build/modules/${1}/shared/debug
@@ -72,12 +72,12 @@ remaken install ${SOLARMODULESROOT}/${1}/packagedependencies.txt -c debug
 
 echo "===========> building ${1} shared <==========="
 pushd build/modules/${1}/shared/debug
-`${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${2}
 popd
 
 pushd build/modules/${1}/shared/release
-`${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${2}
 popd
 }

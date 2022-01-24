@@ -69,11 +69,11 @@ remaken install ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
 
 echo "===========> building SolAR Framework shared <==========="
 pushd build/core/SolARFramework/shared/debug
-`${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${NBPROCESSORS}
 popd
 pushd build/core/SolARFramework/shared/release
-`${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${NBPROCESSORS}
 popd
 

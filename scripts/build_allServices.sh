@@ -55,6 +55,12 @@ fi
 echo "SOLAR all services QT project used is : ${SOLARROOTFOLDER}/SolARAllServices.pro"
 
 buildAndInstall() {
+echo "=============================================================="
+echo "=============================================================="
+echo "===========> building ${1} shared "
+echo "=============================================================="
+echo "=============================================================="
+echo ""
 if [ -d build/services/${1}/shared ]; then
 	rm -rf build/services/${1}/shared
 fi
@@ -66,16 +72,14 @@ echo "===========> run remaken from ${SOLARROOTFOLDER}/${serviceProjectPath}/pac
 remaken install ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt
 remaken install ${SOLARROOTFOLDER}/${serviceProjectPath}/packagedependencies.txt -c debug
 
-
-echo "===========> building ${1} shared <==========="
 pushd build/services/${1}/shared/debug
 echo "${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all"
-`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${3}
 popd
 pushd build/services/${1}/shared/release
 echo "${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all"
-`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
+${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${3}
 popd
 }
@@ -84,7 +88,6 @@ for serviceProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllServices.pro 
   do
      serviceProject="${serviceProjectPath##*/}"
      serviceName="${serviceProject%%.pro}"
-     echo "Toto ${serviceName} ${serviceProjectPath}"
      buildAndInstall ${serviceName} ${serviceProjectPath} ${NBPROCESSORS}
   done
 
