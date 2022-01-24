@@ -15,6 +15,7 @@
 ##
 
 CONFIG -= flat
+CONFIG += ordered
 
 TEMPLATE = subdirs
 
