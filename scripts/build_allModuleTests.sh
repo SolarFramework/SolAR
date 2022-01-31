@@ -55,7 +55,7 @@ if [ ! -f ${SOLARROOTFOLDER}/SolARAllModulesTests.pro ]; then
 	exit 2
 fi
 
-echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}/SolARAllModulesTests.pro"
+echo "SOLAR all pipeline tests QT project used is : ${SOLARROOTFOLDER}/SolARAllModulesTests.pro"
 
 BUILDREPORT=""
 if [ -f build/${PLATEFORMFOLDER}moduleTests/report.txt ]; then
