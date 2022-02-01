@@ -71,7 +71,7 @@ fi
 echo "SOLAR project root path used is : ${SOLARFRAMEWORKROOT}"
 
 if [ "$CROSSBUILD" == "ANDROID" ]; then		
-	if [ ! -n $ANDROID_NDK_ROOT ]; then
+	if [ ! -n "$ANDROID_NDK_ROOT" ]; then
 		echo "The ANDROID_NDK_ROOT environnement variable must be defined for cross-building (e.g. /home/user/Android/Sdk/ndk/21.3.6528147)."
 		exit 2
 	else
@@ -119,10 +119,6 @@ mkdir -p build/${PLATEFORMFOLDER}core/SolARFramework/shared/debug
 mkdir -p build/${PLATEFORMFOLDER}core/SolARFramework/shared/release
 
 echo "===========> run remaken from ${SOLARROOTFOLDER}/packagedependencies.txt <==========="
-if [ -f ${SOLARFRAMEWORKROOT}/installpackages.txt ]; then
-	remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/installpackages.txt
-	remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/installpackages.txt -c debug 
-fi
 remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/packagedependencies.txt
 remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
 

@@ -11,6 +11,7 @@ QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH="/usr/bin/"
 
 modules=("SolARModuleCeres" "SolARModuleFBOW" "SolARModuleG2O" "SolARModuleNonFreeOpenCV" "SolARModuleOpenCV" "SolARModuleOpenGL" "SolARModuleOpenGV" "SolARModulePCL" "SolARModulePopSift" "SolARModuleTools")
+modulesAndroid=("SolARModuleCeres" "SolARModuleFBOW" "SolARModuleG2O" "SolARModuleNonFreeOpenCV" "SolARModuleOpenCV"  "SolARModuleTools")
 
 display_usage() { 
 	echo "This script builds the SolAR modules in shared mode."
@@ -75,7 +76,7 @@ fi
 echo "SOLAR module folder root path used is : ${SOLARMODULESROOT}"
 
 if [ "$CROSSBUILD" == "ANDROID" ]; then		
-	if [ ! -n $ANDROID_NDK_ROOT ]; then
+	if [ ! -n "$ANDROID_NDK_ROOT" ]; then
 		echo "The ANDROID_NDK_ROOT environnement variable must be defined for cross-building (e.g. /home/user/Android/Sdk/ndk/21.3.6528147)."
 		exit 2
 	else
@@ -124,10 +125,6 @@ mkdir -p build/${PLATEFORMFOLDER}modules/${1}/shared/debug
 mkdir -p build/${PLATEFORMFOLDER}modules/${1}/shared/release
 
 echo "===========> run remaken for ${1} <==========="
-if [ -f ${SOLARMODULESROOT}/${1}/installpackages.txt ]; then
-	remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/installpackages.txt
-	remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/installpackages.txt -c debug
-fi
 remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt
 remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt -c debug
 
@@ -155,10 +152,17 @@ fi
 popd
 }
 
-for module in ${modules[*]}
-  do
-    buildAndInstall $module 
-  done
+if [ ! "$CROSSBUILD" == "ANDROID" ]; then
+	for module in ${modules[*]}
+	  do
+	    buildAndInstall $module 
+	  done
+else
+	for module in ${modulesAndroid[*]}
+	  do
+	    buildAndInstall $module 
+	  done
+fi
 
 echo -e ${BUILDREPORT}
 echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}modules/report.txt
