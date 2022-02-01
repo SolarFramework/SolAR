@@ -73,7 +73,7 @@ fi
 echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}/SolARAllPipelines.pro"
 
 if [ "$CROSSBUILD" == "ANDROID" ]; then		
-	if [ ! -n $ANDROID_NDK_ROOT ]; then
+	if [ ! -n "$ANDROID_NDK_ROOT" ]; then
 		echo "The ANDROID_NDK_ROOT environnement variable must be defined for cross-building (e.g. /home/user/Android/Sdk/ndk/21.3.6528147)."
 		exit 2
 	else
