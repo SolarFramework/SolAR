@@ -20,7 +20,7 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
     SolARFramework \
-    SolARFrameworkGRPCRemote 
+    SolARFrameworkGRPCRemote \
 
 # where to find the sub projects - give the folders
     SolARFramework.subdir = core/SolARFramework
