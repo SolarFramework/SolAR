@@ -3,6 +3,7 @@
 QTVERSION=5.15.2
 NBPROCESSORS=6
 SOLARROOTFOLDER=..
+PLATEFORMFOLDER="linux/"
 
 display_usage() { 
 	echo "This script builds the SolAR samples in shared mode."
@@ -40,6 +41,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
 	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
 	QMAKE_SPEC=macx-clang
+	PLATEFORMFOLDER="mac/"
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
@@ -54,12 +56,18 @@ fi
 
 echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}/SolARAllPipelineTests.pro"
 
+BUILDREPORT=""
+if [ -f build/${PLATEFORMFOLDER}pipelineTests/report.txt ]; then
+	rm -f build/${PLATEFORMFOLDER}pipelineTests/report.txt
+fi
+
+
 buildAndInstall() {
 if [ -d build/pipelineTests/${1}/shared ]; then
-	rm -rf build/pipelineTests/${1}/shared
+	rm -rf build/${PLATEFORMFOLDER}pipelineTests/${1}/shared
 fi
-mkdir -p build/pipelineTests/${1}/shared/debug
-mkdir -p build/pipelineTests/${1}/shared/release
+mkdir -p build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/debug
+mkdir -p build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/release
 
 pipelineTestProjectPath=${2%/*}
 echo "===========> run remaken from ${SOLARROOTFOLDER}/${pipelineTestProjectPath}/packagedependencies.txt <==========="
@@ -68,13 +76,23 @@ remaken install ${SOLARROOTFOLDER}/${pipelineTestProjectPath}/packagedependencie
 
 
 echo "===========> building ${1} shared <==========="
-pushd build/pipelineTests/${1}/shared/debug
-${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
-make -j${3}
+pushd build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/debug
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Debug$(tput sgr 0)"
+fi
 popd
-pushd build/pipelineTests/${1}/shared/release
-${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
-make -j${3}
+pushd build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/release
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Release$(tput sgr 0)"
+fi
 popd
 }
 
@@ -83,10 +101,10 @@ for pipelineTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllPipeline
      pipelineTestProject="${pipelineTestProjectPath##*/}"
      pipelineTestName="${pipelineTestProject%%.pro}"
      echo "${pipelineTestName} ${pipelineTestProjectPath}"
-     buildAndInstall ${pipelineTestName} ${pipelineTestProjectPath} ${NBPROCESSORS}
+     buildAndInstall ${pipelineTestName} ${pipelineTestProjectPath} 
   done
 
-
+echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}pipelineTests/report.txt
 
 
 

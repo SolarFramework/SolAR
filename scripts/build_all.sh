@@ -1,14 +1,16 @@
 #!/bin/bash
 
-
+CROSSBUILD=NO
 QTVERSION=5.15.2
 NBPROCESSORS=6
 SOLARROOT=../
 
+PLATEFORMFOLDER="linux/"
+
 display_usage() { 
 	echo "This script builds all SolAR projects in shared mode."
     echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION}'] [path to SolAR root folder | default='${SOLARROOT}'] \n" 
+	echo -e "\nUsage: \$0 [ Cross build ? | default='${CROSSBUILD}' | possible values=[NO, ANDROID]] [Qt kit version to use | default='${QTVERSION}'] [path to SolAR root folder | default='${SOLARROOT}'] \n" 
 } 
 
 
@@ -20,16 +22,23 @@ then
 fi
 
 if [ $# -ge 1 ]; then
-	NBPROCESSORS=$1
-	echo "Build using ${NBPROCESSORS} processors"
+	CROSSBUILD=$1
+	if [[ "CROSSBUILD" == "ANDROID" ]]; then
+		echo "Cross-build for Android requested."	
+	fi
 fi
 
 if [ $# -ge 2 ]; then
-	QTVERSION=$2
+	NBPROCESSORS=$2
+	echo "Build using ${NBPROCESSORS} processors"
+fi
+
+if [ $# -ge 3 ]; then
+	QTVERSION=$3
 fi 
 
-if [ $# -eq 3 ]; then
-	SOLARROOT=$3
+if [ $# -eq 4 ]; then
+	SOLARROOT=$4
 fi
 
 if [ ! -d ${SOLARROOT} ]; then
@@ -37,11 +46,46 @@ if [ ! -d ${SOLARROOT} ]; then
 	exit 2
 fi
 
-./build_framework.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/core/SolARFramework
-./build_allModules.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/modules
-./build_allModuleTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
-./build_allSamples.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
-./build_allPipelines.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
-./build_allPipelineTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
-./build_allServices.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
-./build_allServiceTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	PLATEFORMFOLDER="mac/"
+fi
+
+if [[ "$CROSSBUILD" == "ANDROID" ]]; then
+	PLATEFORMFOLDER="android/"
+fi		
+	
+./build_framework.sh ${CROSSBUILD} ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/core/SolARFramework
+./build_allModules.sh ${CROSSBUILD} ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/modules
+
+./build_allPipelines.sh ${CROSSBUILD} ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+echo "Build report for all pipelines"
+cat build/${PLATEFORMFOLDER}pipelines/report.txt
+
+if [ ! "$CROSSBUILD" == "ANDROID" ]; then
+	./build_allSamples.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+	./build_allModuleTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+	./build_allPipelineTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+	./build_allServices.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+	./build_allServiceTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+fi
+
+# display build reports
+echo "Build report for SolAR framework"
+cat build/${PLATEFORMFOLDER}core/SolARFramework/report.txt
+echo "Build report for all modules"
+cat build/${PLATEFORMFOLDER}modules/report.txt
+echo "Build report for all pipelines"
+cat build/${PLATEFORMFOLDER}pipelines/report.txt
+
+if [ ! "$CROSSBUILD" == "ANDROID" ]; then
+	echo "Build report for all samples"
+	cat build/${PLATEFORMFOLDER}samples/report.txt
+	echo "Build report for all module tests"
+	cat build/${PLATEFORMFOLDER}moduleTests/report.txt
+	echo "Build report for all pipeline tests"
+	cat build/${PLATEFORMFOLDER}pipelineTests/report.txt
+	echo "Build report for all services"
+	cat build/${PLATEFORMFOLDER}services/report.txt
+	echo "Build report for all service tests"
+	cat build/${PLATEFORMFOLDER}serviceTests/report.txt
+fi

@@ -4,6 +4,8 @@ QTVERSION=5.15.2
 SOLARROOTFOLDER=..
 NBPROCESSORS=6
 
+PLATEFORMFOLDER="linux/"
+
 display_usage() { 
 	echo "This script builds the SolAR module tests."
     echo "It can receive three optional arguments." 
@@ -40,6 +42,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
 	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
 	QMAKE_SPEC=macx-clang
+	PLATEFORMFOLDER="mac/"
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
@@ -54,12 +57,17 @@ fi
 
 echo "SOLAR all pipeline tests QT project used is : ${SOLARROOTFOLDER}/SolARAllModulesTests.pro"
 
-buildAndInstall() {
-if [ -d build/moduleTests/${1}/shared ]; then
-	rm -rf build/moduleTests/${1}/shared
+BUILDREPORT=""
+if [ -f build/${PLATEFORMFOLDER}moduleTests/report.txt ]; then
+	rm -f build/${PLATEFORMFOLDER}moduleTests/report.txt
 fi
-mkdir -p build/moduleTests/${1}/shared/debug
-mkdir -p build/moduleTests/${1}/shared/release
+
+buildAndInstall() {
+if [ -d build/${PLATEFORMFOLDER}moduleTests/${1}/shared ]; then
+	rm -rf build/${PLATEFORMFOLDER}moduleTests/${1}/shared
+fi
+mkdir -p build/${PLATEFORMFOLDER}moduleTests/${1}/shared/debug
+mkdir -p build/${PLATEFORMFOLDER}moduleTests/${1}/shared/release
 
 moduleTestProjectPath=${2%/*}
 echo "===========> run remaken from ${SOLARROOTFOLDER}/${moduleTestProjectPath}/packagedependencies.txt <==========="
@@ -68,13 +76,23 @@ remaken install ${SOLARROOTFOLDER}/${moduleTestProjectPath}/packagedependencies.
 
 
 echo "===========> building ${1} shared <==========="
-pushd build/moduleTests/${1}/shared/debug
-${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
-make -j${3}
+pushd build/${PLATEFORMFOLDER}moduleTests/${1}/shared/debug
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Debug$(tput sgr 0)"
+fi 
 popd
-pushd build/moduleTests/${1}/shared/release
-${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
-make -j${3}
+pushd build/${PLATEFORMFOLDER}moduleTests/${1}/shared/release
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Release$(tput sgr 0)"
+fi
 popd
 }
 
@@ -85,10 +103,11 @@ for moduleTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllModulesTes
      moduleTestProject="${moduleTestProjectPath##*/}"
      moduleTestName="${moduleTestProject%%.pro}"
      echo "${moduleTestName} ${moduleTestProjectPath}"
-     buildAndInstall ${moduleTestName} ${moduleTestProjectPath} ${NBPROCESSORS}
+     buildAndInstall ${moduleTestName} ${moduleTestProjectPath} 
   done
 
-
+echo -e ${BUILDREPORT}
+echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}moduleTests/report.txt
 
 
 
