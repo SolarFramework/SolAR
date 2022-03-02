@@ -15,6 +15,7 @@
 ##
 
 CONFIG -= flat
+CONFIG += ordered
 
 TEMPLATE = subdirs
 
@@ -55,9 +56,9 @@ win32 {
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
-install_deps.CONFIG += recursive
-install_deps.recurse_target = install_deps
-QMAKE_EXTRA_TARGETS += install_deps
+#install_deps.CONFIG += recursive
+#install_deps.recurse_target = install_deps
+#QMAKE_EXTRA_TARGETS += install_deps
 
 
 
