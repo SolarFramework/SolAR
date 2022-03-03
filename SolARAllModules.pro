@@ -23,7 +23,8 @@ SUBDIRS = \
     SolARModuleFBOW \
     SolARModuleG2O \
     SolARModuleNonFreeOpenCV \
-    SolARModuleOpenCV \
+    modules/SolARModuleOpenCV/SolARModuleOpenCV.pro \
+    modules/SolARModuleOpenCV/SolARModuleOpenCVCuda.pro \
     SolARModuleOpenGL \
     SolARModuleOpenGV \
     SolARModuleTools \
@@ -36,16 +37,15 @@ win32 {
 }
 
 # where to find the sub projects - give the folders
-    SolARModuleCeres.subdir = modules/SolARModuleCeres
-    SolARModuleFBOW.subdir = modules/SolARModuleFBOW
-    SolARModuleG2O.subdir = modules/SolARModuleG2O
-    SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
-    SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV
-    SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
-    SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
-    SolARModuleTools.subdir = modules/SolARModuleTools
-    SolARModulePCL.subdir = modules/SolARModulePCL
-    SolARModulePopSift.subdir = modules/SolARModulePopSift
+SolARModuleCeres.subdir = modules/SolARModuleCeres
+SolARModuleFBOW.subdir = modules/SolARModuleFBOW
+SolARModuleG2O.subdir = modules/SolARModuleG2O
+SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
+SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
+SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
+SolARModuleTools.subdir = modules/SolARModuleTools
+SolARModulePCL.subdir = modules/SolARModulePCL
+SolARModulePopSift.subdir = modules/SolARModulePopSift
 
 win32 {
     SolARModuleRealSense.subdir = modules/SolARModuleRealSense
