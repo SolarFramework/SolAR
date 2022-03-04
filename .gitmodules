@@ -99,3 +99,9 @@
 [submodule "services/Service-Mapping"]
 	path = services/Service-Mapping
 	url = https://github.com/SolarFramework/Service-Mapping.git
+[submodule "plugin/unity/SolARUnityClientHololens2Plugin"]
+	path = plugin/unity/SolARUnityClientHololens2Plugin
+	url = https://github.com/SolarFramework/SolARUnityClientHololens2Plugin
+[submodule "plugin/unity/SolARUnityClientHololens2"]
+	path = plugin/unity/SolARUnityClientHololens2
+	url = https://github.com/SolarFramework/SolARUnityClientHololens2
