@@ -1,5 +1,6 @@
 #Ignore Qt shadow builds
-**/build-SolAR*  
+**/build-SolAR*
+scripts/build/*  
 *.so.*
 *.so
 /*/*/*.txt
@@ -12,4 +13,5 @@ remaken*
 *.vs*
 tools/*
 *.pro.user
+SolARFramework/core/SolARFrameworkGRPCRemote/*
 

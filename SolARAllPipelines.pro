@@ -15,6 +15,7 @@
 ##
 
 CONFIG -= flat
+CONFIG += ordered
 
 TEMPLATE = subdirs
  
@@ -23,7 +24,10 @@ SUBDIRS = \
     samples/Sample-NaturalImageMarker/SolARPipeline_NaturalImageMarker/SolARPipeline_NaturalImageMarker.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/SolARPipeline_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/SolARPipeline_Mapping_Multi.pro \
+    samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_NoDrop/SolARPipeline_Mapping_Multi_NoDrop.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/SolARPipeline_SLAM.pro \
-    samples/Sample-Relocalization/Pipeline/SolARRelocalizationPipeline.pro
+    samples/Sample-Relocalization/SolARPipeline_Relocalization/SolARPipeline_Relocalization.pro \
+    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/SolARPipeline_MappingAndRelocalizationFrontend.pro \
+    samples/Sample-MapUpdate/SolARPipeline_MapUpdate/SolARPipeline_MapUpdate.pro \
 
 

@@ -15,6 +15,7 @@
 ##
 
 CONFIG -= flat
+CONFIG += ordered
 
 TEMPLATE = subdirs
 
@@ -45,19 +46,19 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
-    modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
+    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
+    modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro 
 	
 win32 {
-	SUBDIRS += \
-		modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
-		modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
+        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
 }
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
-install_deps.CONFIG += recursive
-install_deps.recurse_target = install_deps
-QMAKE_EXTRA_TARGETS += install_deps
+#install_deps.CONFIG += recursive
+#install_deps.recurse_target = install_deps
+#QMAKE_EXTRA_TARGETS += install_deps
 
 
 

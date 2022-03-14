@@ -15,19 +15,15 @@
 ##
 
 CONFIG -= flat
+CONFIG += ordered
 
 TEMPLATE = subdirs
-
+ 
 SUBDIRS = \
-    SolARFramework \
-    SolARFrameworkGRPCRemote
-
-# where to find the sub projects - give the folders
-SolARFramework.subdir = core/SolARFramework
-SolARFrameworkGRPCRemote.subdir = core/SolARFrameworkGRPCRemote
-
-
-
-
-
+    services/Service-Mapping/SolARService_Mapping_Multi/SolARService_Mapping_Multi.pro \
+    services/Service-Mapping/SolARService_Mapping_Multi_NoDrop/SolARService_Mapping_Multi_NoDrop.pro \
+    services/Service-MapUpdate/SolARService_MapUpdate/SolARService_MapUpdate.pro \
+    services/Service-Relocalization/SolARService_Relocalization/SolARService_Relocalization.pro \
+    services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/SolARService_MappingAndRelocalizationFrontend.pro \
+    services/Service-Relocalization/SolARService_MappingAndRelocalizationProxy/SolARService_MappingAndRelocalizationProxy.pro \
 

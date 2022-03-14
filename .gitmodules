@@ -2,6 +2,10 @@
 	path = core/SolARFramework
 	url = https://github.com/SolarFramework/SolARFramework
 	branch = .
+[submodule "core/SolARFrameworkGRPCRemote"]
+	path = core/SolARFrameworkGRPCRemote
+	url = https://github.com/SolarFramework/SolARFrameworkGRPCRemote.git
+	branch = .
 [submodule "modules/SolARModuleTools"]
 	path = modules/SolARModuleTools
 	url = https://github.com/SolarFramework/SolARModuleTools
@@ -49,7 +53,7 @@
 [submodule "plugin/unity/SolARUnityPlugin"]
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
-	branch = .
+	branch = develop
 [submodule "modules/SolARModuleRealSense"]
 	path = modules/SolARModuleRealSense
 	url = https://github.com/SolarFramework/SolARModuleRealSense.git
@@ -57,6 +61,10 @@
 [submodule "modules/SolARModulePCL"]
 	path = modules/SolARModulePCL
 	url = https://github.com/SolarFramework/SolARModulePCL.git
+	branch = .
+[submodule "modules/SolARModulePopSift"]
+	path = modules/SolARModulePopSift
+	url = https://github.com/SolarFramework/SolARModulePopSift
 	branch = .
 [submodule "samples/Sample-DepthCamera"]
 	path = samples/Sample-DepthCamera
@@ -70,14 +78,30 @@
 	path = samples/Sample-Mapping
 	url = https://github.com/SolarFramework/Sample-Mapping
 	branch = .
-[submodule "samples/Sample-Relocalization"]
-	path = samples/Sample-Relocalization
-	url = https://github.com/SolarFramework/Sample-Relocalization
-	branch = .
 [submodule "samples/Sample-NaturalImageMarker"]
 	path = samples/Sample-NaturalImageMarker
 	url = https://github.com/SolarFramework/Sample-NaturalImageMarker
 	branch = .
+[submodule "samples/Sample-Relocalization"]
+	path = samples/Sample-Relocalization
+	url = https://github.com/SolarFramework/Sample-Relocalization.git
+	branch = .
 [submodule "samples/Sample-MapUpdate"]
 	path = samples/Sample-MapUpdate
 	url = https://github.com/SolarFramework/Sample-MapUpdate.git
+	branch = .
+[submodule "services/Service-MapUpdate"]
+	path = services/Service-MapUpdate
+	url = https://github.com/SolarFramework/Service-MapUpdate.git
+[submodule "services/Service-Relocalization"]
+	path = services/Service-Relocalization
+	url = https://github.com/SolarFramework/Service-Relocalization.git
+[submodule "services/Service-Mapping"]
+	path = services/Service-Mapping
+	url = https://github.com/SolarFramework/Service-Mapping.git
+[submodule "plugin/unity/SolARUnityClientHololens2Plugin"]
+	path = plugin/unity/SolARUnityClientHololens2Plugin
+	url = https://github.com/SolarFramework/SolARUnityClientHololens2Plugin
+[submodule "plugin/unity/SolARUnityClientHololens2"]
+	path = plugin/unity/SolARUnityClientHololens2
+	url = https://github.com/SolarFramework/SolARUnityClientHololens2

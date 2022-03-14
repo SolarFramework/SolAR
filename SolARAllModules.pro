@@ -19,33 +19,43 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    modules/SolARModuleCeres \
-    modules/SolARModuleFBOW \
-    modules/SolARModuleG2O \
-    modules/SolARModuleNonFreeOpenCV \
-    modules/SolARModuleOpenCV \
-    modules/SolARModuleTools
+    SolARModuleCeres \
+    SolARModuleFBOW \
+    SolARModuleG2O \
+    SolARModuleNonFreeOpenCV \
+    modules/SolARModuleOpenCV/SolARModuleOpenCV.pro \
+    modules/SolARModuleOpenCV/SolARModuleOpenCVCuda.pro \
+    SolARModuleOpenGL \
+    SolARModuleOpenGV \
+    SolARModuleTools \
+    SolARModulePCL \
+    SolARModulePopSift
 
 win32 {
     SUBDIRS += \
-        modules/SolARModulePCL \
-        modules/SolARModuleRealSense \
-        modules/SolARModuleOpenGV \
-        modules/SolARModuleOpenGL
-    }
+        SolARModuleRealSense
+}
 
-unix:!android {
-    SUBDIRS += \
-        modules/SolARModuleOpenGV \
-        modules/SolARModuleOpenGL
-    }
+# where to find the sub projects - give the folders
+SolARModuleCeres.subdir = modules/SolARModuleCeres
+SolARModuleFBOW.subdir = modules/SolARModuleFBOW
+SolARModuleG2O.subdir = modules/SolARModuleG2O
+SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
+SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
+SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
+SolARModuleTools.subdir = modules/SolARModuleTools
+SolARModulePCL.subdir = modules/SolARModulePCL
+SolARModulePopSift.subdir = modules/SolARModulePopSift
 
+win32 {
+    SolARModuleRealSense.subdir = modules/SolARModuleRealSense
+}
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
-install_deps.CONFIG += recursive
-install_deps.recurse_target = install_deps
-QMAKE_EXTRA_TARGETS += install_deps
+#install_deps.CONFIG += recursive
+#install_deps.recurse_target = install_deps
+#QMAKE_EXTRA_TARGETS += install_deps
 
 
 
