@@ -1,12 +1,14 @@
 #!/bin/bash
 
 QTVERSION=5.15.2
-SOLARROOTFOLDER=../
+NBPROCESSORS=6
+SOLARROOTFOLDER=..
+PLATEFORMFOLDER="linux/"
 
 display_usage() { 
 	echo "This script builds the SolAR samples in shared mode."
     echo "It can receive two optional arguments." 
-	echo -e "\nUsage: \$0 [Qt kit version to use | default='${QTVERSION} [path to the folder containing the QT project SolARAllPipelineTests.pro | default='${SOLARROOTFOLDER}']'] \n" 
+	echo -e "\nUsage: \$0 [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to the folder containing the QT project SolARAllPipelineTests.pro | default='${SOLARROOTFOLDER}'] \n" 
 }
 
 
@@ -18,11 +20,16 @@ then
 fi 
 
 if [ $# -ge 1 ]; then
-	QTVERSION=$1
+	NBPROCESSORS=$1
+	echo "Build using ${NBPROCESSORS} processors"
 fi
 
-if [ $# -eq 2 ]; then
-	SOLARROOTFOLDER=$2
+if [ $# -ge 2 ]; then
+	QTVERSION=$2
+fi
+
+if [ $# -eq 3 ]; then
+	SOLARROOTFOLDER=$3
 fi
 
 # default linux values
@@ -34,6 +41,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
 	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
 	QMAKE_SPEC=macx-clang
+	PLATEFORMFOLDER="mac/"
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
@@ -41,19 +49,25 @@ if [ ! -d ${QMAKE_PATH} ]; then
 	exit 2
 fi
 
-if [ ! -f ${SOLARROOTFOLDER}SolARAllPipelineTests.pro ]; then
+if [ ! -f ${SOLARROOTFOLDER}/SolARAllPipelineTests.pro ]; then
 	echo "QT project SolARAllPipelineTests.pro doesn't exist in folder '${SOLARROOTFOLDERPROJECT}'"
 	exit 2
 fi
 
-echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}SolARAllPipelineTests.pro"
+echo "SOLAR all pipelines QT project used is : ${SOLARROOTFOLDER}/SolARAllPipelineTests.pro"
+
+BUILDREPORT=""
+if [ -f build/${PLATEFORMFOLDER}pipelineTests/report.txt ]; then
+	rm -f build/${PLATEFORMFOLDER}pipelineTests/report.txt
+fi
+
 
 buildAndInstall() {
 if [ -d build/pipelineTests/${1}/shared ]; then
-	rm -rf build/pipelineTests/${1}/shared
+	rm -rf build/${PLATEFORMFOLDER}pipelineTests/${1}/shared
 fi
-mkdir -p build/pipelineTests/${1}/shared/debug
-mkdir -p build/pipelineTests/${1}/shared/release
+mkdir -p build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/debug
+mkdir -p build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/release
 
 pipelineTestProjectPath=${2%/*}
 echo "===========> run remaken from ${SOLARROOTFOLDER}/${pipelineTestProjectPath}/packagedependencies.txt <==========="
@@ -62,29 +76,35 @@ remaken install ${SOLARROOTFOLDER}/${pipelineTestProjectPath}/packagedependencie
 
 
 echo "===========> building ${1} shared <==========="
-pushd build/pipelineTests/${1}/shared/debug
-`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
-make install_deps
+pushd build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/debug
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Debug$(tput sgr 0)"
+fi
 popd
-pushd build/pipelineTests/${1}/shared/release
-`${QMAKE_PATH}/qmake ../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all`
-make
-make install
-make install_deps
+pushd build/${PLATEFORMFOLDER}pipelineTests/${1}/shared/release
+${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+make -j${NBPROCESSORS}
+if [ $? -eq 0 ]; then 
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"
+else
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${1} - Release$(tput sgr 0)"
+fi
 popd
 }
 
-for pipelineTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}SolARAllPipelineTests.pro | grep -v "SUBDIRS +=" | tr -d '\\')
+for pipelineTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllPipelineTests.pro | grep -v "SUBDIRS +=" | tr -d '\\')
   do
      pipelineTestProject="${pipelineTestProjectPath##*/}"
      pipelineTestName="${pipelineTestProject%%.pro}"
      echo "${pipelineTestName} ${pipelineTestProjectPath}"
-     buildAndInstall ${pipelineTestName} ${pipelineTestProjectPath}
+     buildAndInstall ${pipelineTestName} ${pipelineTestProjectPath} 
   done
 
-
+echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}pipelineTests/report.txt
 
 
 
