@@ -15,6 +15,10 @@ if NOT [%2]==[] set VISUALVERSION=%2
 if NOT [%3]==[] set SOLARMODULESROOT=%3
 
 set JOM_PATH=c:\Qt\Tools\QtCreator\bin
+<<<<<<< HEAD
+=======
+if not exist %JOM_PATH%\jom.exe set JOM_PATH=c:\Qt\Tools\QtCreator\bin\jom
+>>>>>>> develop
 set QMAKE_PATH=C:\Qt\%QTVERSION%\msvc%VISUALVERSION%_64\bin
 
 if not exist %QMAKE_PATH% (echo "Qt path '%QMAKE_PATH%' doesn't exist : check your Qt installation and kits" & exit /b 2)

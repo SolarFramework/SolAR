@@ -125,6 +125,7 @@ mkdir -p build/${PLATEFORMFOLDER}modules/${1}/shared/debug
 mkdir -p build/${PLATEFORMFOLDER}modules/${1}/shared/release
 
 echo "===========> run remaken for ${1} <==========="
+<<<<<<< HEAD
 #remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt
 #remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt -c debug
 
@@ -133,6 +134,15 @@ pushd build/${PLATEFORMFOLDER}modules/${1}/shared/debug
 ${MAKE_PATH}make clean -j${NBPROCESSORS} 
 echo "${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
 ${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
+=======
+remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt
+remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedependencies.txt -c debug
+
+echo "===========> building ${1} shared <==========="
+pushd build/${PLATEFORMFOLDER}modules/${1}/shared/debug
+echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
+${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+>>>>>>> develop
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
@@ -142,9 +152,14 @@ fi
 popd
 
 pushd build/${PLATEFORMFOLDER}modules/${1}/shared/release
+<<<<<<< HEAD
 ${MAKE_PATH}make clean -j${NBPROCESSORS} 
 echo "${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
 ${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
+=======
+echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
+${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${1}.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+>>>>>>> develop
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"
