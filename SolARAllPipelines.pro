@@ -27,6 +27,7 @@ SUBDIRS = \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_NoDrop/SolARPipeline_Mapping_Multi_NoDrop.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/SolARPipeline_SLAM.pro \
     samples/Sample-Relocalization/SolARPipeline_Relocalization/SolARPipeline_Relocalization.pro \
+	samples/Sample-Relocalization/SolARPipeline_RelocalizationMarker/SolARPipeline_RelocalizationMarker.pro \
     samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/SolARPipeline_MappingAndRelocalizationFrontend.pro \
     samples/Sample-MapUpdate/SolARPipeline_MapUpdate/SolARPipeline_MapUpdate.pro \
 
