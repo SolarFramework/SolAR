@@ -19,35 +19,14 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    SolARModuleCeres \
-    SolARModuleFBOW \
-    SolARModuleG2O \
-    SolARModuleNonFreeOpenCV \
-    SolARModuleOpenCV \
-    SolARModuleOpenGL \
-    SolARModuleOpenGV \
-    SolARModuleTools \
-    SolARModulePCL \
-
-win32 {
-    SUBDIRS += \
-        SolARModuleRealSense
-}
+    SolARModuleFBOWCuda \
+    SolARModuleOpenCVCuda \
+    SolARModulePopSift
 
 # where to find the sub projects - give the folders
-    SolARModuleCeres.subdir = modules/SolARModuleCeres
-    SolARModuleFBOW.subdir = modules/SolARModuleFBOW/SolARModuleFBOW
-    SolARModuleG2O.subdir = modules/SolARModuleG2O
-    SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
-    SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV/SolARModuleOpenCV
-    SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
-    SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
-    SolARModuleTools.subdir = modules/SolARModuleTools
-    SolARModulePCL.subdir = modules/SolARModulePCL
-
-win32 {
-    SolARModuleRealSense.subdir = modules/SolARModuleRealSense
-}
+    SolARModuleFBOWCuda.subdir = modules/SolARModuleFBOW/SolARModuleFBOWCuda
+    SolARModuleOpenCVCuda.subdir = modules/SolARModuleOpenCV/SolARModuleOpenCVCuda
+    SolARModulePopSift.subdir = modules/SolARModulePopSift
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
