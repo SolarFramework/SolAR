@@ -44,9 +44,13 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_ExtractSubmap/SolARTest_ModuleTools_ExtractSubmap.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_FiducialMarkersDetection/SolARTest_ModuleTools_FiducialMarkersDetection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopClosureDetection/SolARTest_ModuleTools_LoopClosureDetection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_WorldGraphLoader/SolARTest_ModuleTools_WorldGraphLoader.pro \
     modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro 
 	
