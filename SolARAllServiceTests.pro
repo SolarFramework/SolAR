@@ -26,6 +26,7 @@ SUBDIRS = \
     services/Service-MapUpdate/SolARService_MapUpdate/tests/SolARServiceTest_MapUpdate/SolARServiceTest_MapUpdate.pro \
     services/Service-MapUpdate/SolARService_MapUpdate/tests/SolARServiceTest_MapUpdate_DisplayMap/SolARServiceTest_MapUpdate_DisplayMap.pro \
     services/Service-Relocalization/SolARService_Relocalization/tests/SolARServiceTest_Relocalization/SolARServiceTest_Relocalization.pro \
+    services/Service-Relocalization/SolARService_RelocalizationMarkers/tests/SolARServiceTest_RelocalizationMarkers/SolARServiceTest_RelocalizationMarkers.pro \
     services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/tests/SolARServiceTest_MappingAndRelocalizationFrontend/SolARServiceTest_MappingAndRelocalizationFrontend.pro \
     services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/tests/SolARServiceTest_MappingAndRelocalizationFrontend_RelocViewer/SolARServiceTest_MappingAndRelocalizationFrontend_RelocViewer.pro \
     services/Service-Relocalization/SolARService_RelocalizationMarkers/tests/SolARServiceTest_RelocalizationMarkers/SolARServiceTest_RelocalizationMarkers.pro
