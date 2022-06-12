@@ -10,9 +10,8 @@ ANDROIDREMAKENOPTIONS=""
 QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH="/usr/bin/"
 
-# path of modules and their rpoject names separate by a coma
-modules=("SolARModuleCeres,SolARModuleCeres" "SolARModuleFBOW/SolARModuleFBOW,SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleOpenGL,SolARModuleOpenGL" "SolARModuleOpenGV,SolARModuleOpenGV" "SolARModulePCL,SolARModulePCL" "SolARModuleTools,SolARModuleTools")
-modulesAndroid=("SolARModuleCeres,SolARModuleCeres" "SolARModuleFBOW/SolARModuleFBOW, SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV"  "SolARModuleTools,SolARModuleTools")
+modules=("SolARModuleFBOW/SolARModuleFBOWCuda, SolARModuleFBOWCuda" "SolARModuleOpenCV/SolARModuleOpenCVCuda, SolARModuleOpenCVCuda" "SolARModulePopSift,SolARModulePopSift")
+modulesAndroid=()
 
 display_usage() { 
 	echo "This script builds the SolAR modules in shared mode."
@@ -157,12 +156,12 @@ popd
 if [ ! "$CROSSBUILD" == "ANDROID" ]; then
 	for module in ${modules[*]}
 	  do
-	    buildAndInstall ${module%,*} ${module#*,}
+	    buildAndInstall ${module%,*} ${module#*,} 
 	  done
 else
 	for module in ${modulesAndroid[*]}
 	  do
-	    buildAndInstall ${module%,*} ${module#*,}
+	    buildAndInstall ${module%,*} ${module#*,} 
 	  done
 fi
 
