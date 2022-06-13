@@ -28,12 +28,12 @@ SolARTest_ModuleOpenCV_FeatureMatchingStabilization|0.11.0
 SolARTest_ModuleOpenCV_FiducialMarker|0.11.0
 SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer|0.11.0
 SolARTest_ModuleOpenCV_FundamentalMatrixEstimation|0.11.0
-SolARTest_ModuleOpenCV_ImageCompression|0.11.0
+SolARTest_ModuleOpenCV_ImageCompression|0.11.01.0.11.0
 SolARTest_ModuleOpenCV_ImageConvertor|0.11.0
 SolARTest_ModuleOpenCV_ImageFilter|0.11.0
 SolARTest_ModuleOpenCV_ImageLoader|0.11.0
 SolARTest_ModuleOpenCV_MatchesFilter|0.11.0
-SolARTest_ModuleOpenCV_MultiQRCodePoseEstimation|0.11.0
+SolARTest_ModuleOpenCV_MultiQRCodesPoseEstimation|0.11.0
 SolARTest_ModuleOpenCV_OpticalFlow|0.11.0
 SolARTest_ModuleOpenCV_QRCodePoseEstimation|0.11.0
 SolARTest_ModuleOpenCV_QRCodesDetection|0.11.0
@@ -74,19 +74,19 @@ SolARTest_ModuleRealSense_RGBDCamera|0.11.0
 SolARTest_ModuleRealSense_StereoCamera|0.11.0
 
 SolARSample_FiducialMarker_Mono|0.11.0
-SolARPipeline_FiducialMarker|0.11.0
+SolARPipelineFiducialMarker|0.11.0
 SolARPipelineTest_FiducialMarker|0.11.0
 
 SolARSample_NaturalImageMarker_Mono|0.11.0
 SolARSample_NaturalImageMarker_Multi|0.11.0
-SolARPipeline_NaturalImageMarker|0.11.0
+SolARPipelineNaturalImageMarker|0.11.0
 SolARPipelineTest_NaturalImageMarker|0.11.0
 
 SolARSample_DepthCamera_Mono|0.11.0
 
 SolARSample_SLAM_Mono|0.11.0
 SolARSample_SLAM_Multi|0.11.0
-SolARPipeline_SLAM|0.11.0
+SolARPipelineSLAM|0.11.0
 SolARPipelineTest_SLAM|0.11.0
 
 SolARSample_Triangulation_Mono|0.11.0
@@ -95,14 +95,15 @@ SolARSample_Mapping_MapExtension_Mono|0.11.0
 SolARSample_Mapping_Mono|0.11.0
 SolARSample_Mapping_Multi|0.11.0
 SolARSample_Mapping_MapVisualizer|0.11.0
-SolARPipeline_MappingMono|0.11.0
-SolARPipeline_MappingMulti|0.11.0
-SolARPipeline_MappingMulti_NoDrop|0.11.0
-SolARPipeline_MappingAndRelocalizationFrontEnd|0.11.0
+SolARPipelineMappingMono|0.11.0
+SolARPipelineMappingMulti|0.11.0
+SolARPipelineMappingMultiNoDrop|0.11.0
+SolARPipelineMappingAndRelocalizationFrontEnd|0.11.0
 SolARPipelineTest_Mapping_Mono|0.11.0
 SolARPipelineTest_Mapping_Multi|0.11.0
 SolARPipelineTest_Mapping_Multi_NoDrop|0.11.0
-SolARPipelineTest_MappingAndRelocalizationFrontEnd|0.11.0
+SolARPipelineTest_MappingAndRelocalizationFrontend|0.11.0
+SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly|0.11.0
 SolARService_Mapping_Multi|0.11.0
 SolARService_Mapping_Multi_NoDrop|0.11.0
 SolARService_MappingAndRelocalizationFrontEnd|0.11.0
@@ -116,7 +117,7 @@ SolARServiceTest_MappingAndRelocalizationFrontEnd_RelocViewer|0.11.0
 SolARSample_MapUpdate_FloatingMapFusion|0.11.0
 SolARSample_MapUpdate_LocalMapFusion|0.11.0
 SolARSample_MapUpdate_Standalone|0.11.0
-SolARPipeline_MapUpdate|0.11.0
+SolARPipelineMapUpdate|0.11.0
 SolARPipelineTest_MapUpdate|0.11.0
 SolARService_MapUpdate|0.11.0
 SolARServiceTest_MapUpdate|0.11.0
@@ -124,8 +125,8 @@ SolARServiceTest_MapUpdate_DisplayMap|0.11.0
 
 SolARSample_Relocalization_Mono|0.11.0
 SolARSample_Relocalization_Multi|0.11.0
-SolARPipeline_Relocalization|0.11.0
-SolARPipeline_RelocalizationMarker|0.11.0
+SolARPipelineRelocalization|0.11.0
+SolARPipelineRelocalizationMarker|0.11.0
 SolARPipelineTest_Relocalization|0.11.0
 SolARPipelineTest_RelocalizationMarker|0.11.0
 SolARService_Relocalization|0.11.0
@@ -143,8 +144,8 @@ freeglut|3.0.0
 fbowSolAR|0.0.7
 ceres|2.0.0
 pcl|1.12.0
-flann17|1.9.1
+flann|1.9.1
 realsense2|2.36.0
 g2o|20200410
-popsift|1.0.0-rc3
+popsift|0.11.0-rc3
 
