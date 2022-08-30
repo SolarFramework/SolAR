@@ -105,3 +105,6 @@
 [submodule "plugin/unity/SolARUnityClientHololens2"]
 	path = plugin/unity/SolARUnityClientHololens2
 	url = https://github.com/SolarFramework/SolARUnityClientHololens2
+[submodule "modules/SolARModuleHapPLY"]
+	path = modules/SolARModuleHapPLY
+	url = https://github.com/SolarFramework/SolARModuleHapPLY.git
