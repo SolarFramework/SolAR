@@ -62,6 +62,7 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_WorldGraphLoader/SolARTest_ModuleTools_WorldGraphLoader.pro \
     modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
+    modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_PointCloudFileToPly/SolARTest_ModuleHapPLY_PointCloudFileToPly.pro
 	
 win32 {
         SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro

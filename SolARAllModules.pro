@@ -28,6 +28,7 @@ SUBDIRS = \
     SolARModuleOpenGV \
     SolARModuleTools \
     SolARModulePCL \
+    SolARModuleHapPLY
 
 win32 {
     SUBDIRS += \
@@ -44,6 +45,7 @@ win32 {
     SolARModuleOpenGV.subdir = modules/SolARModuleOpenGV
     SolARModuleTools.subdir = modules/SolARModuleTools
     SolARModulePCL.subdir = modules/SolARModulePCL
+    SolARModuleHapPLY.subdir = modules/SolARModuleHapPLY
 
 win32 {
     SolARModuleRealSense.subdir = modules/SolARModuleRealSense
