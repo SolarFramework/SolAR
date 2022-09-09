@@ -29,7 +29,6 @@ SUBDIRS = \
     services/Service-Relocalization/SolARService_RelocalizationMarkers/tests/SolARServiceTest_RelocalizationMarkers/SolARServiceTest_RelocalizationMarkers.pro \
     services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/tests/SolARServiceTest_MappingAndRelocalizationFrontend/SolARServiceTest_MappingAndRelocalizationFrontend.pro \
     services/Service-Relocalization/SolARService_MappingAndRelocalizationFrontend/tests/SolARServiceTest_MappingAndRelocalizationFrontend_RelocViewer/SolARServiceTest_MappingAndRelocalizationFrontend_RelocViewer.pro \
-    services/Service-Relocalization/SolARService_RelocalizationMarkers/tests/SolARServiceTest_RelocalizationMarkers/SolARServiceTest_RelocalizationMarkers.pro
 
 # Add install_deps target that recursively calls install_deps
 # on submodules
