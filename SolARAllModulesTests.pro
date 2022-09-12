@@ -45,6 +45,7 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_QRCodePoseEstimation/SolARTest_ModuleOpenCV_QRCodePoseEstimation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_QRCodesDetection/SolARTest_ModuleOpenCV_QRCodesDetection.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_YolactSegmentation/SolARTest_ModuleOpenCV_YolactSegmentation.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_PnP/SolARTest_ModuleOpenCV_PnP.pro \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
@@ -61,7 +62,6 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_WorldGraphLoader/SolARTest_ModuleTools_WorldGraphLoader.pro \
-    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
 	
 win32 {
         SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
