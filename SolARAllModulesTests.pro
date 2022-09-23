@@ -48,7 +48,6 @@ SUBDIRS = \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
     modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
-    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
