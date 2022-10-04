@@ -11,7 +11,7 @@ QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH="/usr/bin/"
 
 # path of modules and their rpoject names separate by a coma
-modules=("SolARModuleCeres,SolARModuleCeres" "SolARModuleFBOW/SolARModuleFBOW,SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleOpenGL,SolARModuleOpenGL" "SolARModuleOpenGV,SolARModuleOpenGV" "SolARModulePCL,SolARModulePCL" "SolARModuleTools,SolARModuleTools")
+modules=("SolARModuleCeres,SolARModuleCeres" "SolARModuleFBOW/SolARModuleFBOW,SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleOpenGL,SolARModuleOpenGL" "SolARModuleOpenGV,SolARModuleOpenGV" "SolARModulePCL,SolARModulePCL" "SolARModuleTools,SolARModuleTools" "SolARModuleHapPLY, SolARModuleHapPLY")
 modulesAndroid=("SolARModuleCeres,SolARModuleCeres" "SolARModuleFBOW/SolARModuleFBOW, SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV"  "SolARModuleTools,SolARModuleTools")
 
 display_usage() { 
