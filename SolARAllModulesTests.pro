@@ -51,6 +51,7 @@ SUBDIRS = \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_CameraParametersManager/SolARTest_ModuleTools_CameraParametersManager.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_CovisibilityGraph/SolARTest_ModuleTools_CovisibilityGraph.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_DualMapperSingleton/SolARTest_ModuleTools_DualMapperSingleton.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_ExtractSubmap/SolARTest_ModuleTools_ExtractSubmap.pro \
