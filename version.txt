@@ -6,6 +6,7 @@ SolARWrapper|1.0.0
 SolARModuleTools|1.0.0
 SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D|1.0.0
 SolARTest_ModuleTools_BoostCovisibilityGraph|1.0.0
+SolARTest_ModuleTools_CameraParametersManager|1.0.0
 SolARTest_ModuleTools_CovisibilityGraph|1.0.0
 SolARTest_ModuleTools_DualMapperSingleton|1.0.0
 SolARTest_ModuleTools_ExtractSubmap|1.0.0
@@ -134,14 +135,14 @@ SolARService_RelocalizationMarkers|1.0.0
 SolARServiceTest_Relocalization|1.0.0
 SolARServiceTest_RelocalizationMarkers|1.0.0
 
-xpcf|2.5.1
-boost|1.74.0
+xpcf|2.6.1
+boost|1.76.0
 openimageio|2.3.13.0
 opencv|4.5.5
 spdlog|0.14.0
-eigen|3.3.9
+eigen|3.4.0
 freeglut|3.0.0
-fbowSolAR|0.0.7
+fbowSolAR|1.0.0
 ceres|2.0.0
 pcl|1.12.0
 flann|1.9.1

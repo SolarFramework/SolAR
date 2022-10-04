@@ -1,0 +1,3 @@
+colmap|3.6|colmap|vcpkg|
+boost|1.74.0|boost|conan-solar@conan|conan-solar|default|zlib=False#bzip2=False
+grpc|1.32.0|grpc|thirdParties|https://github.com/SolarFramework/binaries/releases/download|static
