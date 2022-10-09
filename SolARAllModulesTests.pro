@@ -62,6 +62,7 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_WorldGraphLoader/SolARTest_ModuleTools_WorldGraphLoader.pro \
     modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_PointCloudFileToPLY/SolARTest_ModuleHapPLY_PointCloudFileToPLY.pro \
+    modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_MeshIO/SolARTest_ModuleHapPLY_MeshIO.pro \
     modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
 	
 win32 {
