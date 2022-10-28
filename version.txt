@@ -134,7 +134,7 @@ SolARService_RelocalizationMarkers|0.11.0
 SolARServiceTest_Relocalization|0.11.0
 SolARServiceTest_RelocalizationMarkers|0.11.0
 
-xpcf|2.5.1
+xpcf|2.5.3
 boost|1.74.0
 openimageio|2.3.13.0
 opencv|4.5.5
