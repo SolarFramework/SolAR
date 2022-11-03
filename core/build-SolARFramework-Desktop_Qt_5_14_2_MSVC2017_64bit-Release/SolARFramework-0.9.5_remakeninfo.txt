@@ -1,3 +1,0 @@
-platform=win-cl-14.1
-cppstd=17
-runtime=dynamicCRT
