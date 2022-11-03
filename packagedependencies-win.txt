@@ -2,3 +2,4 @@ SolARModuleOpenGL|1.0.0|SolARModuleOpenGL|SolARBuild@github|https://github.com/S
 SolARModuleOpenGV|1.0.0|SolARModuleOpenGV|SolARBuild@github|https://github.com/SolarFramework/SolarModuleOpenGV/releases/download
 SolARModulePCL|1.0.0|SolARModulePCL|SolARBuild@github|https://github.com/SolarFramework/SolARModulePCL/releases/download
 SolARModuleRealSense|1.0.0|SolARModuleRealSense|SolARBuild@github|https://github.com/SolarFramework/SolARModuleRealSense/releases/download
+SolARModulePopSift|1.0.0|SolARModulePopSift|SolARBuild@github|https://github.com/SolarFramework/SolARModulePopSift/releases/download
