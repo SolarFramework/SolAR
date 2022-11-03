@@ -1,0 +1,7 @@
+SolArModulePipeline {
+    moduleName="SolARModuleColmap"
+    dirName="SolARBuild"
+	makeTarget="install install_deps"
+    runTests=true
+    android=false
+}

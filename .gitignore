@@ -12,6 +12,7 @@ remaken*
 *.sln
 *.vs*
 tools/*
-*.pro.user
+*.pro.user*
 SolARFramework/core/SolARFrameworkGRPCRemote/*
+
 

@@ -27,8 +27,8 @@ SUBDIRS = \
     samples/Sample-Slam/SolARPipeline_SLAM/tests/SolARPipelineTest_SLAM/SolARPipelineTest_SLAM.pro \
     samples/Sample-Relocalization/SolARPipeline_Relocalization/tests/SolARPipelineTest_Relocalization/SolARPipelineTest_Relocalization.pro \
     samples/Sample-Relocalization/SolARPipeline_RelocalizationMarker/tests/SolARPipelineTest_RelocalizationMarker/SolARPipelineTest_RelocalizationMarker.pro \
-    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_MappingAndRelocalizationFrontend/SolARPipelineTest_MappingAndRelocalizationFrontend.pro \
-    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly/SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly.pro \
+    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_Frontend_MappingAndReloc/SolARPipelineTest_Frontend_MappingAndReloc.pro \
+    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_Frontend_RelocOnly/SolARPipelineTest_Frontend_RelocOnly.pro \
     samples/Sample-MapUpdate/SolARPipeline_MapUpdate/tests/SolARPipelineTest_MapUpdate/SolARPipelineTest_MapUpdate.pro \
 	
 # Add install_deps target that recursively calls install_deps

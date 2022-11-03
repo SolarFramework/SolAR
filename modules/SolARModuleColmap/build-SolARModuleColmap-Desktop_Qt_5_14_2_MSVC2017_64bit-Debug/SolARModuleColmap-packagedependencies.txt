@@ -1,0 +1,4 @@
+SolARFramework|0.9.5|SolARFramework|SolARBuild@github|https://github.com/SolarFramework/SolarFramework/releases/download
+xpcf|2.5.0|xpcf|@github|https://github.com/SolarFramework/binaries/releases/download
+eigen|3.3.7|eigen|conan-solar@conan|conan-solar
+spdlog|0.14.0|spdlog|thirdParties@github|https://github.com/SolarFramework/binaries/releases/download
