@@ -45,23 +45,23 @@ fi
 
 # default linux values
 
-QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin
+QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin/
 QMAKE_SPEC=linux-g++
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
-	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
+	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin/
 	QMAKE_SPEC=macx-clang
 	PLATEFORMFOLDER="mac/"
 else
 	if [ "$CROSSBUILD" == "ANDROID" ]; then	
-		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin
+		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin/
 	fi
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
-	echo "Qt path '${QMAKE_PATH}' doesn't exist : check your Qt installation and kits"
-	exit 2
+	echo "Warning ! '${QMAKE_PATH}' does not exists. Try to find qmake and make in your PATH."
+	QMAKE_PATH=""
 fi
 
 if [ ! -d ${SOLARFRAMEWORKROOT} ]; then
@@ -102,7 +102,7 @@ if [ "$CROSSBUILD" == "ANDROID" ]; then
 	QMAKEOPTIONS="ANDROID_ABIS=\"armeabi-v8a\" "
 	QMAKE_SPEC="android-clang"
 	PLATEFORMFOLDER="android/"
-	MAKE_PATH=${QMAKE_PATH}  
+	MAKE_PATH=${QMAKE_PATH}  /
 fi
 
 BUILDREPORT=""
@@ -124,8 +124,8 @@ remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/packagedependenci
 
 echo "===========> building SolAR Framework shared <==========="
 pushd build/${PLATEFORMFOLDER}core/SolARFramework/shared/debug
-echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
-${QMAKE_PATH}/qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Debug$(tput sgr 0)"
@@ -134,8 +134,8 @@ else
 fi  
 popd
 pushd build/${PLATEFORMFOLDER}core/SolARFramework/shared/release
-echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
-${QMAKE_PATH}/qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Release$(tput sgr 0)"

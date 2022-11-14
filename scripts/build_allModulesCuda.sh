@@ -8,7 +8,7 @@ NBPROCESSORS=6
 PLATEFORMFOLDER="linux/"
 ANDROIDREMAKENOPTIONS=""
 QMAKEOPTIONS="CONFIG+=x86_64"
-MAKE_PATH="/usr/bin/"
+MAKE_PATH=""
 
 modules=("SolARModuleFBOW/SolARModuleFBOWCuda, SolARModuleFBOWCuda" "SolARModuleOpenCV/SolARModuleOpenCVCuda, SolARModuleOpenCVCuda" "SolARModulePopSift,SolARModulePopSift")
 modulesAndroid=()
@@ -49,24 +49,24 @@ fi
 
 # default linux values
 
-QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin
+QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin/
 QMAKE_SPEC=linux-g++
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
-	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
+	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin/
 	QMAKE_SPEC=macx-clang
 	PLATEFORMFOLDER="mac/"
 else
 	if [ "$CROSSBUILD" == "ANDROID" ]; then	
-		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin
+		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin/
 	fi
 fi
 
 
 if [ ! -d ${QMAKE_PATH} ]; then
-	echo "Qt path '${QMAKE_PATH}' doesn't exist : check your Qt installation and kits"
-	exit 2
+	echo "Warning ! '${QMAKE_PATH}' does not exists. Try to find qmake and make in your PATH."
+	QMAKE_PATH=""
 fi
 
 if [ ! -d ${SOLARMODULESROOT} ]; then
@@ -107,7 +107,7 @@ if [ "$CROSSBUILD" == "ANDROID" ]; then
 	QMAKEOPTIONS="ANDROID_ABIS=\"armeabi-v8a\" "
 	QMAKE_SPEC="android-clang"
 	PLATEFORMFOLDER="android/"
-	MAKE_PATH=${QMAKE_PATH}  
+	MAKE_PATH=${QMAKE_PATH}  /
 fi
 
 BUILDREPORT=""
@@ -130,8 +130,8 @@ remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARMODULESROOT}/${1}/packagedepende
 
 echo "===========> building ${2} shared <==========="
 pushd build/${PLATEFORMFOLDER}modules/${2}/shared/debug
-echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
-${QMAKE_PATH}/qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${2} - Debug$(tput sgr 0)"
@@ -142,8 +142,8 @@ popd
 
 pushd build/${PLATEFORMFOLDER}modules/${2}/shared/release
 ${MAKE_PATH}make clean -j${NBPROCESSORS} 
-echo "${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
-${QMAKE_PATH}/qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
+echo "${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${2} - Release$(tput sgr 0)"
