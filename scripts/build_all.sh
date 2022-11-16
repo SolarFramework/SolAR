@@ -65,6 +65,7 @@ if [ ! "$CROSSBUILD" == "ANDROID" ]; then
 	./build_allSamples.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
 	./build_allModuleTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
 	./build_allPipelineTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
+	./build_frameworkGrpc.sh ${CROSSBUILD} ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}/core/SolARFrameworkGRPCRemote
 	./build_allServices.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
 	./build_allServiceTests.sh ${NBPROCESSORS} ${QTVERSION} ${SOLARROOT}
 fi
@@ -84,6 +85,8 @@ if [ ! "$CROSSBUILD" == "ANDROID" ]; then
 	cat build/${PLATEFORMFOLDER}moduleTests/report.txt
 	echo "Build report for all pipeline tests"
 	cat build/${PLATEFORMFOLDER}pipelineTests/report.txt
+	echo "Build report for SolAR framework"
+	cat build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/report.txt
 	echo "Build report for all services"
 	cat build/${PLATEFORMFOLDER}services/report.txt
 	echo "Build report for all service tests"
