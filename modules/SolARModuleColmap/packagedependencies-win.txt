@@ -1,1 +1,0 @@
-colmap|3.6|colmap|vcpkg|
