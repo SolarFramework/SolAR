@@ -1,5 +1,11 @@
 # Release Notes
 
+## v0.11.0 (2022/11/15)
+
+* Support of QR Code for relocalization
+* Support of PNG decoding
+* Bug fixes, optimizations
+
 ## v0.10.0 (2021/12/30)
 
 * Stereo camera components (e.g. calibration, rectification, depth estimation, reprojection to 3D)
