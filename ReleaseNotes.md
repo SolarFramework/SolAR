@@ -5,6 +5,12 @@
 * Support of QR Code for relocalization
 * Support of PNG decoding
 * Bug fixes, optimizations
+* Dependencies
+  * Update XPCF to 2.5.3
+  * Update OpenCV to 4.5.5
+  * Update spdlog to 1.9.2
+  * Introduce OpenImageIO 2.3.13.0
+  * Remove flann 1.9.1
 
 ## v0.10.0 (2021/12/30)
 
