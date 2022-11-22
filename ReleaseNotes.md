@@ -3,7 +3,11 @@
 ## v0.11.0 (2022/11/15)
 
 * Support of QR Code for relocalization
-* Support of PNG decoding
+* Support of PNG and JPEG decoding
+* New Front End service (for cloud deployment)
+* New Relocalization Markers pipeline and service
+* Optimization of Map Update, Mapping and Relocalization pipelines
+* CUDA versions of Map Update, Mapping and Relocalization services
 * Bug fixes, optimizations
 * Dependencies
   * Update XPCF to 2.5.3
