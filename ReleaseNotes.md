@@ -1,5 +1,9 @@
 # Release Notes
 
+## v1.0.0
+* Dependencies:
+  * Update XPCF to 2.6.2
+
 ## v0.11.0 (2022/11/15)
 
 * Support of QR Code for relocalization
