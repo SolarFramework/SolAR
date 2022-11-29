@@ -133,10 +133,13 @@ pushd build/${PLATEFORMFOLDER}modules/${2}/shared/debug
 echo "${QMAKE_PATH}qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
 ${QMAKE_PATH}qmake ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS} 
+
+declare BUILD_REPORT_TARGET=BUILDREPORT_$1
+
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${2} - Debug$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Debug$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${2} - Debug$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Debug$(tput sgr 0)"
 fi  
 popd
 
@@ -146,9 +149,9 @@ echo "${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/
 ${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${2} - Release$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Release$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - ${2} - Release$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Release$(tput sgr 0)"
 fi
 popd
 }
@@ -156,17 +159,29 @@ popd
 if [ ! "$CROSSBUILD" == "ANDROID" ]; then
 	for module in ${modules[*]}
 	  do
-	    buildAndInstall ${module%,*} ${module#*,}
+	    ( buildAndInstall ${module%,*} ${module#*,} & )
+		pids[${i}]=$!
+
 	  done
 else
 	for module in ${modulesAndroid[*]}
 	  do
-	    buildAndInstall ${module%,*} ${module#*,}
+	    ( buildAndInstall ${module%,*} ${module#*,} & )
+		pids[${i}]=$!
 	  done
 fi
 
-echo -e ${BUILDREPORT}
-echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}modules/report.txt
+for pid in ${pids[*]}; do
+    wait $pid
+done
+
+for module in ${modules[*]}
+do
+    echo -e ${BUILDREPORT_${module%,*}}
+    echo -e ${BUILDREPORT_${module%,*}} >> build/${PLATEFORMFOLDER}modules/report.txt
+done
+
+
 
 
 
