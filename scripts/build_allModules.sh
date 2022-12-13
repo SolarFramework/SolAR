@@ -137,9 +137,9 @@ make -j${NBPROCESSORS}
 declare BUILD_REPORT_TARGET=BUILDREPORT_$1
 
 if [ $? -eq 0 ]; then 
-	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Debug$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${!BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Debug$(tput sgr 0)"
 else
-	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Debug$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${!BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Debug$(tput sgr 0)"
 fi  
 popd
 
@@ -149,9 +149,9 @@ echo "${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/
 ${QMAKE_PATH}qmake -o Makefile ../../../../../../${SOLARMODULESROOT}/${1}/${2}.pro -spec ${QMAKE_SPEC} CONFIG+=qtquickcompiler ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS} 
 if [ $? -eq 0 ]; then 
-	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Release$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${!BUILD_REPORT_TARGET}\n$(tput setab 2)success - ${2} - Release$(tput sgr 0)"
 else
-	BUILD_REPORT_TARGET="${BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Release$(tput sgr 0)"
+	BUILD_REPORT_TARGET="${!BUILD_REPORT_TARGET}\n$(tput setab 1)failed - ${2} - Release$(tput sgr 0)"
 fi
 popd
 }
