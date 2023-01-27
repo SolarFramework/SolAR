@@ -104,6 +104,7 @@ for pipelineTestProjectPath in $(grep ".pro" ${SOLARROOTFOLDER}/SolARAllPipeline
      buildAndInstall ${pipelineTestName} ${pipelineTestProjectPath} 
   done
 
+echo -e ${BUILDREPORT}
 echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}pipelineTests/report.txt
 
 
