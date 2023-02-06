@@ -138,9 +138,9 @@ echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFramew
 ${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Release$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - FrameworkGrcpRemote - Release$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - Framework - Release$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - FrameworkGrcpRemote - Release$(tput sgr 0)"
 fi
 popd
 
