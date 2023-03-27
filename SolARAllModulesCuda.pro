@@ -19,12 +19,10 @@ CONFIG -= flat
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    SolARModuleFBOWCuda \
     SolARModuleOpenCVCuda \
     SolARModulePopSift
 
 # where to find the sub projects - give the folders
-    SolARModuleFBOWCuda.subdir = modules/SolARModuleFBOW/SolARModuleFBOWCuda
     SolARModuleOpenCVCuda.subdir = modules/SolARModuleOpenCV/SolARModuleOpenCVCuda
     SolARModulePopSift.subdir = modules/SolARModulePopSift
 

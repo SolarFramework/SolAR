@@ -33,12 +33,7 @@ SUBDIRS = \
     samples/Sample-Relocalization/SolARSample_Relocalization_Multi/SolARSample_Relocalization_Multi.pro \
     samples/Sample-MapUpdate/SolARSample_MapUpdate_FloatingMapFusion/SolARSample_MapUpdate_FloatingMapFusion.pro \
     samples/Sample-MapUpdate/SolARSample_MapUpdate_LocalMapFusion/SolARSample_MapUpdate_LocalMapFusion.pro \
-    samples/Sample-MapUpdate/SolARSample_MapUpdate_Standalone/SolARSample_MapUpdate_Standalone.pro \
-    samples/Sample-Triangulation/SolARSample_Triangulation_Mono/SolARSample_Triangulation_Mono.pro
-
-win32 {
-	SUBDIRS += samples/Sample-DepthCamera/SolARSample_DepthCamera_Mono/SolARSample_DepthCamera_Mono.pro
-}
+    samples/Sample-MapUpdate/SolARSample_MapUpdate_Standalone/SolARSample_MapUpdate_Standalone.pro
 
 
 
