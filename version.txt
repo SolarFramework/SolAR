@@ -35,6 +35,7 @@ SolARTest_ModuleOpenCV_ImageFilter|1.0.0
 SolARTest_ModuleOpenCV_ImageLoader|1.0.0
 SolARTest_ModuleOpenCV_MatchesFilter|1.0.0
 SolARTest_ModuleOpenCV_MultiQRCodesPoseEstimation|1.0.0
+SolARTest_ModuleOpenCV_PnP|1.0.0
 SolARTest_ModuleOpenCV_OpticalFlow|1.0.0
 SolARTest_ModuleOpenCV_QRCodePoseEstimation|1.0.0
 SolARTest_ModuleOpenCV_QRCodesDetection|1.0.0
@@ -53,6 +54,7 @@ SolARModuleFBOWCuda|1.0.0
 SolARTest_ModuleFBOW_ClosestKeyframeRetrieval|1.0.0
 SolARTest_ModuleFBOW_FeatureMatching|1.0.0
 SolARTool_FBOWCreator|1.0.0
+SolARTool_CameraCalibration|1.0.0
 
 SolARModuleCeres|1.0.0
 SolARTest_ModuleCeres_Bundler|1.0.0
