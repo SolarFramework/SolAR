@@ -1,206 +1,147 @@
 #!/bin/bash
 
-
 if [ $# -lt 1 ]; then
   echo "Usage:"
   echo "$0 [path to versions.txt file]"
   exit -1
 fi
 
-VERSIONSFILE=$1		# input file : versions.txt
-WITHWARNING=0		# 1 to print warnings
-DONOTHING=0			# 1 to display current versions only
+VERSIONSFILE=$1        # input file : versions.txt
+WITHWARNING=1        # 1 to print warnings
+DONOTHING=0            # 1 to display current versions only
+VERBOSE=0            # 1 to enable verbose logs
 
-SOURCEDIR=`pwd`
-echo "SOURCEDIR: $SOURCEDIR"
-export PATH=$SOURCEDIR/build-scripts/:$PATH
+# $1: message string
+function log_verbose()
+{
+    if [ $VERBOSE -ne 0 ]; then echo "$1"; fi
+}
 
+pushd () {
+    command pushd "$@" > /dev/null
+}
+
+popd () {
+    command popd "$@" > /dev/null
+}
 
 # read required versions and store them in associative array
 declare -A ARRAYVER
-
+echo "Loading version file"
 while read line; do
-	if [[ $line == *\|*.*.* ]]; then
+    if [[ $line == *\|* ]]; then
         componentName=`echo $line | cut -d "|" -f1`
-		componentVersion=`echo $line | cut -d "|" -f2`
-		ARRAYVER[$componentName]=$componentVersion
-		#echo ">>>>> ARRAYVER[$componentName]=$componentVersion"
-		echo "$componentName will be set to version $componentVersion"
-    fi	
+        componentVersion=`echo $line | cut -d "|" -f2`
+        ARRAYVER[$componentName]=$componentVersion
+        log_verbose "  $componentName: $componentVersion"
+    fi
 done < $VERSIONSFILE
+log_verbose
 
-
-
-# update all sources repositories
-# update function
-function updateVersion()
-{
-	repo_fullname=`git rev-parse --show-toplevel`
-	repo_name=`basename $repo_fullname`
-
-	# find directories containing a CMakeLists.txt file
-	directories=`find . -name "*.pro" -printf '%h\n'`
-	processedDir=`pwd`
-	for directory in $directories
-	do
-		#echo "##### PROCESSING $directory"
-		cd $directory
-		current=`pwd`
-		# get current version
-		for file in *.pro ; do
-			target=`grep "^TARGET" $file | cut -d '=' -f2 | tr -d ' '`
-			version=`grep "^VERSION" $file | cut -d '=' -f2 | tr -d ' '`
-
-			if [[ $version == "" ]]; then
-				if [[ $WITHWARNING == "1" ]]; then
-					echo "(WARN) $file does not contain version number in $file"
-				fi
-			else
-				echo ""
-				echo "$target is in version $version"
-
-				# CHANGE VERSION NUMBER HERE - interactive mode if versions.txt does not contain version number for component
-				if [[ $DONOTHING == "0" ]]; then
-
-
-					if [[ ${ARRAYVER[$target]} == "" ]]; then
-						echo "enter new version:"
-						read newversion
-						ARRAYVER[$target]=$newversion
-					else
-						newversion=${ARRAYVER[$target]}		
-						echo ">>>> Changing $target version number to $newversion"
-					fi
-
-					# change in .pc.in if exists
-					for pcin in ./*.pc.in; do
-						[ -e "$pcin" ] && sed -i -e "s/Version: [0-]\.[0-9]\.[0-9]/Version: $newversion/g" $pcin
-					done
-					
-					# change in .pro
-					sed -i -e "s/VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/VERSION=$newversion/g" *.pro > /dev/null
-
-					# change in all .xml
-					xmlfiles=`find $SOURCEDIR -name "*.xml"`
-					for xmlfile in $xmlfiles
-					do
-						sed -i -e "s/$target\/[0-9]\.[0-9]\.[0-9]/$target\/$newversion/g" $xmlfile
-					done
-
-					# change packagedependencies.txt in other repositories
-					packagedepfiles=`find $SOURCEDIR -name "packagedependencies*.txt"`
-					for packagedepfile in $packagedepfiles
-					do
-						sed -i -e "s/$target|[0-9]\.[0-9]\.[0-9]/$target|$newversion/g" $packagedepfile
-					done
-					
-					# change in _build.bat and _build.sh for SolARWrapper
-					if [[ $target == "SolARWrapper" ]]; then
-						batfiles=`find $SOURCEDIR -name "_build.*"`
-						for batfile in $batfiles
-						do
-							sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" $batfile
-							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
-							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
-						done
-					fi
-					
-					# change in _build.bat and _build.sh for SolARPipelineManager
-					if [[ $target == "SolARPipelineManager" ]]; then
-						batfiles=`find $SOURCEDIR -name "BuildCSharp.*"`
-						for batfile in $batfiles
-						do
-							sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $batfile
-							sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $batfile
-						done
-					fi
-					
-					# change in bundleSamples.bat and .sh if exists
-					for bundleSamples in ./*bundleSamples.*; do
-						[ -e "$bundleSamples" ] && sed -i -e "s/Version: [0-]\.[0-9]\.[0-9]/Version: $newversion/g" $bundleSamples
-					done
-					
-					# change in .pro
-					sed -i -e "s/VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/VERSION=$newversion/g" *.pro > /dev/null
-				fi		
-				# 
-				####
-
-			fi
-		done
-		# fi
-		cd $processedDir
-	done
-}
-
-# SolARFramework
-echo "------------ Process Framework"
-cd core/SolARFramework
-updateVersion
-cd $SOURCEDIR
-
-# SolARPipelineManager
-echo "------------ Process Pipeline Manager"
-cd core/SolARPipelineManager
-updateVersion
-cd $SOURCEDIR
-
-
-# Modules
-echo "------------ Process Modules"
-cd modules
-MODULEDIR=`pwd`
-for module in ./SolAR* #$modules
+echo "Updating .pro and .pc.in files"
+rm -f version-gen.txt
+for qt_project_file in `find . -path "**/deploy" -prune -o -type f -name "*.pro" -print`
 do
-	cd $module
-	if [ -f .git ] || [ -d *.git ]; then
-		updateVersion
-		echo ""
-	fi
-	cd $MODULEDIR	
-done
-cd $SOURCEDIR
+    target=`grep "^TARGET" $qt_project_file | cut -d '=' -f2 | tr -d ' '`
+    version=`grep "^VERSION" $qt_project_file | cut -d '=' -f2 | tr -d ' '`
 
-# Samples
-echo "----------- Process samples"
-samples=`find samples/ -mindepth 1 -maxdepth 1 -type d`
-cd samples
-SAMPLEDIR=`pwd`
-for sample in */
+    if [[ $target == "" ]]; then continue; fi
+
+    log_verbose
+    log_verbose "Updating $qt_project_file"
+
+    if [[ $version == "" ]]; then
+        if [ $WITHWARNING -eq 1 ]; then
+            echo "(WARN) $file does not contain version number in $file"
+        fi
+    else
+        if [[ ${ARRAYVER[$target]} == "" ]]; then
+            echo "Enter new version for $target:"
+            read newversion
+            ARRAYVER[$target]=$newversion
+            echo "$target|$newversion" >> version-gen.txt
+        else
+            newversion=${ARRAYVER[$target]}
+        fi
+
+        log_verbose "  $target: $version -> $newversion"
+
+        if [ $DONOTHING -ne 0 ]; then continue; fi
+
+        sed -i -e "s/VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/VERSION=$newversion/g" $qt_project_file > /dev/null
+
+        pushd $(dirname "$qt_project_file")
+        # change in .pc.in if exists
+        for pcin in `find . -name "*.pc.in"`; do
+            log_verbose "  Updating $pcin" && sed -i -e "s/Version: [0-9]\+\.[0-9]\+\.[0-9]\+/Version: $newversion/g" $pcin
+        done
+        popd
+    fi
+done
+
+log_verbose
+log_verbose "Newly defined versions can be found in 'version-gen.txt' to update version file with missing entries"
+log_verbose
+
+if [ $DONOTHING -ne 0 ]; then exit 0; fi
+
+# Cannot deduce version from particular .pro file -> take framework version as it is what we usually do (c.f. samples/Sample-Mapping)
+echo "Updating bundleSamples* files"
+for bundleSamples in `find . -name "*bundleSamples.*"`
 do
-	cd $sample
-	if [ -f .git ] || [ -d *.git ]; then
-		updateVersion
-		echo ""
-	fi
-	cd $SAMPLEDIR
+    # /!\ .bat have "version", .sh have "Version"
+    log_verbose "  Updating $bundleSamples"
+    sed -i -e "s/ersion\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/ersion=${ARRAYVER["SolARFramework"]}/g" $bundleSamples
 done
-cd $SOURCEDIR
+log_verbose
 
-# ultimate change of all packagedependencies.txt
-echo "----------- Process all packagedependencies.txt"
-if [[ $DONOTHING == "0" ]]; then
+# Uncomment to have completely updated version file
+# echo "Generating updated version file to 'version-gen.txt'"
+# rm -f version-gen.txt
+# for key in ${!ARRAYVER[@]}; do
+#     echo "$key|${ARRAYVER[$key]}" >> version-gen.txt
+# done
 
-	for comp in "${!ARRAYVER[@]}"
-	do
-		vers=${ARRAYVER[$comp]}
-		packagedepfiles=`find $SOURCEDIR -name "packagedependencies*.txt"`
-		for packagedepfile in $packagedepfiles
-		do
-			sed -i -e "s/$comp|[0-9]\.[0-9]\.[0-9]/$comp|$vers/g" $packagedepfile
-			sed -i -e "s/$comp|[0-9]\.[0-9][0-9]\.[0-9]/$comp|$vers/g" $packagedepfile
-		done				
-	done
-fi
-cd $SOURCEDIR
+echo "Updating *.xml files"
+for xmlfile in `find . -path **/deploy -prune -o -name "*.xml" -print`
+do
+    log_verbose "  Updating $xmlfile"
+    for key in ${!ARRAYVER[@]}; do
+        sed -i -e "s/$key\/[0-9]\+\.[0-9]\+\.[0-9]\+/$key\/${ARRAYVER[$key]}/g" $xmlfile
+    done
+done
+log_verbose
 
-# Update of Bundle.bat for the Unity Plugin
-echo "----------- Process unity plugin batch files"
-cd plugin
-if [[ $DONOTHING == "0" ]]; then
-	unityplugin=`find -name "SolARUnityPlugin" -type d ! -path "*.vs*"` 
-	cd $unityplugin
-	sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" Bundle.bat
-	sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\.[0-9]\.[0-9]/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" Bundle.bat
-fi
-cd $SOURCEDIR
+echo "Updating packagedependencies files"
+for packagedepfile in `find . -path **/deploy -prune -o -path **/.build-rules -prune -o -name "packagedependencies*.txt" -print`
+do
+    log_verbose "  Updating $packagedepfile"
+    for key in ${!ARRAYVER[@]}; do
+        sed -i -e "s/$key|[0-9]\+\.[0-9]\+\.[0-9]\+/$key|${ARRAYVER[$key]}/g" $packagedepfile
+    done
+done
+log_verbose
+
+echo "Updating SolARWrapper *_build* scripts"
+for script in `find core/SolARFramework/SolARWrapper -path **/deploy -prune -o -name "_build*" -print`
+do
+    log_verbose "  Updating $script"
+    sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" $script
+    sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $script
+    sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $script
+done
+log_verbose
+
+echo "Updating SolARPipelineManager BuildCSharp* scripts"
+for script in `find core/SolARPipelineManager -path **/deploy -prune -o -name "BuildCSharp*" -print`
+do
+    log_verbose "  Updating $script"
+    sed -i -e "s/SOLAR_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_VERSION=${ARRAYVER["SolARFramework"]}/g" $script
+    sed -i -e "s/XPCF_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/XPCF_VERSION=${ARRAYVER["xpcf"]}/g" $script
+done
+log_verbose
+
+echo "Updating $plugin/unity/SolARUnityPlugin/Bundle.bat"
+sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" plugin/unity/SolARUnityPlugin/Bundle.bat
+sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" plugin/unity/SolARUnityPlugin/Bundle.bat
+
