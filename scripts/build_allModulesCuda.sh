@@ -10,7 +10,7 @@ ANDROIDREMAKENOPTIONS=""
 QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH=""
 
-modules=("SolARModuleFBOW/SolARModuleFBOWCuda,SolARModuleFBOWCuda" "SolARModuleOpenCV/SolARModuleOpenCVCuda,SolARModuleOpenCVCuda" "SolARModulePopSift,SolARModulePopSift")
+modules=("SolARModuleOpenCV/SolARModuleOpenCVCuda,SolARModuleOpenCVCuda" "SolARModulePopSift,SolARModulePopSift")
 modulesAndroid=()
 
 display_usage() { 

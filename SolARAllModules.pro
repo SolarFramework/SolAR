@@ -27,7 +27,7 @@ SUBDIRS = \
     SolARModuleHapPLY \
 
 # where to find the sub projects - give the folders
-    SolARModuleFBOW.subdir = modules/SolARModuleFBOW/SolARModuleFBOW
+    SolARModuleFBOW.subdir = modules/SolARModuleFBOW
     SolARModuleG2O.subdir = modules/SolARModuleG2O
     SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV/SolARModuleOpenCV
     SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
