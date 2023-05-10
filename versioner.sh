@@ -120,7 +120,8 @@ for packagedepfile in `find . -path **/deploy -prune -o -path **/.build-rules -p
 do
     log_verbose "  Updating $packagedepfile"
     for key in ${!ARRAYVER[@]}; do
-        sed -i -e "s/$key|.*|$key/$key|${ARRAYVER[$key]}|$key/g" $packagedepfile
+        # Handle cases like 'pcl#boost_1_76|1.12.0|pcl'
+        sed -i -e "s/\(^$key.*\)|.*|$key/\1|${ARRAYVER[$key]}|$key/g" $packagedepfile
     done
 done
 log_verbose
