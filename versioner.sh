@@ -6,9 +6,9 @@ if [ $# -lt 1 ]; then
   exit -1
 fi
 
-VERSIONSFILE=$1        # input file : versions.txt
+VERSIONSFILE=$1      # input file : versions.txt
 WITHWARNING=1        # 1 to print warnings
-DONOTHING=0            # 1 to display current versions only
+DONOTHING=0          # 1 to display current versions only
 VERBOSE=0            # 1 to enable verbose logs
 
 # $1: message string
@@ -56,7 +56,7 @@ do
         fi
     else
         if [[ ${ARRAYVER[$target]} == "" ]]; then
-            echo "Enter new version for $target:"
+            echo "Enter new version for $target (current: $version):"
             read newversion
             ARRAYVER[$target]=$newversion
             echo "$target|$newversion" >> version-gen.txt
@@ -68,9 +68,12 @@ do
 
         if [ $DONOTHING -ne 0 ]; then continue; fi
 
-        sed -i -e "s/VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/VERSION=$newversion/g" $qt_project_file > /dev/null
+        sed -i -e "s/VERSION\s\?=\s\?$version/VERSION=$newversion/g" $qt_project_file > /dev/null
 
         pushd $(dirname "$qt_project_file")
+        # TODO: there should be no need to update .pc.in files. Use place holders:
+        # libnaame=@TARGET@, Name: @TARGET@, Version: @VERSION@
+        # so that remaken takes care of dealing with them
         # change in .pc.in if exists
         for pcin in `find . -name "*.pc.in"`; do
             log_verbose "  Updating $pcin" && sed -i -e "s/Version: [0-9]\+\.[0-9]\+\.[0-9]\+/Version: $newversion/g" $pcin
@@ -91,7 +94,7 @@ for bundleSamples in `find . -name "*bundleSamples.*"`
 do
     # /!\ .bat have "version", .sh have "Version"
     log_verbose "  Updating $bundleSamples"
-    sed -i -e "s/ersion\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/ersion=${ARRAYVER["SolARFramework"]}/g" $bundleSamples
+    sed -i -e "s/ersion\s\?=.*[0-9]\+\.[0-9]\+\.[0-9]\+.*/ersion=${ARRAYVER["SolARFramework"]}/g" $bundleSamples
 done
 log_verbose
 
@@ -117,7 +120,7 @@ for packagedepfile in `find . -path **/deploy -prune -o -path **/.build-rules -p
 do
     log_verbose "  Updating $packagedepfile"
     for key in ${!ARRAYVER[@]}; do
-        sed -i -e "s/$key|[0-9]\+\.[0-9]\+\.[0-9]\+/$key|${ARRAYVER[$key]}/g" $packagedepfile
+        sed -i -e "s/$key|.*|$key/$key|${ARRAYVER[$key]}|$key/g" $packagedepfile
     done
 done
 log_verbose
@@ -141,7 +144,7 @@ do
 done
 log_verbose
 
-echo "Updating $plugin/unity/SolARUnityPlugin/Bundle.bat"
+echo "Updating plugin/unity/SolARUnityPlugin/Bundle.bat"
 sed -i -e "s/SOLAR_PIPELINE_MANAGER_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_PIPELINE_MANAGER_VERSION=${ARRAYVER["SolARPipelineManager"]}/g" plugin/unity/SolARUnityPlugin/Bundle.bat
 sed -i -e "s/SOLAR_WRAPPER_VERSION\s\?=\s\?[0-9]\+\.[0-9]\+\.[0-9]\+/SOLAR_WRAPPER_VERSION=${ARRAYVER["SolARWrapper"]}/g" plugin/unity/SolARUnityPlugin/Bundle.bat
 
