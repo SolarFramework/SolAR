@@ -30,7 +30,7 @@ SolARTest_ModuleOpenCV_FiducialMarker|1.0.0
 SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer|1.0.0
 SolARTest_ModuleOpenCV_FundamentalMatrixEstimation|1.0.0
 SolARTest_ModuleOpenCV_GenericSemanticSegmentation|1.0.0
-SolARTest_ModuleOpenCV_ImageCompression|1.0.01.1.0.0
+SolARTest_ModuleOpenCV_ImageCompression|1.0.0
 SolARTest_ModuleOpenCV_ImageConvertor|1.0.0
 SolARTest_ModuleOpenCV_ImageFilter|1.0.0
 SolARTest_ModuleOpenCV_ImageLoader|1.0.0
