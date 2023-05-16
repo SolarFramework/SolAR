@@ -26,6 +26,7 @@ SUBDIRS = \
     modules/SolARModuleG2O/tests/SolARTest_ModuleG2O_Bundler/SolARTest_ModuleG2O_Bundler.pro \
     modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_CameraCalibration/SolARTest_ModuleOpenCV_CameraCalibration.pro \
+	modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_GenericSemanticSegmentation/SolARTest_ModuleOpenCV_GenericSemanticSegmentation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DescriptorMatcher/SolARTest_ModuleOpenCV_DescriptorMatcher.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDataLoader/SolARTest_ModuleOpenCV_DeviceDataLoader.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration.pro \
