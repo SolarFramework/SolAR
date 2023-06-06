@@ -20,7 +20,6 @@ CONFIG += ordered
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    modules/SolARModuleCeres/tests/SolARTest_ModuleCeres_Bundler/SolARTest_ModuleCeres_Bundler.pro \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval.pro \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_FeatureMatching/SolARTest_ModuleFBOW_FeatureMatching.pro \
     modules/SolARModuleG2O/tests/SolARTest_ModuleG2O_Bundler/SolARTest_ModuleG2O_Bundler.pro \
@@ -52,8 +51,6 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoImageRectification/SolARTest_ModuleOpenCV_StereoImageRectification.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoKeypointRectification/SolARTest_ModuleOpenCV_StereoKeypointRectification.pro \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
-    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
-    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
@@ -72,11 +69,6 @@ SUBDIRS = \
     modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_MeshIO/SolARTest_ModuleHapPLY_MeshIO.pro \
     modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
 
-	
-win32 {
-        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
-        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_StereoCamera/SolARTest_ModuleRealSense_StereoCamera.pro
-}
 
 
 
