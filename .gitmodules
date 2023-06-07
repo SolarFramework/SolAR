@@ -18,10 +18,6 @@
 	path = modules/SolARModuleOpenCV
 	url = https://github.com/SolarFramework/SolARModuleOpenCV
 	branch = .
-[submodule "modules/SolARModuleOpenGV"]
-	path = modules/SolARModuleOpenGV
-	url = https://github.com/SolarFramework/SolARModuleOpenGV
-	branch = .
 [submodule "modules/SolARModuleOpenGL"]
 	path = modules/SolARModuleOpenGL
 	url = https://github.com/SolarFramework/SolARModuleOpenGL
@@ -33,10 +29,6 @@
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
-	branch = .
-[submodule "modules/SolARModuleCeres"]
-	path = modules/SolARModuleCeres
-	url = https://github.com/SolarFramework/SolARModuleCeres
 	branch = .
 [submodule "modules/SolARModuleG2O"]
 	path = modules/SolARModuleG2O
@@ -54,14 +46,6 @@
 	path = plugin/unity/SolARUnityPlugin
 	url = https://github.com/SolarFramework/SolARUnityPlugin
 	branch = develop
-[submodule "modules/SolARModuleRealSense"]
-	path = modules/SolARModuleRealSense
-	url = https://github.com/SolarFramework/SolARModuleRealSense.git
-	branch = .
-[submodule "modules/SolARModulePCL"]
-	path = modules/SolARModulePCL
-	url = https://github.com/SolarFramework/SolARModulePCL.git
-	branch = .
 [submodule "modules/SolARModulePopSift"]
 	path = modules/SolARModulePopSift
 	url = https://github.com/SolarFramework/SolARModulePopSift
