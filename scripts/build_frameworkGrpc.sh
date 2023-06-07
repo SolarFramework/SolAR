@@ -11,7 +11,7 @@ QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH="/usr/bin/"
 
 display_usage() { 
-	echo "This script builds the SolAR framework in shared mode."
+	echo "This script builds FrameworkGrcpRemote in shared mode."
 	echo "It can receive four optional arguments." 
 	echo -e "\nUsage: \$0 [ Cross build ? | default='${CROSSBUILD}' | possible values=[NO, ANDROID]] [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to SolAR Framework Grpc Remote project root | default='${SOLARFRAMEWORKROOT}'] \n" 
 } 
@@ -128,9 +128,9 @@ echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFramew
 ${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Debug$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - FrameworkGrcpRemote - Debug$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - Framework - Debug$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - FrameworkGrcpRemote - Debug$(tput sgr 0)"
 fi  
 popd
 pushd build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared/release
