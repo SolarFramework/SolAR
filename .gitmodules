@@ -34,10 +34,6 @@
 	path = modules/SolARModuleG2O
 	url = https://github.com/SolarFramework/SolARModuleG2O
 	branch = .
-[submodule "samples/Sample-Triangulation"]
-	path = samples/Sample-Triangulation
-	url = https://github.com/SolarFramework/Sample-Triangulation
-	branch = .
 [submodule "core/SolARPipelineManager"]
 	path = core/SolARPipelineManager
 	url = https://github.com/SolarFramework/SolARPipelineManager
