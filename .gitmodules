@@ -34,10 +34,6 @@
 	path = modules/SolARModuleG2O
 	url = https://github.com/SolarFramework/SolARModuleG2O
 	branch = .
-[submodule "plugin/unity/SolARUnityPlugin"]
-	path = plugin/unity/SolARUnityPlugin
-	url = https://github.com/SolarFramework/SolARUnityPlugin
-	branch = develop
 [submodule "modules/SolARModulePopSift"]
 	path = modules/SolARModulePopSift
 	url = https://github.com/SolarFramework/SolARModulePopSift
