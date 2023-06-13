@@ -85,35 +85,26 @@ SolARSample_FiducialMarker_Mono|1.0.0
 SolARPipelineFiducialMarker|1.0.0
 SolARPipelineTest_FiducialMarker|1.0.0
 
-SolARSample_NaturalImageMarker_Mono|1.0.0
 SolARSample_NaturalImageMarker_Multi|1.0.0
 SolARPipelineNaturalImageMarker|1.0.0
 SolARPipelineTest_NaturalImageMarker|1.0.0
 
 SolARSample_DepthCamera_Mono|1.0.0
 
-SolARSample_SLAM_Mono|1.0.0
 SolARSample_SLAM_Multi|1.0.0
 SolARPipelineSLAM|1.0.0
 SolARPipelineTest_SLAM|1.0.0
 
 SolARSample_Triangulation_Mono|1.0.0
 
-SolARSample_Mapping_MapExtension_Mono|1.0.0
-SolARSample_Mapping_Mono|1.0.0
 SolARSample_Mapping_Multi|1.0.0
 SolARSample_Mapping_MapVisualizer|1.0.0
-SolARPipelineMappingMono|1.0.0
 SolARPipelineMappingMulti|1.0.0
-SolARPipelineMappingMultiNoDrop|1.0.0
 SolARPipelineMappingAndRelocalizationFrontEnd|1.0.0
-SolARPipelineTest_Mapping_Mono|1.0.0
 SolARPipelineTest_Mapping_Multi|1.0.0
-SolARPipelineTest_Mapping_Multi_NoDrop|1.0.0
 SolARPipelineTest_MappingAndRelocalizationFrontend|1.0.0
 SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly|1.0.0
 SolARService_Mapping_Multi|1.0.0
-SolARService_Mapping_Multi_NoDrop|1.0.0
 SolARService_MappingAndRelocalizationFrontEnd|1.0.0
 SolARService_MappingAndRelocalizationProxy|1.0.0
 SolARServiceTest_Mapping_Multi_Producer|1.0.0
@@ -123,7 +114,6 @@ SolARServiceTest_MappingAndRelocalizationFrontEnd|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd_RelocViewer|1.0.0
 
 SolARSample_MapUpdate_FloatingMapFusion|1.0.0
-SolARSample_MapUpdate_LocalMapFusion|1.0.0
 SolARSample_MapUpdate_Standalone|1.0.0
 SolARPipelineMapUpdate|1.0.0
 SolARPipelineTest_MapUpdate|1.0.0
