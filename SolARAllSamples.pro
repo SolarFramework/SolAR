@@ -30,9 +30,6 @@ SUBDIRS = \
     samples/Sample-MapUpdate/SolARSample_MapUpdate_FloatingMapFusion/SolARSample_MapUpdate_FloatingMapFusion.pro \
     samples/Sample-MapUpdate/SolARSample_MapUpdate_Standalone/SolARSample_MapUpdate_Standalone.pro \
 
-win32 {
-	SUBDIRS += samples/Sample-DepthCamera/SolARSample_DepthCamera_Mono/SolARSample_DepthCamera_Mono.pro
-}
 
 
 
