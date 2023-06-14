@@ -11,8 +11,8 @@ QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH=""
 
 # path of modules and their rpoject names separate by a coma
-modules=("SolARModuleFBOW/SolARModuleFBOW,SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleOpenGL,SolARModuleOpenGL" "SolARModuleTools,SolARModuleTools" "SolARModuleHapPLY,SolARModuleHapPLY")
-modulesAndroid=("SolARModuleFBOW/SolARModuleFBOW, SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleNonFreeOpenCV,SolARModuleNonFreeOpenCV" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleTools,SolARModuleTools")
+modules=("SolARModuleFBOW/SolARModuleFBOW,SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleOpenGL,SolARModuleOpenGL" "SolARModuleTools,SolARModuleTools" "SolARModuleHapPLY,SolARModuleHapPLY")
+modulesAndroid=("SolARModuleFBOW/SolARModuleFBOW, SolARModuleFBOW" "SolARModuleG2O,SolARModuleG2O" "SolARModuleOpenCV/SolARModuleOpenCV,SolARModuleOpenCV" "SolARModuleTools,SolARModuleTools")
 
 display_usage() { 
 	echo "This script builds the SolAR modules in shared mode."

@@ -21,7 +21,6 @@ TEMPLATE = subdirs
 SUBDIRS = \
     SolARModuleFBOW \
     SolARModuleG2O \
-    SolARModuleNonFreeOpenCV \
     SolARModuleOpenCV \
     SolARModuleOpenGL \
     SolARModuleTools \
@@ -30,7 +29,6 @@ SUBDIRS = \
 # where to find the sub projects - give the folders
     SolARModuleFBOW.subdir = modules/SolARModuleFBOW/SolARModuleFBOW
     SolARModuleG2O.subdir = modules/SolARModuleG2O
-    SolARModuleNonFreeOpenCV.subdir = modules/SolARModuleNonFreeOpenCV
     SolARModuleOpenCV.subdir = modules/SolARModuleOpenCV/SolARModuleOpenCV
     SolARModuleOpenGL.subdir = modules/SolARModuleOpenGL
     SolARModuleTools.subdir = modules/SolARModuleTools

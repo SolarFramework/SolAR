@@ -5,7 +5,7 @@ REM default parameter value
 set QTVERSION=5.14.2
 set VISUALVERSION=2017
 set SOLARMODULESROOT=..\modules
-set modules= SolARModuleFBOW\SolARModuleFBOW#SolARModuleFBOW SolARoduleG2O#SolARModuleG2O SolARModuleNonFreeOpenCV#SolARModuleNonFreeOpenCV SolARModuleOpenCV\SolARModuleOpenCV#SolARModuleOpenCV SolARModuleOpenGL#SolARModuleOpenGL SolARModuleTools#SolARModuleTools SolARModuleHapPLY#SolARModuleHapPLY
+set modules= SolARModuleFBOW\SolARModuleFBOW#SolARModuleFBOW SolARoduleG2O#SolARModuleG2O SolARModuleOpenCV\SolARModuleOpenCV#SolARModuleOpenCV SolARModuleOpenGL#SolARModuleOpenGL SolARModuleTools#SolARModuleTools SolARModuleHapPLY#SolARModuleHapPLY
 REM check whether user had supplied -h or --help . If yes display usage 
 for %%A in ("--help" "-h") do if "%1"==%%A (call:display_usage %1 & exit /b 0)
 

@@ -44,9 +44,6 @@ SolARTest_ModuleOpenCV_YolactSegmentation|1.0.0
 
 SolARTest_ModuleOpenCV_FeatureMatchingStabilization|1.0.0
 
-SolARModuleNonFreeOpenCV|1.0.0
-SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor|1.0.0
-
 SolARModuleOpenGL|1.0.0
 SolARTest_ModuleOpenGL_PointsCloudDisplay|1.0.0
 

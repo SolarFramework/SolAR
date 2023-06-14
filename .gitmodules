@@ -22,10 +22,6 @@
 	path = modules/SolARModuleOpenGL
 	url = https://github.com/SolarFramework/SolARModuleOpenGL
 	branch = .
-[submodule "modules/SolARModuleNonFreeOpenCV"]
-	path = modules/SolARModuleNonFreeOpenCV
-	url = https://github.com/SolarFramework/SolARModuleNonFreeOpenCV
-	branch = .
 [submodule "modules/SolARModuleFBOW"]
 	path = modules/SolARModuleFBOW
 	url = https://github.com/SolarFramework/SolARModuleFBOW
