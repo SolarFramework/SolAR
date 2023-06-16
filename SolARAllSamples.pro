@@ -20,15 +20,9 @@ CONFIG += ordered
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples/Sample-FiducialMarker/SolARSample_FiducialMarker_Mono/SolARSample_FiducialMarker_Mono.pro \
-    samples/Sample-NaturalImageMarker/SolARSample_NaturalImageMarker_Multi/SolARSample_NaturalImageMarker_Multi.pro \
-    samples/Sample-Mapping/Mapping/SolARSample_Mapping_Multi/SolARSample_Mapping_Multi.pro \
     samples/Sample-Mapping/MapViz/SolARSample_Mapping_MapVisualizer/SolARSample_Mapping_MapVisualizer.pro \
-    samples/Sample-Slam/SolARSample_SLAM_Multi/SolARSample_SLAM_Multi.pro \
-    samples/Sample-Relocalization/SolARSample_Relocalization_Mono/SolARSample_Relocalization_Mono.pro \
-    samples/Sample-Relocalization/SolARSample_Relocalization_Multi/SolARSample_Relocalization_Multi.pro \
     samples/Sample-MapUpdate/SolARSample_MapUpdate_FloatingMapFusion/SolARSample_MapUpdate_FloatingMapFusion.pro \
-    samples/Sample-MapUpdate/SolARSample_MapUpdate_Standalone/SolARSample_MapUpdate_Standalone.pro \
+
 
 
 

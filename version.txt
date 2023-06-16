@@ -62,19 +62,15 @@ SolARTest_ModuleHapPLY_PointCloudFileToPly|1.0.0
 SolARModulePopSift|1.0.0
 SolARTest_ModulePopSift_DescriptorMatcher|1.0.0
 
-SolARSample_FiducialMarker_Mono|1.0.0
 SolARPipelineFiducialMarker|1.0.0
 SolARPipelineTest_FiducialMarker|1.0.0
 
-SolARSample_NaturalImageMarker_Multi|1.0.0
 SolARPipelineNaturalImageMarker|1.0.0
 SolARPipelineTest_NaturalImageMarker|1.0.0
 
-SolARSample_SLAM_Multi|1.0.0
 SolARPipelineSLAM|1.0.0
 SolARPipelineTest_SLAM|1.0.0
 
-SolARSample_Mapping_Multi|1.0.0
 SolARSample_Mapping_MapVisualizer|1.0.0
 SolARPipelineMappingMulti|1.0.0
 SolARPipelineMappingAndRelocalizationFrontEnd|1.0.0
@@ -91,15 +87,12 @@ SolARServiceTest_MappingAndRelocalizationFrontEnd|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd_RelocViewer|1.0.0
 
 SolARSample_MapUpdate_FloatingMapFusion|1.0.0
-SolARSample_MapUpdate_Standalone|1.0.0
 SolARPipelineMapUpdate|1.0.0
 SolARPipelineTest_MapUpdate|1.0.0
 SolARService_MapUpdate|1.0.0
 SolARServiceTest_MapUpdate|1.0.0
 SolARServiceTest_MapUpdate_DisplayMap|1.0.0
 
-SolARSample_Relocalization_Mono|1.0.0
-SolARSample_Relocalization_Multi|1.0.0
 SolARPipelineMappingAndRelocalizationFrontend|1.0.0
 SolARPipelineRelocalization|1.0.0
 SolARPipelineRelocalizationMarker|1.0.0
