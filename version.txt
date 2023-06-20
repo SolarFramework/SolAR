@@ -86,7 +86,6 @@ SolARServiceTest_Mapping_Multi_Relocalization|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd_RelocViewer|1.0.0
 
-SolARSample_MapUpdate_FloatingMapFusion|1.0.0
 SolARPipelineMapUpdate|1.0.0
 SolARPipelineTest_MapUpdate|1.0.0
 SolARService_MapUpdate|1.0.0
