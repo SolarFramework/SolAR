@@ -2,8 +2,8 @@
 setlocal
 
 REM default parameter value
-set QTVERSION=5.14.2
-set VISUALVERSION=2017
+set QTVERSION=6.4.2
+set VISUALVERSION=2019
 set SOLARMODULESROOT=..\modules
 set modules= SolARModuleOpenCV\SolARModuleOpenCVCuda#SolARModuleOpenCVCuda SolARModulePopSift#SolARModulePopSift
 REM check whether user had supplied -h or --help . If yes display usage 
