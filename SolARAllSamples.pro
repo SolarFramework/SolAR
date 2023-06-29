@@ -20,25 +20,9 @@ CONFIG += ordered
 TEMPLATE = subdirs
  
 SUBDIRS = \
-    samples/Sample-FiducialMarker/SolARSample_FiducialMarker_Mono/SolARSample_FiducialMarker_Mono.pro \
-    samples/Sample-NaturalImageMarker/SolARSample_NaturalImageMarker_Mono/SolARSample_NaturalImageMarker_Mono.pro \
-    samples/Sample-NaturalImageMarker/SolARSample_NaturalImageMarker_Multi/SolARSample_NaturalImageMarker_Multi.pro \
-    samples/Sample-Mapping/MapExtension/SolARSample_Mapping_MapExtension_Mono/SolARSample_Mapping_MapExtension_Mono.pro \
-    samples/Sample-Mapping/Mapping/SolARSample_Mapping_Mono/SolARSample_Mapping_Mono.pro \
-    samples/Sample-Mapping/Mapping/SolARSample_Mapping_Multi/SolARSample_Mapping_Multi.pro \
     samples/Sample-Mapping/MapViz/SolARSample_Mapping_MapVisualizer/SolARSample_Mapping_MapVisualizer.pro \
-    samples/Sample-Slam/SolARSample_SLAM_Mono/SolARSample_SLAM_Mono.pro \
-    samples/Sample-Slam/SolARSample_SLAM_Multi/SolARSample_SLAM_Multi.pro \
-    samples/Sample-Relocalization/SolARSample_Relocalization_Mono/SolARSample_Relocalization_Mono.pro \
-    samples/Sample-Relocalization/SolARSample_Relocalization_Multi/SolARSample_Relocalization_Multi.pro \
-    samples/Sample-MapUpdate/SolARSample_MapUpdate_FloatingMapFusion/SolARSample_MapUpdate_FloatingMapFusion.pro \
-    samples/Sample-MapUpdate/SolARSample_MapUpdate_LocalMapFusion/SolARSample_MapUpdate_LocalMapFusion.pro \
-    samples/Sample-MapUpdate/SolARSample_MapUpdate_Standalone/SolARSample_MapUpdate_Standalone.pro \
-    samples/Sample-Triangulation/SolARSample_Triangulation_Mono/SolARSample_Triangulation_Mono.pro
 
-win32 {
-	SUBDIRS += samples/Sample-DepthCamera/SolARSample_DepthCamera_Mono/SolARSample_DepthCamera_Mono.pro
-}
+
 
 
 

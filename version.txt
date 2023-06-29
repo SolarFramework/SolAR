@@ -1,7 +1,5 @@
 SolARFramework|1.0.0
 SolARFrameworkGRPCRemote|1.0.0
-SolARPipelineManager|1.0.0
-SolARWrapper|1.0.0
 
 SolARModuleTools|1.0.0
 SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D|1.0.0
@@ -29,21 +27,20 @@ SolARTest_ModuleOpenCV_FeatureMatchingStabilization|1.0.0
 SolARTest_ModuleOpenCV_FiducialMarker|1.0.0
 SolARTest_ModuleOpenCV_FundamentalMatrixDecomposer|1.0.0
 SolARTest_ModuleOpenCV_FundamentalMatrixEstimation|1.0.0
-SolARTest_ModuleOpenCV_ImageCompression|1.0.01.1.0.0
+SolARTest_ModuleOpenCV_GenericSemanticSegmentation|1.0.0
+SolARTest_ModuleOpenCV_ImageCompression|1.0.0
 SolARTest_ModuleOpenCV_ImageConvertor|1.0.0
 SolARTest_ModuleOpenCV_ImageFilter|1.0.0
 SolARTest_ModuleOpenCV_ImageLoader|1.0.0
 SolARTest_ModuleOpenCV_MatchesFilter|1.0.0
 SolARTest_ModuleOpenCV_MultiQRCodesPoseEstimation|1.0.0
+SolARTest_ModuleOpenCV_PnP|1.0.0
 SolARTest_ModuleOpenCV_OpticalFlow|1.0.0
 SolARTest_ModuleOpenCV_QRCodePoseEstimation|1.0.0
 SolARTest_ModuleOpenCV_QRCodesDetection|1.0.0
 SolARTest_ModuleOpenCV_YolactSegmentation|1.0.0
 
 SolARTest_ModuleOpenCV_FeatureMatchingStabilization|1.0.0
-
-SolARModuleNonFreeOpenCV|1.0.0
-SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor|1.0.0
 
 SolARModuleOpenGL|1.0.0
 SolARTest_ModuleOpenGL_PointsCloudDisplay|1.0.0
@@ -53,60 +50,34 @@ SolARModuleFBOWCuda|1.0.0
 SolARTest_ModuleFBOW_ClosestKeyframeRetrieval|1.0.0
 SolARTest_ModuleFBOW_FeatureMatching|1.0.0
 SolARTool_FBOWCreator|1.0.0
-
-SolARModuleCeres|1.0.0
-SolARTest_ModuleCeres_Bundler|1.0.0
+SolARTool_CameraCalibration|1.0.0
 
 SolARModuleG2O|1.0.0
 SolARTest_ModuleG2O_Bundler|1.0.0
 
-SolARModuleOpenGV|1.0.0
-SolARTest_ModuleOpenGV_PnP|1.0.0
-SolARTest_ModuleOpenGV_Triangulation|1.0.0
+SolARModuleHapPLY|1.0.0
+SolARTest_ModuleHapPLY_MeshIO|1.0.0
+SolARTest_ModuleHapPLY_PointCloudFileToPly|1.0.0
 
 SolARModulePopSift|1.0.0
 SolARTest_ModulePopSift_DescriptorMatcher|1.0.0
 
-SolARModulePCL|1.0.0
-SolARTest_ModulePCL_PointCloudLoader|1.0.0
-
-SolARModuleRealSense|1.0.0
-SolARTest_ModuleRealSense_RGBDCamera|1.0.0
-SolARTest_ModuleRealSense_StereoCamera|1.0.0
-
-SolARSample_FiducialMarker_Mono|1.0.0
 SolARPipelineFiducialMarker|1.0.0
 SolARPipelineTest_FiducialMarker|1.0.0
 
-SolARSample_NaturalImageMarker_Mono|1.0.0
-SolARSample_NaturalImageMarker_Multi|1.0.0
 SolARPipelineNaturalImageMarker|1.0.0
 SolARPipelineTest_NaturalImageMarker|1.0.0
 
-SolARSample_DepthCamera_Mono|1.0.0
-
-SolARSample_SLAM_Mono|1.0.0
-SolARSample_SLAM_Multi|1.0.0
 SolARPipelineSLAM|1.0.0
 SolARPipelineTest_SLAM|1.0.0
 
-SolARSample_Triangulation_Mono|1.0.0
-
-SolARSample_Mapping_MapExtension_Mono|1.0.0
-SolARSample_Mapping_Mono|1.0.0
-SolARSample_Mapping_Multi|1.0.0
 SolARSample_Mapping_MapVisualizer|1.0.0
-SolARPipelineMappingMono|1.0.0
 SolARPipelineMappingMulti|1.0.0
-SolARPipelineMappingMultiNoDrop|1.0.0
 SolARPipelineMappingAndRelocalizationFrontEnd|1.0.0
-SolARPipelineTest_Mapping_Mono|1.0.0
 SolARPipelineTest_Mapping_Multi|1.0.0
-SolARPipelineTest_Mapping_Multi_NoDrop|1.0.0
 SolARPipelineTest_MappingAndRelocalizationFrontend|1.0.0
 SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly|1.0.0
 SolARService_Mapping_Multi|1.0.0
-SolARService_Mapping_Multi_NoDrop|1.0.0
 SolARService_MappingAndRelocalizationFrontEnd|1.0.0
 SolARService_MappingAndRelocalizationProxy|1.0.0
 SolARServiceTest_Mapping_Multi_Producer|1.0.0
@@ -115,23 +86,25 @@ SolARServiceTest_Mapping_Multi_Relocalization|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd|1.0.0
 SolARServiceTest_MappingAndRelocalizationFrontEnd_RelocViewer|1.0.0
 
-SolARSample_MapUpdate_FloatingMapFusion|1.0.0
-SolARSample_MapUpdate_LocalMapFusion|1.0.0
-SolARSample_MapUpdate_Standalone|1.0.0
 SolARPipelineMapUpdate|1.0.0
 SolARPipelineTest_MapUpdate|1.0.0
 SolARService_MapUpdate|1.0.0
 SolARServiceTest_MapUpdate|1.0.0
 SolARServiceTest_MapUpdate_DisplayMap|1.0.0
 
-SolARSample_Relocalization_Mono|1.0.0
-SolARSample_Relocalization_Multi|1.0.0
+SolARPipelineMappingAndRelocalizationFrontend|1.0.0
 SolARPipelineRelocalization|1.0.0
 SolARPipelineRelocalizationMarker|1.0.0
+SolARPipelineTest_Frontend_RelocOnly|1.0.0
+SolARPipelineTest_Frontend_MappingAndReloc|1.0.0
 SolARPipelineTest_Relocalization|1.0.0
 SolARPipelineTest_RelocalizationMarker|1.0.0
+SolARService_MappingAndRelocFrontend|1.0.0
 SolARService_Relocalization|1.0.0
 SolARService_RelocalizationMarkers|1.0.0
+SolARServiceTest_MappingAndRelocFrontend|1.0.0
+SolARServiceTest_MappingAndRelocFrontend_Viewer|1.0.0
+SolARServiceTest_MappingAndRelocFrontend_Multi_Viewer|1.0.0
 SolARServiceTest_Relocalization|1.0.0
 SolARServiceTest_RelocalizationMarkers|1.0.0
 
@@ -143,10 +116,6 @@ spdlog|0.14.0
 eigen|3.4.0
 freeglut|3.0.0
 fbowSolAR|1.0.0
-ceres|2.0.0
-pcl|1.12.0
 flann|1.9.1
-realsense2|2.36.0
 g2o|20200410
 popsift|1.0.0-rc3
-

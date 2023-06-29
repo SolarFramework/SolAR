@@ -21,7 +21,6 @@ TEMPLATE = subdirs
  
 SUBDIRS = \
     services/Service-Mapping/SolARService_Mapping_Multi/SolARService_Mapping_Multi.pro \
-    services/Service-Mapping/SolARService_Mapping_Multi_NoDrop/SolARService_Mapping_Multi_NoDrop.pro \
     services/Service-MapUpdate/SolARService_MapUpdate/SolARService_MapUpdate.pro \
     services/Service-Relocalization/SolARService_Relocalization/SolARService_Relocalization.pro \
     services/Service-Relocalization/SolARService_RelocalizationMarkers/SolARService_RelocalizationMarkers.pro \

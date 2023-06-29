@@ -20,12 +20,11 @@ CONFIG += ordered
 TEMPLATE = subdirs
 
 SUBDIRS = \
-    modules/SolARModuleCeres/tests/SolARTest_ModuleCeres_Bundler/SolARTest_ModuleCeres_Bundler.pro \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval/SolARTest_ModuleFBOW_ClosestKeyframeRetrieval.pro \
     modules/SolARModuleFBOW/tests/SolARTest_ModuleFBOW_FeatureMatching/SolARTest_ModuleFBOW_FeatureMatching.pro \
     modules/SolARModuleG2O/tests/SolARTest_ModuleG2O_Bundler/SolARTest_ModuleG2O_Bundler.pro \
-    modules/SolARModuleNonFreeOpenCV/tests/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor/SolARTest_ModuleNonFreeOpenCV_DescriptorExtractor.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_CameraCalibration/SolARTest_ModuleOpenCV_CameraCalibration.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_GenericSemanticSegmentation/SolARTest_ModuleOpenCV_GenericSemanticSegmentation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DescriptorMatcher/SolARTest_ModuleOpenCV_DescriptorMatcher.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDataLoader/SolARTest_ModuleOpenCV_DeviceDataLoader.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration/SolARTest_ModuleOpenCV_DeviceDualMarkerCalibration.pro \
@@ -46,9 +45,11 @@ SUBDIRS = \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_QRCodesDetection/SolARTest_ModuleOpenCV_QRCodesDetection.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_YolactSegmentation/SolARTest_ModuleOpenCV_YolactSegmentation.pro \
     modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_PnP/SolARTest_ModuleOpenCV_PnP.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoCameraCalibration/SolARTest_ModuleOpenCV_StereoCameraCalibration.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoFeatureMatching/SolARTest_ModuleOpenCV_StereoFeatureMatching.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoImageRectification/SolARTest_ModuleOpenCV_StereoImageRectification.pro \
+    modules/SolARModuleOpenCV/tests/SolARTest_ModuleOpenCV_StereoKeypointRectification/SolARTest_ModuleOpenCV_StereoKeypointRectification.pro \
     modules/SolARModuleOpenGL/tests/SolARTest_ModuleOpenGL_PointsCloudDisplay/SolARTest_ModuleOpenGL_PointsCloudDisplay.pro \
-    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_PnP/SolARTest_ModuleOpenGV_PnP.pro \
-    modules/SolARModuleOpenGV/tests/SolARTest_ModuleOpenGV_Triangulation/SolARTest_ModuleOpenGV_Triangulation.pro \
     modules/SolARModulePopSift/tests/SolARTest_ModulePopSift_DescriptorMatcher/SolARTest_ModulePopSift_DescriptorMatcher.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D/SolARTest_ModuleTools_3DTransformEstimationSACFrom3D3D.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_BoostCovisibilityGraph/SolARTest_ModuleTools_BoostCovisibilityGraph.pro \
@@ -61,15 +62,11 @@ SUBDIRS = \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_LoopCorrection/SolARTest_ModuleTools_LoopCorrection.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator/SolARTest_ModuleTools_MultiFiducialMarkersPoseEstimator.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_PointCloudManager/SolARTest_ModuleTools_PointCloudManager.pro \
+    modules/SolARModuleTools/tests/SolARTest_ModuleTools_StereoDepthEstimation/SolARTest_ModuleTools_StereoDepthEstimation.pro \
     modules/SolARModuleTools/tests/SolARTest_ModuleTools_WorldGraphLoader/SolARTest_ModuleTools_WorldGraphLoader.pro \
     modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_PointCloudFileToPly/SolARTest_ModuleHapPLY_PointCloudFileToPly.pro \
     modules/SolARModuleHapPLY/tests/SolARTest_ModuleHapPLY_MeshIO/SolARTest_ModuleHapPLY_MeshIO.pro \
-    modules/SolARModulePCL/tests/SolARTest_ModulePCL_PointCloudLoader/SolARTest_ModulePCL_PointCloudLoader.pro \
-	
-win32 {
-        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_RGBDCamera/SolARTest_ModuleRealSense_RGBDCamera.pro
-        SUBDIRS += modules/SolARModuleRealSense/tests/SolARTest_ModuleRealSense_StereoCamera/SolARTest_ModuleRealSense_StereoCamera.pro
-}
+
 
 
 

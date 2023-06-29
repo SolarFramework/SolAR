@@ -3,6 +3,7 @@
 ## v1.0.0
 * Dependencies:
   * Update XPCF to 2.6.2
+  * Remove support for Android
 
 ## v0.11.0 (2022/11/15)
 
