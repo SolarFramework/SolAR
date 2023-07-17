@@ -21,14 +21,12 @@ TEMPLATE = subdirs
 SUBDIRS = \
     samples/Sample-FiducialMarker/SolARPipeline_FiducialMarker/tests/SolARPipelineTest_FiducialMarker/SolARPipelineTest_FiducialMarker.pro \
     samples/Sample-NaturalImageMarker/SolARPipeline_NaturalImageMarker/tests/SolARPipelineTest_NaturalImageMarker/SolARPipelineTest_NaturalImageMarker.pro \
-    samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Mono/tests/SolARPipelineTest_Mapping_Mono/SolARPipelineTest_Mapping_Mono.pro \
     samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi/tests/SolARPipelineTest_Mapping_Multi/SolARPipelineTest_Mapping_Multi.pro \
-    samples/Sample-Mapping/Mapping/SolARPipeline_Mapping_Multi_NoDrop/tests/SolARPipelineTest_Mapping_Multi_NoDrop/SolARPipelineTest_Mapping_Multi_NoDrop.pro \
     samples/Sample-Slam/SolARPipeline_SLAM/tests/SolARPipelineTest_SLAM/SolARPipelineTest_SLAM.pro \
     samples/Sample-Relocalization/SolARPipeline_Relocalization/tests/SolARPipelineTest_Relocalization/SolARPipelineTest_Relocalization.pro \
-	samples/Sample-Relocalization/SolARPipeline_RelocalizationMarker/tests/SolARPipelineTest_RelocalizationMarker/SolARPipelineTest_RelocalizationMarker.pro \
-    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_MappingAndRelocalizationFrontend/SolARPipelineTest_MappingAndRelocalizationFrontend.pro \
-    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly/SolARPipelineTest_MappingAndRelocalizationFrontend_RelocOnly.pro \
+    samples/Sample-Relocalization/SolARPipeline_RelocalizationMarker/tests/SolARPipelineTest_RelocalizationMarker/SolARPipelineTest_RelocalizationMarker.pro \
+    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_Frontend_MappingAndReloc/SolARPipelineTest_Frontend_MappingAndReloc.pro \
+    samples/Sample-Relocalization/SolARPipeline_MappingAndRelocalizationFrontend/tests/SolARPipelineTest_Frontend_RelocOnly/SolARPipelineTest_Frontend_RelocOnly.pro \
     samples/Sample-MapUpdate/SolARPipeline_MapUpdate/tests/SolARPipelineTest_MapUpdate/SolARPipelineTest_MapUpdate.pro \
 
 # Add install_deps target that recursively calls install_deps

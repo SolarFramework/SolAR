@@ -34,19 +34,19 @@ fi
 
 # default linux values
 
-QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin
+QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin/
 QMAKE_SPEC=linux-g++
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
-	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
+	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin/
 	QMAKE_SPEC=macx-clang
 	PLATEFORMFOLDER="mac/"
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
-	echo "Qt path '${QMAKE_PATH}' doesn't exist : check your Qt installation and kits"
-	exit 2
+	echo "Warning ! '${QMAKE_PATH}' does not exists. Try to find qmake and make in your PATH."
+	QMAKE_PATH=""
 fi
 
 if [ ! -f ${SOLARROOTFOLDER}/SolARAllSamples.pro ]; then
@@ -76,7 +76,7 @@ remaken install ${SOLARROOTFOLDER}/${sampleProjectPath}/packagedependencies.txt 
 
 echo "===========> building ${1} shared <==========="
 pushd build/${PLATEFORMFOLDER}samples/${1}/shared/debug
-${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
@@ -85,7 +85,7 @@ else
 fi
 popd
 pushd build/${PLATEFORMFOLDER}samples/${1}/shared/release
-${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
+${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=x86_64 CONFIG+=qml_debug && /usr/bin/make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"

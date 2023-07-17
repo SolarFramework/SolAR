@@ -46,23 +46,23 @@ fi
 
 # default linux values
 
-QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin
+QMAKE_PATH=$HOME/Qt/${QTVERSION}/gcc_64/bin/
 QMAKE_SPEC=linux-g++
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 # overload for mac values
-	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin
+	QMAKE_PATH=~/Applications/Qt/${QTVERSION}/clang_64/bin/
 	QMAKE_SPEC=macx-clang
 	PLATEFORMFOLDER="mac/"
 else
 	if [ "$CROSSBUILD" == "ANDROID" ]; then	
-		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin
+		QMAKE_PATH=$HOME/Qt/${QTVERSION}/android/bin/
 	fi
 fi
 
 if [ ! -d ${QMAKE_PATH} ]; then
-	echo "Qt path '${QMAKE_PATH}' doesn't exist : check your Qt installation and kits"
-	exit 2
+	echo "Warning ! '${QMAKE_PATH}' does not exists. Try to find qmake and make in your PATH."
+	QMAKE_PATH=""
 fi
 
 if [ ! -f ${SOLARROOTFOLDER}/SolARAllPipelines.pro ]; then
@@ -127,8 +127,8 @@ remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARROOTFOLDER}/${pipelineProjectPat
 
 echo "===========> building ${1} shared <==========="
 pushd build/${PLATEFORMFOLDER}pipelines/${1}/shared/debug
-echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
-${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Debug$(tput sgr 0)"
@@ -137,8 +137,8 @@ else
 fi 
 popd
 pushd build/${PLATEFORMFOLDER}pipelines/${1}/shared/release
-echo "${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all"
-${QMAKE_PATH}/qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}/make qmake_all
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARROOTFOLDER}/${2} -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
 	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - ${1} - Release$(tput sgr 0)"

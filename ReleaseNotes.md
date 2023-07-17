@@ -1,10 +1,25 @@
 # Release Notes
 
+## v1.0.0
+* Dependencies:
+  * Update XPCF to 2.6.2
+  * Remove support for Android
+
 ## v0.11.0 (2022/11/15)
 
 * Support of QR Code for relocalization
-* Support of PNG decoding
+* Support of PNG and JPEG decoding
+* New Front End service (for cloud deployment)
+* New Relocalization Markers pipeline and service
+* Optimization of Map Update, Mapping and Relocalization pipelines
+* CUDA versions of Map Update, Mapping and Relocalization services
 * Bug fixes, optimizations
+* Dependencies
+  * Update XPCF to 2.5.3
+  * Update OpenCV to 4.5.5
+  * Update spdlog to 1.9.2
+  * Introduce OpenImageIO 2.3.13.0
+  * Remove flann 1.9.1
 
 ## v0.10.0 (2021/12/30)
 

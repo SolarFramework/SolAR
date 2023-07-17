@@ -3,7 +3,7 @@
 CROSSBUILD=NO
 QTVERSION=5.15.2
 NBPROCESSORS=6
-SOLARFRAMEWORKROOT=../core/SolARFramework
+SOLARFRAMEWORKGRPCROOT=../core/SolARFrameworkGRPCRemote
 
 PLATEFORMFOLDER="linux/"
 ANDROIDREMAKENOPTIONS=""
@@ -11,9 +11,9 @@ QMAKEOPTIONS="CONFIG+=x86_64"
 MAKE_PATH="/usr/bin/"
 
 display_usage() { 
-	echo "This script builds the SolAR framework in shared mode."
+	echo "This script builds FrameworkGrcpRemote in shared mode."
 	echo "It can receive four optional arguments." 
-	echo -e "\nUsage: \$0 [ Cross build ? | default='${CROSSBUILD}' | possible values=[NO, ANDROID]] [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to SolAR Framework project root | default='${SOLARFRAMEWORKROOT}'] \n" 
+	echo -e "\nUsage: \$0 [ Cross build ? | default='${CROSSBUILD}' | possible values=[NO, ANDROID]] [Nb processors used for building | default='${NBPROCESSORS}'] [Qt kit version to use | default='${QTVERSION}'] [path to SolAR Framework Grpc Remote project root | default='${SOLARFRAMEWORKROOT}'] \n" 
 } 
 
 # check whether user had supplied -h or --help . If yes display usage 
@@ -64,11 +64,11 @@ if [ ! -d ${QMAKE_PATH} ]; then
 	QMAKE_PATH=""
 fi
 
-if [ ! -d ${SOLARFRAMEWORKROOT} ]; then
-	echo "SOLAR project root path '${SOLARFRAMEWORKROOT}' doesn't exist"
+if [ ! -d ${SOLARFRAMEWORKGRPCROOT} ]; then
+	echo "SOLAR Framework Grpc Remote project root path '${SOLARFRAMEWORKGRPCROOT}' doesn't exist"
 	exit 2
 fi
-echo "SOLAR project root path used is : ${SOLARFRAMEWORKROOT}"
+echo "SOLAR Framework Grpc Remote project root path used is : ${SOLARFRAMEWORKGRPCROOT}"
 
 if [ "$CROSSBUILD" == "ANDROID" ]; then		
 	if [ ! -n "$ANDROID_NDK_ROOT" ]; then
@@ -106,43 +106,43 @@ if [ "$CROSSBUILD" == "ANDROID" ]; then
 fi
 
 BUILDREPORT=""
-if [ -f build/${PLATEFORMFOLDER}core/SolARFramework/report.txt ]; then
-	rm -f build/${PLATEFORMFOLDER}core/SolARFramework/report.txt
+if [ -f build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/report.txt ]; then
+	rm -f build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/report.txt
 fi
 
 
-if [ -d build/${PLATEFORMFOLDER}core/SolARFramework/shared ]; then
-	rm -rf build/${PLATEFORMFOLDER}core/SolARFramework/shared
+if [ -d build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared ]; then
+	rm -rf build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared
 fi
 
-mkdir -p build/${PLATEFORMFOLDER}core/SolARFramework/shared/debug
-mkdir -p build/${PLATEFORMFOLDER}core/SolARFramework/shared/release
+mkdir -p build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared/debug
+mkdir -p build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared/release
 
 echo "===========> run remaken from ${SOLARROOTFOLDER}/packagedependencies.txt <==========="
-remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/packagedependencies.txt
-remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKROOT}/packagedependencies.txt -c debug
+remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKGRPCROOT}/packagedependencies.txt
+remaken install ${ANDROIDREMAKENOPTIONS} ${SOLARFRAMEWORKGRPCROOT}/packagedependencies.txt -c debug
 
 echo "===========> building SolAR Framework shared <==========="
-pushd build/${PLATEFORMFOLDER}core/SolARFramework/shared/debug
-echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
-${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
+pushd build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared/debug
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=debug CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Debug$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - FrameworkGrcpRemote - Debug$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - Framework - Debug$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - FrameworkGrcpRemote - Debug$(tput sgr 0)"
 fi  
 popd
-pushd build/${PLATEFORMFOLDER}core/SolARFramework/shared/release
-echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
-${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKROOT}/SolARFramework.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
+pushd build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/shared/release
+echo "${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all"
+${QMAKE_PATH}qmake ../../../../../../${SOLARFRAMEWORKGRPCROOT}/SolARFrameworkGRPCRemote.pro -spec ${QMAKE_SPEC} CONFIG+=qml_debug ${QMAKEOPTIONS} && ${MAKE_PATH}make qmake_all
 make -j${NBPROCESSORS}
 if [ $? -eq 0 ]; then 
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - Framework - Release$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 2)success - FrameworkGrcpRemote - Release$(tput sgr 0)"
 else
-	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - Framework - Release$(tput sgr 0)"
+	BUILDREPORT="${BUILDREPORT}\n$(tput setab 1)failed - FrameworkGrcpRemote - Release$(tput sgr 0)"
 fi
 popd
 
 echo -e ${BUILDREPORT}
-echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}core/SolARFramework/report.txt
+echo -e ${BUILDREPORT} >> build/${PLATEFORMFOLDER}core/SolARFrameworkGrpcRemote/report.txt

@@ -19,6 +19,7 @@ call build_allModuleTests.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
 call build_allSamples.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
 call build_allPipelines.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
 call build_allPipelineTests.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
+call build_SolARFrameworkGrpcRemote.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%/core/SolARFrameworkGRPCRemote
 call build_allServices.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
 call build_allServiceTests.bat %QTVERSION% %VISUALVERSION% %SOLARROOTFOLDER%
 endlocal
